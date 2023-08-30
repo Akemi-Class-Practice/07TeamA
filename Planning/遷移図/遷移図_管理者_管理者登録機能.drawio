@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2023-08-30T01:54:06.884Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="rvU5wMUQXUvUoQW6hA07" version="21.7.0" type="device">
+  <diagram name="ページ1" id="rZqXLZd7nlMIfL8ldDXN">
+    <mxGraphModel dx="908" dy="924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" edge="1" source="eLcvxQoy1mJ-Kwe2JzoQ-1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-4" value="管理者_管理者登録機能" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="60" y="10" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-5" value="管理者" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="45" y="200" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-6" value="管理者ログイン画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-7" value="管理者ログイン" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="310" y="160" as="sourcePoint" />
+            <mxPoint x="420" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-8" value="講座一覧画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="420" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-10" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="eLcvxQoy1mJ-Kwe2JzoQ-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="330" y="430" as="sourcePoint" />
+            <mxPoint x="503" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-11" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="eLcvxQoy1mJ-Kwe2JzoQ-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="448" y="280" as="sourcePoint" />
+            <mxPoint x="414" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-12" value="管理者登録画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-13" value="[戻るボタン]&lt;br&gt;をクリック" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="220" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-15" value="[管理者登録ボタン]&lt;br&gt;をクリック" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="220" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-19" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="474.5" y="330" as="sourcePoint" />
+            <mxPoint x="474.5" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-20" value="[新たな管理者]の&lt;br&gt;情報を追加" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="360" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="455" y="450" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eLcvxQoy1mJ-Kwe2JzoQ-23" value="講座一覧画面&lt;br&gt;に戻る" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="457" width="80" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
