@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" modified="2023-08-30T04:07:54.315Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="yOqH69vAI-J4YTrzT1QJ" version="21.6.8" type="device">
+  <diagram name="페이지-1" id="rm7KRm2pN6IDjV-6zRbD">
+    <mxGraphModel dx="1396" dy="1618" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-1" value="ユーザー登録機能" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-225" y="-552" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-2" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="290" y="-80" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-3" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-180" y="-480" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-4" value="" style="html=1;verticalAlign=bottom;endArrow=classic;strokeColor=#000000;rounded=0;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=1;strokeWidth=1;" edge="1" source="zOx3O6FkK7F3G0d4trwR-3" parent="1" target="zOx3O6FkK7F3G0d4trwR-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-175" y="-350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-5" value="講座一覧画面" style="html=1;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="-490" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-6" value="ユーザ登録画面" style="html=1;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="-340" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-8" value="ユーザー" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="-450" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-9" value="ユーザログイン画面" style="html=1;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="-490" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-10" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zOx3O6FkK7F3G0d4trwR-5" target="zOx3O6FkK7F3G0d4trwR-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="-370" as="sourcePoint" />
+            <mxPoint x="230" y="-420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-11" value="「ログインボタン」クリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="90" y="-450" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-12" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="-340" as="sourcePoint" />
+            <mxPoint x="290" y="-440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-13" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="-440" as="sourcePoint" />
+            <mxPoint x="320" y="-340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-14" value="「戻るボタン」クリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="160" y="-400" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-15" value="ユーザーログイン画面に戻る" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="220" y="-50" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-16" value="「新規登録ボタン」クリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="-400" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-17" value="ユーザ登録情報確認画面" style="html=1;whiteSpace=wrap;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="250" y="-190" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-19" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="-190" as="sourcePoint" />
+            <mxPoint x="290" y="-290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-20" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="-290" as="sourcePoint" />
+            <mxPoint x="320" y="-190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-21" value="「戻って変更ボタン」クリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="130" y="-250" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-23" value="「入力情報確認ボタン」クリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="-250" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zOx3O6FkK7F3G0d4trwR-24" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zOx3O6FkK7F3G0d4trwR-17" target="zOx3O6FkK7F3G0d4trwR-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="-170" as="sourcePoint" />
+            <mxPoint x="230" y="-220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

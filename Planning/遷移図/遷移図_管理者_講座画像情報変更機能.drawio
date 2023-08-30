@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net" modified="2023-08-30T04:22:56.925Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="EL5ROt6f62FYTiCnPDtQ" version="21.7.0" type="device">
+  <diagram name="페이지-1" id="Z6Ct1N_wJwdlQKyPhpvo">
+    <mxGraphModel dx="1396" dy="1218" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-2" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#FF0000;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="-100" y="-260" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-4" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="320" y="80" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-5" value="管理者" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-115" y="-230" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-6" value="管理者ログイン画面" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="50" y="-270" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-8" value="講座一覧画面" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="280" y="-270" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-10" value="講座画像情報編集機能" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-120" y="-340" width="165" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-11" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="STxH4XwOeEqbzBBw3oPl-2" target="STxH4XwOeEqbzBBw3oPl-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="-250" as="sourcePoint" />
+            <mxPoint x="340" y="-300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-12" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.7;exitY=0.06;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="STxH4XwOeEqbzBBw3oPl-16" target="STxH4XwOeEqbzBBw3oPl-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="-330" as="sourcePoint" />
+            <mxPoint x="377" y="-210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-13" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="STxH4XwOeEqbzBBw3oPl-16" target="STxH4XwOeEqbzBBw3oPl-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="10" as="sourcePoint" />
+            <mxPoint x="500" y="-40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-14" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="-220" as="sourcePoint" />
+            <mxPoint x="320" y="-80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-15" value="" style="endArrow=classic;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="STxH4XwOeEqbzBBw3oPl-6" target="STxH4XwOeEqbzBBw3oPl-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="-300" as="sourcePoint" />
+            <mxPoint x="210" y="-350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-16" value="講座画像編集画面" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="280" y="-90" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-17" value="「戻るボタン」をクリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="160" y="-160" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-18" value="「画像変更ボタン」をクリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="355" y="-160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-19" value="「画像変更ボタン」をクリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="330" y="-10" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-20" value="「ログインボタン」をクリック" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="140" y="-220" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="STxH4XwOeEqbzBBw3oPl-21" value="「画像編集が完了しました。」メッセージ出力後、&lt;br&gt;講座一覧画面に戻る" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="350" y="75" width="290" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
