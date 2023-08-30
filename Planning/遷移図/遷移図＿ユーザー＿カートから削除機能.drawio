@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" modified="2023-08-30T04:29:02.585Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="7LRhOpUMi00zZWkvNmZ3" version="21.6.9" type="device">
+  <diagram name="Page-1" id="wm2ifSGsid-J4AiEOYS5">
+    <mxGraphModel dx="1434" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AtgNCquAjrnwRHWfzEny-1" value="ユーザー：　講座削除機能" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="60" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-2" value="ユーザー" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="85" y="100" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-3" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="110" y="140" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-5" value="ユーザーログイン画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="220" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-6" value="講座一覧画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="480" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-7" value="ログインボタンを押下" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="AtgNCquAjrnwRHWfzEny-6">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="330" y="154.5" as="sourcePoint" />
+            <mxPoint x="410" y="154.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="140" as="sourcePoint" />
+            <mxPoint x="760" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-10" value="カート一覧画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="760" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-11" value="カートのリンクを押下" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="100" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="AtgNCquAjrnwRHWfzEny-10" target="AtgNCquAjrnwRHWfzEny-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="160" as="sourcePoint" />
+            <mxPoint x="700" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-13" value="戻るボタンを押下" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="180" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="AtgNCquAjrnwRHWfzEny-10" target="AtgNCquAjrnwRHWfzEny-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="890" y="160" as="sourcePoint" />
+            <mxPoint x="920" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="925" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-18" value="削除したい講座を選択して削除ボタンを押下" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="970" y="230" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-20" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="910" y="450" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-23" value="カート画面に戻る" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="950" y="450" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-24" value="削除確認アレート" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="300" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-25" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="AtgNCquAjrnwRHWfzEny-24" target="AtgNCquAjrnwRHWfzEny-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="350" as="sourcePoint" />
+            <mxPoint x="990" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-26" value="削除したい" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="940" y="390" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="AtgNCquAjrnwRHWfzEny-24" target="AtgNCquAjrnwRHWfzEny-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="305" as="sourcePoint" />
+            <mxPoint x="800" y="185" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="815" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-28" value="削除したくない" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="710" y="270" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AtgNCquAjrnwRHWfzEny-31" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="AtgNCquAjrnwRHWfzEny-3" target="AtgNCquAjrnwRHWfzEny-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="176" as="sourcePoint" />
+            <mxPoint x="210" y="126" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
