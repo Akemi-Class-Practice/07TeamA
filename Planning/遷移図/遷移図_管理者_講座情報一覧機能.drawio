@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net" modified="2023-08-30T01:08:34.814Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="dQ7e4tk8S1nNvoIkbH-8" version="21.7.0" type="device">
+  <diagram name="ページ1" id="-3oP6H1oGsL0ujwTLxHV">
+    <mxGraphModel dx="825" dy="840" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="30" y="150" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" edge="1" source="1ri4a_4eCiXGphT8kiCO-1" parent="1" target="1ri4a_4eCiXGphT8kiCO-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="190" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-3" value="管理者_講座情報一覧機能" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-5" value="管理者ログイン画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="135" y="145" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-8" value="講座一覧画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="350" y="145" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-9" value="管理者ログイン" style="html=1;verticalAlign=bottom;endArrow=classic;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="1ri4a_4eCiXGphT8kiCO-8">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="245" y="169.55" as="sourcePoint" />
+            <mxPoint x="325" y="169.55" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-10" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="460" y="170" as="sourcePoint" />
+            <mxPoint x="550" y="170.45" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-11" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="560" y="150" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1ri4a_4eCiXGphT8kiCO-12" value="管理者" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="210" width="80" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

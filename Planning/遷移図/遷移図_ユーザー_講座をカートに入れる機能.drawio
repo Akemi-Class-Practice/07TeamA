@@ -1,0 +1,84 @@
+<mxfile host="app.diagrams.net" modified="2023-08-30T04:24:16.981Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="LueGlWk7AC1vkzeaiHcI" version="21.7.0" type="device">
+  <diagram name="ページ1" id="86ZHqzX-Lbgeq1Y_CPwB">
+    <mxGraphModel dx="908" dy="924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="K30zjnFrSwYiZggt_6pe-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="190" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=classic;strokeColor=#000000;rounded=0;endFill=1;" parent="1" source="K30zjnFrSwYiZggt_6pe-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-3" value="ユーザー_講座をカートに入れる機能" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="110" y="60" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-4" value="ユーザー&lt;br&gt;ログイン画面" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="180" y="195" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-5" value="ユーザー" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" parent="1" vertex="1">
+          <mxGeometry x="35" y="260" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=classic;strokeColor=#000000;rounded=0;endFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="K30zjnFrSwYiZggt_6pe-7" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="219.5" as="targetPoint" />
+            <mxPoint x="290" y="219.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-8" value="ユーザー&lt;br&gt;ログイン" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="190" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-9" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;entryX=0.818;entryY=0.2;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="440.02" y="245" as="sourcePoint" />
+            <mxPoint x="440" y="375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-11" value="カートに追加&lt;br&gt;をクリック" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="300" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-12" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="414" y="380" width="51" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-17" value="[カートに追加しました]&lt;br&gt;というメッセージボックスを表示" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" parent="1" vertex="1">
+          <mxGeometry x="374.5" y="450" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6wq45P6OvnWMTXq188OH-4" value="" style="endArrow=classic;endFill=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="680.02" y="245" as="sourcePoint" />
+            <mxPoint x="480" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6wq45P6OvnWMTXq188OH-6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=classic;strokeColor=#000000;rounded=0;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="202.5" as="targetPoint" />
+            <mxPoint x="480" y="202.5" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6wq45P6OvnWMTXq188OH-7" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=classic;strokeColor=#000000;rounded=0;endFill=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="230" as="targetPoint" />
+            <mxPoint x="650" y="230" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="K30zjnFrSwYiZggt_6pe-7" value="講座一覧画面" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="390" y="195" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6wq45P6OvnWMTXq188OH-2" value="講座詳細画面" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="620" y="195" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="6wq45P6OvnWMTXq188OH-8" value="講座詳細を&lt;br&gt;クリック" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="169" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="6wq45P6OvnWMTXq188OH-9" value="[戻るボタン]を&lt;br&gt;クリック" style="text;align=center;fontStyle=0;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="240" width="80" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
