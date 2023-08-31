@@ -65,3 +65,18 @@ header nav ul li img{
     border-radius: 50px;
     border: 1px solid var(--text);
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24,
+}
+
+.material-symbols-outlined {
+    font-size: 30px;
+}
+
+header nav ul li a:nth-last-child(){
+}
