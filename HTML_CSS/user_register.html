@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/user_register.css">
+    <title>登録画面</title>
+</head>
+
+<body>
+    <header>
+        <h1><a href="">07TeamA</a></h1>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <form th:action="@{}" id="Form" method="post">
+                <h2>新規登録</h2>
+                <div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file" ></div>
+                <input type="username" name="username" placeholder="ユーザー名前" required>
+                <input type="email" name="email" placeholder="ユーザーメール" required>
+                <input type="password" name="password" placeholder="ユーザーパスワード" required>
+                <input type="password" name="confirm" placeholder="パスワード確認" required>
+
+                <div class="btn-box">
+                    <button name="register" id="register">登録</button>
+                </div>
+                <div class="login">
+                    <a href="#">ログイン</a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
