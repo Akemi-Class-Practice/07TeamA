@@ -1,0 +1,101 @@
+main{
+    padding-top: 180px;
+}
+
+.container{
+	width: 360px;
+	height: 500px;
+	margin: 0 auto;
+	background: #fff;
+	border-radius: 5px;
+	position: relative;
+    border-radius: 30px;
+}
+
+h2{
+	text-align: center;
+	margin-bottom: 60px;
+	color: #777;
+}
+
+.container form{
+	width: 280px;
+	position: absolute;
+	top: 30px;
+	left: 40px;
+}
+
+form img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+
+form input{
+	width: 100%;
+	padding: 10px 5px;
+	margin: 5px 0;
+	border: 1px solid #b8b4b4;
+    border-radius: 5px;
+	outline: none;
+}
+
+#userIcon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#userIcon input{
+    width: 108px;
+
+}
+
+input::placeholder{
+    color: #9c9b9b;
+}
+
+input:focus::placeholder{
+	color: black;
+}
+
+.btn-box{
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+}
+
+form button{
+	width: 110px;
+	height: 35px;
+	margin: 0 10px;
+	background: var(--green);
+	border-radius: 10px;
+	border: 0;
+	outline: none;
+	color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}
+
+form button:hover{
+	background: rgb(30, 208, 152);
+	transition-duration: .8s;
+}
+
+.login{
+    width: 100%;
+	margin: 20px auto;
+	text-align: center;
+    font-size: x-small;
+}
+
+a{
+    color: #777;
+}
+
+a:hover{
+	color: #253ecf;
+}

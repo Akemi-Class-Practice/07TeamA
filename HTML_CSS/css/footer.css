@@ -17,6 +17,7 @@ footer li{
     flex-direction: row;
     justify-content: space-between;
     margin: 20px;
+    color: var(--background);
 }
 
 footer li a{
