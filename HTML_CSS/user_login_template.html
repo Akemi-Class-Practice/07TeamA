@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML | Template</title>
+    <link rel="stylesheet" href="user_login.css">
+    <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="#">07TeamA</a></h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>ログイン</h2>
+            <div class="login-wrapper">
+                <form action="#" method="post">
+                    <div class="form-wrapper">
+                        <input type="email" name="student_email" id="emailInput" placeholder="ユーザーメール"
+                            class="input-item">
+                    </div>
+                    <div>
+                        <input type="password" name="password" id="passwordInput" placeholder="パスワード"
+                            class="input-item">
+                        <span class="toggle-icon" id="toggleIcon" onclick="togglePasswordVisibility()">
+                            🔒
+                        </span>
+                    </div>
+                    <button type="submit">ログイン</button>
+
+                </form>
+
+                <li><a href="#">新規登録</a></li>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
