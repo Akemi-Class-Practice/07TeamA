@@ -1,0 +1,23 @@
+:root {
+    --background: #F9FBFE;
+    --text: #2B546A;
+    --header_background: #FFFFFF;
+    --content_background: #FFFFFF;
+    --red: #FF577B;
+    --green: #AEEABE;
+    --blue: #B8D3F2;
+    --orange: #FF9F00;
+    --brown: #E4CDB0;
+    --light_blue: #B0E9FD;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    font-family: "Lato", "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo, "MS PGothic", sans-serif;
+}
