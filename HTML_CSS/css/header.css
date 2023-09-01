@@ -3,6 +3,7 @@ header {
     border-bottom: 1px grey;
     box-shadow: 0 1px 3px rgba(160,166,179,0.3);
     position: fixed;
+    top: 0px;
     width: 100%;
     height: 75px;
     display: flex;
