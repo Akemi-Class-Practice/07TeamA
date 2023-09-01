@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="jp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/user_view_cart.css">
+	<title>カート一覧</title>
+</head>
+
+<body>
+	<header>
+		<h1><a href="#">07TeamA</a></h1>
+		<nav>
+			<ul>
+				<li><a href="#"><img src="img/kiko.jpg" alt="user_icon"></a></li>
+				<li><a href="#">ユーザー名前</a></li>
+				<li><a href="#">購入履歴</a></li>
+				<li><a href="#">情報変更</a></li>
+				<li><a href="#">ログアウト</a></li>
+				<li><a href="#"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+        <div id="main-wrapper">
+            <section id="total">
+                <div id="total-header">
+                    <h2>カート</h2>
+                    <p class="total-price">2,000yen</p>
+                </div>
+            </section>
+
+            <section id="cart">
+                <article class="course">
+					<div class="course-image">
+						<img src="img/kiko.jpg" alt="" height="200px" width="200px">
+					</div>
+					<div class ="course-info">
+						<div class="course-name-price">
+							<h2>Course name</h2>
+							<p class="course-price">1,000yen</p>
+						</div>
+						<p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+						<a class="course-delete-bttn" href="#">カートから削除</a>
+					</div>
+				</article>
+
+                <article class="course">
+					<div class="course-image">
+						<img src="img/kiko.jpg" alt="" height="200px" width="200px">
+					</div>
+					<div class ="course-info">
+						<div class="course-name-price">
+							<h2>Course name</h2>
+							<p class="course-price">1,000yen</p>
+						</div>
+						<p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+						<a class="course-delete-bttn" href="#">カートから削除</a>
+					</div>
+				</article>
+            </section>
+            
+            <section id="total-price">
+                <p class="total-price">2,000yen</p>
+            </section>
+
+            <section id="buy-button">
+                <a class="total-buy-bttn" href="">購入</a>
+            </section>
+
+
+        </div>
+    </main>
+
+	<footer>
+		<ul>
+			<li><a href="#">購入履歴</a></li>
+			<li><a href="#">情報変更</a></li>
+			<li><a href="#">ログアウト</a></li>
+		</ul>
+		<p>Copyright @ 2023 Learner All Right Reserved.</p>
+	</footer>
+</body>
+
+</html>

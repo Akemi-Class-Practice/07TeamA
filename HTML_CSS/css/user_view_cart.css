@@ -1,0 +1,95 @@
+#main-wrapper {
+    position: relative;
+    top: 100px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#total{
+    display: block;
+}
+
+#total-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price{
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.course {
+    height: 180px;
+    background-color: var(--content_background);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    border-radius: 3px;
+    display: flex;
+    padding: 10px 0px 30px 10px;
+    margin: 0px 0px 20px 0px;
+}
+
+.course-info {
+    margin: 0px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-name-price {
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 0px 0px;
+}
+.course h2 {
+    margin: 0px 0px 20px 0px;
+    font-size: 24px;
+}
+
+.course-price {
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.course-description {
+    padding-right: 10px;
+}
+
+.course-delete-bttn {
+    background-color: var(--red);
+    color:darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    margin-left: 445px;
+    margin-top: 45px;
+}
+
+.course-delete-bttn:hover {
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
+
+.total-buy-bttn{
+    background-color: var(--green);
+    color:var(--text);
+    text-decoration: none;
+    width: 80px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    margin: auto;
+}
+
+.total-buy-bttn:hover {
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
