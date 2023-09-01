@@ -1,0 +1,78 @@
+main{
+    width: 960px;
+    margin: auto;
+}
+
+section img{
+    height: 250px;
+    width: 250px;
+    margin-top: 10px;
+}
+
+div.back-button{
+    width:auto;
+    margin-bottom: 50px;
+}
+
+div.back-button a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+div.course-container{
+    display: flex;
+}
+
+div.course-info{
+    display: flex;
+}
+
+div.heading{
+    margin-bottom: 10px;
+}
+
+div.course-item{
+    width: 600px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-bottom: 30px;
+    /* background-color: aqua; */
+}
+
+p.course-price{
+    margin-top: 40px;
+}
+
+div.course-info button{
+    width: 110px;
+	height: 35px;
+	background: var(--green);
+	border-radius: 5px;
+	color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+    transform: translate(-120px,200px);
+}
+
+p.course-description{
+    width: 850px;
+    padding: 10px 13px;
+    background-color: #FFFFFF;
+}
+
+#add-course-button-bottom{
+    margin-top: 60px;
+    margin-left: 425px;
+    height: 35px;
+    width: 110px;
+    background-color: var(--green);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}
+
+

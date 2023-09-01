@@ -30,7 +30,7 @@
 
     <main>
         <div id="add-admin-container">
-            <a href="#" class="return_link"><< 講座一覧に戻る</a>
+            <a href="#" class="return_link">&lt;&lt; 講座一覧に戻る</a>
             <h2>管理者を追加</h2>
             <div id="form-container">
             <section id="add-admin-form">
@@ -40,20 +40,21 @@
             </div>
                 <form id="form" method="post" onSubmit="return checkPassword(this)">
                     <label for="">管理者の名前</label>
-                    <input type="text" name="" id="" placeholder="管理者の名前" required>
+                    <input type="text" name="" id="" placeholder="admin name" required>
                     <label for="">管理者のメール</label>
-                    <input type="text" name="" id="" placeholder="管理者のメール" required>
+                    <input type="text" name="" id="" placeholder="admin email" required>
                     <label for="">パスワード</label>
-                    <input type="password" name="password" id="password" placeholder="パスワード" required>
+                    <input type="password" name="password" id="password" placeholder="admin password" required>
                     <input type="checkbox" id="toggle-password" />
                     <label for="toggle-password" id="hide-text">Show Password</label>
                     <label for="">パスワード確認</label>
-                    <input type="password" name="confirm_password" id="" placeholder="パスワード確認" required>
+                    <input type="password" name="confirm_password" id="" placeholder="confrim admin password" required>
                 </form>
             </section>
             <div id="form-buttons">
                 <a href="#" id="return">戻る</a>
                 <input type="submit" form="form" id="submit" value="登録">
+                <!-- <a href="#" id="submit" form="form">登録</a> -->
             </div>
             </div>
         </div>
