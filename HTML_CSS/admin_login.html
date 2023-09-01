@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin_login.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>管理者ログイン画面</title>
+</head>
+
+<body>
+    <header>
+        <h1><a href="#">07TeamA</a></h1>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <form th:action="@{}" id="Form" method="post">
+                <h2>管理者ログイン</h2>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="ユーザーメール" required>
+                    <div class="password-container">
+                        <input type="password" name="password" placeholder="ユーザーパスワード" id="password" required>
+                        <img src="img\close-eye.png" id="eyeicon">
+                    </div>
+                </div>
+                <script>
+
+                    let eyeicon = document.getElementById("eyeicon");
+                    let password = document.getElementById("password");
+
+                    eyeicon.onclick = function () {
+                        if (password.type == "password") {
+                            password.type = "text";
+                            eyeicon.src = "/img/open-eye.png";
+                        } else {
+                            password.type = "password";
+                            eyeicon.src = "/img/close-eye.png";
+                        }
+                    }
+
+                </script>
+
+                <div class="btn-box">
+                    <button name="login" id="login">ログイン</button>
+                </div>
+
+
+
+            </form>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
