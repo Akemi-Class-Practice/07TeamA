@@ -3,6 +3,7 @@
     top: 100px;
     width: 800px;
     margin: 0 auto;
+    margin-bottom: 250px;
 }
 
 #search {
@@ -20,23 +21,29 @@
     color:darkslategrey;
     text-decoration: none;
     width: 100px;
-    height: 25px;
+    height: 30px;
     border-radius: 2px;
     font-weight: bold;
     text-align: center;
-    padding: 3px;
+    padding: 4px;
     cursor: pointer;
+    border: none;
 }
 
-#search-buttom:hover {
+#search-button:hover {
     transition: all .3s ease;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color:var(--blue);
+    filter:brightness(90%);
 }
 
 .search-box{
     height: 20px;
     width: 300px;
+    font-weight: bold;
+    padding: 3px;
+    padding-bottom: 5px;
 }
+
 .course {
     height: 180px;
     background-color: var(--content_background);
@@ -59,9 +66,25 @@
     justify-content: space-between;
     margin: 15px 0px 0px 0px;
 }
-.course h2 {
+
+.course-image {
+    cursor: pointer;
+}
+
+.course-image:hover {
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
+.course-name {
     margin: 0px 0px 20px 0px;
-    font-size: 24px;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.course-name:hover {
+    transition: all .2s ease;
+    filter:brightness(25%);
 }
 
 .course-price {
