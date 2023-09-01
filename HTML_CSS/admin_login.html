@@ -28,7 +28,7 @@
                     <input type="email" name="email" placeholder="ユーザーメール" required>
                     <div class="password-container">
                         <input type="password" name="password" placeholder="ユーザーパスワード" id="password" required>
-                        <img src="img\close-eye.png" id="eyeicon">
+                        <img src="./img/close-eye.png" id="eyeicon">
                     </div>
                 </div>
                 <script>
@@ -39,10 +39,10 @@
                     eyeicon.onclick = function () {
                         if (password.type == "password") {
                             password.type = "text";
-                            eyeicon.src = "/img/open-eye.png";
+                            eyeicon.src = "./img/open-eye.png";
                         } else {
                             password.type = "password";
-                            eyeicon.src = "/img/close-eye.png";
+                            eyeicon.src = "./img/close-eye.png";
                         }
                     }
 
