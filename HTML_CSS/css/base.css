@@ -20,4 +20,7 @@
 body {
     background-color: var(--background);
     font-family: "Lato", "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo, "MS PGothic", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
