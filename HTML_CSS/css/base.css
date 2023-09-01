@@ -24,3 +24,14 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.return_link{
+    color: var(--text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.return_link:hover {
+    transition: all .2s ease;
+    filter:brightness(20%);
+}
