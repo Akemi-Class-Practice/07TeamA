@@ -1,0 +1,104 @@
+#admin-panel {
+    /* border: 1px solid black; */
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 25px 0px;
+}
+
+#new-course {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-course-bttn {
+    background-color: var(--green);
+    color:darkslategrey;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    width: 150px;
+    line-height: 75px;
+    margin: 0 auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.new-course-bttn:hover {
+    transition: all .2s ease;
+    filter:brightness(95%);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+}
+
+#statistics {
+    /* border: 1px solid black; */
+    width: 500px;
+    background-color: var(--content_background);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    border-radius: 3px;
+    padding: 10px;
+}
+
+#statistics h3 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.statistics-line {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed grey;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.last {
+    border: none;
+}
+.last p:last-child{
+    color: red;
+    font-weight: bold;
+}
+
+.statistics-line p:first-child{
+    font-weight: bold;
+}
+#statistics p {
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    width: 200px;
+    margin-top: 35px;
+    margin-left: 355px;
+}
+.buttons a {
+    color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+.buttons a:hover {
+transition: all .2s ease;
+filter:brightness(90%);
+}
+
+.course-edit-bttn {
+    background-color: var(--orange);
+}
+
+.course-delete-bttn {
+    background-color: var(--red);
+}
