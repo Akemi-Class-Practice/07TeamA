@@ -7,14 +7,35 @@ section img{
     height: 250px;
     width: 250px;
     margin-top: 10px;
+    border-radius: 3px;
 }
 
+.course {
+    background-color: var(--content_background);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    border-radius: 3px;
+    padding: 10px 0px 30px 10px;
+}
+
+.course-info {
+    display: flex;
+}
+
+.course-info button {
+    margin-top: -45px;
+}
 div.back-button{
     width:auto;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 div.back-button a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+div.back-button a:hover {
     text-decoration: none;
     color: var(--text);
 }
@@ -54,6 +75,10 @@ div.course-info button{
     font-weight: 500;
     transform: translate(-120px,200px);
 }
+div.course-info button:hover {
+        transition: all .2s ease;
+        filter:brightness(90%);
+}
 
 p.course-description{
     width: 850px;
@@ -73,6 +98,11 @@ p.course-description{
 	cursor: pointer;
     font-size:medium;
     font-weight: 500;
+}
+
+#add-course-button-bottom:hover{
+    transition: all .2s ease;
+    filter:brightness(90%);
 }
 
 
