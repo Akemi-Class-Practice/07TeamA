@@ -1,0 +1,100 @@
+main{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.page-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+section img{
+    height: 250px;
+    width: 250px;
+    margin-top: 30px;
+}
+
+div.back-button{
+    width:auto;
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+div.back-button a{
+    text-decoration: none;
+    color: var(--text);
+}
+
+div.course-container{
+    display: flex;
+}
+
+div.course-info{
+    display: flex;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    text-align:left;
+    /* margin-bottom: 10px; */
+	padding: 5px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	resize: none;
+}
+
+form.course-item{
+    width: 600px;
+    padding: 5px;
+    /* margin-left: 15px; */
+    margin-bottom: 30px;
+    /* background-color: aqua; */
+}
+
+.heading label{
+    font-weight: 700;
+    font-size: large;
+}
+
+.heading input{
+    min-height: 30px;
+}
+
+div.course-price{
+    margin-top: 20px;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 50px; */
+}
+
+.body label{
+    font-weight: 800;
+    font-size:x-large;
+    margin-bottom: 5px;
+}
+
+.body textarea{
+    min-height: 400px;
+}
+
+#add-course-button{
+    margin-top: 60px;
+    margin-left: 425px;
+    margin-bottom: 50px;
+    height: 35px;
+    width: 110px;
+    background-color: var(--green);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}
+
