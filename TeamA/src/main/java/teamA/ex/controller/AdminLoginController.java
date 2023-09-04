@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
+import teamA.ex.model.entity.AdminEntity;
+import teamA.ex.service.AdminService;
 
 
 @Controller

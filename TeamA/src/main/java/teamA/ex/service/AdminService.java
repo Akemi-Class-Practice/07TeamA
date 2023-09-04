@@ -6,6 +6,8 @@ import java.util.Base64;
 
 import org.springframework.stereotype.Service;
 
+import teamA.ex.model.entity.AdminEntity;
+
 @Service
 public class AdminService {
 
