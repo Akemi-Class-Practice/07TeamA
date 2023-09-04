@@ -37,8 +37,8 @@ public class AdminEntity {
 	private String adminName;
 	
 	@NonNull
-	@Column(name = "admin_eamil")
-	private String adminEamil;
+	@Column(name = "admin_email")
+	private String adminEmail;
 	
 	@NonNull
 	@Column(name = "register_date")
