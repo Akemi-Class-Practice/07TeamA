@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="jp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/user_edit_user_confirm.css">
+    <link rel="stylesheet" href="css/footer.css">
+	<title>HTML | Template</title>
+</head>
+
+<body>
+	<header>
+		<h1><a href="#">07TeamA</a></h1>
+		<nav>
+			<ul>
+				<li><a href="#"><img src="img/kiko.jpg" alt="user_icon"></a></li>
+				<li><a href="#">ユーザー名前</a></li>
+				<li><a href="#">購入履歴</a></li>
+				<li><a href="#">情報変更</a></li>
+				<li><a href="#">ログアウト</a></li>
+				<li><a href="#"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <main>
+        <div id="change-user-info-container">
+            <a href="#" class="return_link">&lt;&lt; 講座一覧に戻る</a>
+            <h2>この変更はよろしいですか？</h2>
+            <div id="form-container">
+            <section id="change-user-info-form">
+                <div id="choose_user_icon">
+                <img id ="user_icon" src="img/kiko.jpg" height="200px" width="200px" alt="">
+            </div>
+                <form id="form" method="post" onSubmit="return checkPassword(this)">
+                    <label for="">ユーザーの名前</label>
+                    <p>User Name</p>
+                    <label for="">ユーザーのメール</label>
+                    <p>User Email</p>
+                    <label for="">パスワード</label>
+                    <input type="password" name="password" id="password" value="password" placeholder="パスワード" required>
+                    <input type="checkbox" id="toggle-password" />
+                    <label for="toggle-password" id="hide-text">Show Password</label>
+                </form>
+            </section>
+            <div id="form-buttons">
+                <a href="#" id="return">もう一度編集</a>
+                <input type="submit" form="form" id="submit" value="変更">
+            </div>
+            </div>
+        </div>
+    </main>
+
+	<footer>
+		<ul>
+			<li><a href="#">購入履歴</a></li>
+			<li><a href="#">情報変更</a></li>
+			<li><a href="#">ログアウト</a></li>
+		</ul>
+		<p>Copyright @ 2023 Learner All Right Reserved.</p>
+	</footer>
+</body>
+<script>
+    const password = document.getElementById("password");
+    const togglePassword = document.getElementById("toggle-password");
+
+    togglePassword.addEventListener("click", toggleClicked);
+
+    function toggleClicked() {
+        password.classList.toggle("visible");
+        if (this.checked) {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    };
+    
+</script>
+</html>

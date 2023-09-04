@@ -1,0 +1,116 @@
+#main-wrapper {
+    position: relative;
+    top: 100px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#return{
+    margin-bottom: 20px;
+}
+
+#return a:link, #return a:active, #return a:visited, #return a:hover {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+#total{
+    display: block;
+}
+
+#total-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price{
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+#message{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#check{
+    font-size: 50px;
+    color: green;
+}
+
+#total-course{
+    height: auto;
+    width: 550px;
+    background-color: var(--content_background);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.total-list{
+    list-style-type: none;
+}
+
+.total-list:nth-child(even){
+    background-color: rgb(226, 226, 226);
+}
+
+.course-name{
+    border: 1px black;
+    text-align: left;
+    width: 300px;
+    margin: 5px auto;
+}
+
+.course-price{
+    text-align: center;
+    width: 100px;
+    margin: 5px auto;
+}
+
+.course-name-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+#move-page{
+    text-align: center;
+}
+
+.course-list{
+    color: var(--text);
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--green);
+    margin: 0 10px;
+}
+
+.course-list:hover{
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
+
+.payment-detail{
+    color: var(--text);
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--light_blue);
+    margin: 0 10px;
+}
+
+.payment-detail:hover{
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
