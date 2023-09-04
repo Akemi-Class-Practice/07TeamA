@@ -2,6 +2,8 @@ package teamA.ex.model.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import teamA.ex.model.entity.AdminEntity;
+
 public interface AdminDao extends JpaRepository<AdminEntity, Long> {
 
 	// AdminEntityを引数として受け取り、AdminEntityを保存し、保存したAdminEntityを返す
