@@ -9,6 +9,19 @@ main{
     margin-bottom: 30px;
 }
 
+#delete{
+    height: 35px;
+    width: 110px;
+    background-color: var(--red);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+    transform: translate(820px);
+}
+
 section img{
     height: 250px;
     width: 250px;
@@ -85,10 +98,25 @@ div.course-price{
     min-height: 400px;
 }
 
-#add-course-button{
+#back-button{
     margin-top: 60px;
-    margin-left: 425px;
+    margin-left: 300px;
     margin-bottom: 50px;
+    height: 35px;
+    width: 110px;
+    background-color: var(--orange);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}
+
+#save-button{
+    margin-top: 60px;
+    margin-bottom: 50px;
+    margin-left: 100px;
     height: 35px;
     width: 110px;
     background-color: var(--green);
