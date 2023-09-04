@@ -1,0 +1,124 @@
+#change-user-info-container {
+    position: relative;
+    top: 100px;
+    width: 550px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+}
+
+#change-user-info-container h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+#change-user-info-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#form-container img {
+    border-radius: 100px;
+    border: 1px solid var(--text);
+    margin-bottom: 5px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#form label {
+    color: var(--text);
+    padding: 0px 0px 0px 10px;
+    font-size: 14px;
+}
+
+#form p {
+    margin: 5px 0px 10px 0px;
+    font-weight: bold;
+}
+#form input{
+	width: 100%;
+	padding: 5px 5px;
+	margin: 5px 0px;
+	border: 1px solid #b8b4b4;
+    border-radius: 5px;
+	outline: none;
+} 
+
+#password {  
+    background-image: url("https://img.icons8.com/material-sharp/20/000000/visible.png");
+    background-position: 97% center;
+    background-repeat: no-repeat;
+  }
+  #password.visible {
+    background-image: url("https://img.icons8.com/material-outlined/20/000000/invisible.png");
+  }
+
+  #toggle-password {
+    display: none;
+  }
+  #toggle-password + label{
+    text-indent: -9999px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 275px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+#form-buttons {
+    display: flex;
+    gap: 10px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+#form-buttons a {
+    color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+#submit {
+    color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 31px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    border: none;
+    font-size: 14px;
+}
+
+#submit:hover {
+    transition: all .2s ease;
+    filter:brightness(90%);
+    cursor: pointer;
+    }
+
+#form-buttons a:hover {
+transition: all .2s ease;
+filter:brightness(90%);
+}
+
+#return {
+    background-color: var(--red);
+}
+
+#submit {
+    background-color: var(--green);
+}

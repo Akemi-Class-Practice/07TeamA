@@ -35,6 +35,11 @@
     margin-bottom: 10px;
 }
 
+#check{
+    font-size: 50px;
+    color: green;
+}
+
 #total-course{
     height: auto;
     width: 550px;
@@ -70,44 +75,42 @@
     justify-content: space-between;
 }
 
-#credit-number, #credit-name{
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    width: 400px;
-    padding: 8px;
-    display: block;
-    margin: 10px auto;
-}
-
-#credit-date, #credit-cvv{
-    text-align: center;
-    font-size: 15px;
-    font-weight: bold;
-    width: 188px;
-    padding: 8px;
-    margin: auto;
-    justify-content: space-between;
-}
-
-#credit-card-cvv{
+#move-page{
     text-align: center;
 }
 
-.total-buy-bttn{
-    background-color: var(--green);
-    color:var(--text);
+.course-list{
+    color: var(--text);
+    width: 300px;
+    text-align: center;
     text-decoration: none;
-    width: 80px;
+    padding: 3px;
     border-radius: 3px;
+    font-size: 24px;
     font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    display: block;
-    margin: 10px auto;
+    background-color: var(--green);
+    margin: 0 10px;
 }
 
-.total-buy-bttn:hover {
+.course-list:hover{
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
+
+.payment-detail{
+    color: var(--text);
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: var(--light_blue);
+    margin: 0 10px;
+}
+
+.payment-detail:hover{
     transition: all .2s ease;
     filter:brightness(90%);
 }
