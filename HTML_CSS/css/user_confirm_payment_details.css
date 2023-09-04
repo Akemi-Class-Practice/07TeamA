@@ -44,6 +44,14 @@
     margin: 20px auto;
 }
 
+.total-list{
+    list-style-type: none;
+}
+
+.total-list:nth-child(even){
+    background-color: rgb(226, 226, 226);
+}
+
 .course-name{
     border: 1px black;
     text-align: center;
