@@ -1,0 +1,113 @@
+#main-wrapper {
+    position: relative;
+    top: 100px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#return{
+    margin-bottom: 20px;
+}
+
+#return a:link, #return a:active, #return a:visited, #return a:hover {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+#total{
+    display: block;
+}
+
+#total-header{
+    display: flex;
+    justify-content: space-between;
+    font-size: x-large
+}
+
+.total-price{
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+
+
+.course-name{
+    border: 1px black;
+    text-align: center;
+    width: 300px;
+    margin: 5px auto;
+}
+
+.course-price{
+    text-align: center;
+    width: 100px;
+    margin: 5px auto;
+}
+
+.course-name-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.payment-button{
+    background-color: var(--green);
+    color:var(--text);
+    text-decoration: none;
+    width: 150px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+.payment-button:hover {
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
+
+h2{
+    padding-top: 30px;
+    padding-bottom: 13px;
+    text-align: center;
+}
+
+.payment-method-button img{
+    width: 120px;
+    height: 120px;
+}
+
+.payment-method-button {
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        border-radius: 20px;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 20px;
+        margin-left: 30px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        
+}
+
+.payment-method-button:hover{
+    transition: all .2s ease;
+    filter:brightness(90%);
+}
+
+#credit-card{
+    margin-left: 120px;
+    
+}
+
+#PayPal{
+    margin-left: 220px;
+    margin-top: 10px;
+}
