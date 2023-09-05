@@ -17,20 +17,7 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	 // CourseEntityのオブジェクトを引数として受け取り、そのオブジェクトをデータベースに保存
 	 
 	 CourseEntity save(CourseEntity courseEntity);
-	 
-	//titleとregisterDateを検査条件として、blogEntityを取得
 	
-	 CourseEntity findByCourseNameAndregisterDate(String courseName,LocalDate registerDate);
-	 
-	//findByCourseId methodを定義し、DBのCourseEntityを検索
-		
-	 CourseEntity findByCourseId(Long blogId);
-		
-	//トランザクション管理は複数BD操作をまとめ、一括処理	
-		
-	 @Transactional
-	 List<CourseEntity> deleteByCourseId(Long blogId);
-	 
-	 
+	 CourseEntity findByCourseId(Long courseId);
 
 }
