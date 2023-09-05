@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import teamA.ex.model.entity.AdminEntity;
 import teamA.ex.model.entity.CourseEntity;
 import teamA.ex.model.entity.UserEntity;
 import teamA.ex.service.CourseService;
+
 
 @RequestMapping("/home")
 
@@ -27,7 +29,7 @@ public class CourseController {
 	@Autowired
 	private HttpSession session;
 	
-	@GetMapping("/adminviewcourses")
+	@GetMapping("/admin/view/courses")
 	public String getAdminCourseViewPage(Model model) {
 		
 		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
@@ -45,7 +47,7 @@ public class CourseController {
 		return "admin_view_courses.html";
 	}
 	
-	@GetMapping("/userviewcourses")
+	@GetMapping("/user/view/courses")
 	public String getUserCourseViewPage(Model model) {
 		
 		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
@@ -63,7 +65,16 @@ public class CourseController {
 		model.addAttribute("courselist", courselist);
 		return "user_view_courses.html";
 	}
-	
 
 
+	@GetMapping("/editcourse/{courseId}")
+	public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
+		CourseEntity course = courseService.getCourse(courseId);
+		if(course == null) {
+			return "redirect:/home/admin/view/courses";
+		} else {
+			model.addAttribute("course", course);
+			return "admin_edit_course.html";
+		}
+	}
 }
