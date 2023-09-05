@@ -35,7 +35,6 @@ public class UserRegisterController {
 	@PostMapping("/userregister/process")
 	public String register(@RequestParam MultipartFile user_icon, @RequestParam String user_name, 
 			@RequestParam String email, @RequestParam String password) {
-		
 		String imgFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + user_icon.getOriginalFilename();
 
 		try {

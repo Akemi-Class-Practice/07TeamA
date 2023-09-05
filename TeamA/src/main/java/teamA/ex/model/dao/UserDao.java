@@ -10,8 +10,8 @@ public interface UserDao extends JpaRepository<UserEntity, Long> {
 		UserEntity save(UserEntity userEntity);
 
 		// String型の引数を受け取り、その引数と一致するemailを持つUserEntityを返す
-		UserEntity findByUserEmail(String email);
+		UserEntity findByStudentEmail(String email);
 
 		// データベース内のUserEntityの中から、emailとpasswordと一致するものを検索し、それを返す
-		UserEntity findByUserEmailAndPassword(String email, String password);
+//		UserEntity findByUserEmailAndPassword(String email, String password);
 }

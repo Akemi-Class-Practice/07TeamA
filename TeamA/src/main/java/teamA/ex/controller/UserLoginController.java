@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
 import teamA.ex.model.entity.UserEntity;
+import teamA.ex.service.UserService;
 
 
 @Controller

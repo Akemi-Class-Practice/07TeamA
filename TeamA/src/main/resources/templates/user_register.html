@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/base.css"}>
-    <link rel="stylesheet" th:href="@{/css/header.css"}>
-    <link rel="stylesheet" th:href="@{/css/footer.css"}>
-    <link rel="stylesheet" th:href="@{/css/user_register.css"}>
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/user_register.css}">
     <title>登録画面</title>
 </head>
 
@@ -21,10 +21,9 @@
 
     <main>
         <div class="container">
-
-            <form th:action="@{/userregister/process}" id="Form" method="post">
+            <form th:action="@{/userregister/process}" id="Form" method="post" enctype="multipart/form-data">
                 <h2>新規登録</h2>
-                <div id="userIcon"><img th:href="@{/img/kiko.jpg｝" alt="user_icon"><input type="file" name="user_icon"></div>
+                <div id="userIcon"><img th:src="@{/img/kiko.jpg}" alt="user_icon"><input type="file" name="user_icon"></div>
                 <input type="username" name="user_name" placeholder="ユーザー名前" required>
                 <input type="email" name="email" placeholder="ユーザーメール" required>
                 <input type="password" name="password" placeholder="ユーザーパスワード" required>

@@ -21,7 +21,7 @@ public class UserService {
 	
 	// Loginの処理
 		public UserEntity login(String email, String password) {
-			UserEntity userEntity = userDao.findByUserEmail(email);
+			UserEntity userEntity = userDao.findByStudentEmail(email);
 			String salt = userEntity.getSalt();
 			String hashPassword = hashPassword(password+salt);
 			
@@ -33,8 +33,8 @@ public class UserService {
 		}
 		
 		//Registerの処理
-		public boolean createAccount(String studentName,String studentEmail,String password, String studentIcon) {
-			UserEntity userEntity = userDao.findByUserEmail(studentEmail);
+		public boolean createAccount(String studentIcon,String studentName,String studentEmail, String password) {
+			UserEntity userEntity = userDao.findByStudentEmail(studentEmail);
 			LocalDateTime registerDate = LocalDateTime.now();
 			int deleteFlag = 0;
 			// UUIDを使ってRandom文字を作る
