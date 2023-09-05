@@ -7,7 +7,6 @@ import java.util.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import blog.ex.model.dao.UserDao;
 import teamA.ex.model.dao.AdminDao;
 import teamA.ex.model.entity.AdminEntity;
 
