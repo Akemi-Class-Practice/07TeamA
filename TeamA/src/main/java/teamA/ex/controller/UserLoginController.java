@@ -7,46 +7,47 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
-import teamA.ex.model.entity.AdminEntity;
-import teamA.ex.service.AdminService;
+import teamA.ex.model.entity.UserEntity;
 
 
 @Controller
-public class AdminLoginController {
+public class UserLoginController {
+	
 	@Autowired
-	private AdminService adminService;
+	private UserService userService;
 	@Autowired
 	private HttpSession session;
 	
 	// GetMappingで管理者のログイン画面の表示
-	@GetMapping("/adminlogin")
-	public String getAdminLoginPage() {
-		return "admin_login.html";
+	@GetMapping("/userlogin")
+	public String getUserLoginPage() {
+		return "user_login.html";
 	}
 	
-	// PostMappingでadminlogin/processのPOST情報を取得
+	// PostMappingでuserlogin/processのPOST情報を取得
 	// @RequestParamでHTMLのFORMAのINPUTを受け取る
-	@PostMapping("/adminlogin/process")
+	@PostMapping("/userlogin/process")
 	public String login(@RequestParam String email, @RequestParam String password) {
-		// 受け取ったemailとpasswordを使ってAdminEntityのadminServiceでログインする
-		AdminEntity admin = adminService.login(email, password);
+		// 受け取ったemailとpasswordを使ってUserEntityのuserServiceでログインする
+		UserEntity user = userService.login(email, password);
 		
-		// loginメソッドが失敗する場合、admin loginのページに移動する
+		// loginメソッドが失敗する場合、userloginのページに移動する
 		// 成功した場合、ユーザのインスタンスを使ってセッションを初めてに移動する
-		if (adminService.login(email, password) == null) {
-			return "redirect:/adminlogin";
+		if (userService.login(email, password) == null) {
+			return "redirect:/userlogin";
 		} else {
-			session.setAttribute("admin", admin);
-			return "redirect:/admin/viewcourses";
+			session.setAttribute("user", user);
+			return "redirect:/user/viewcourses";
 		}
 	}
 	
 	//ログアウト処理
-	@GetMapping("/adminlogout")
+	@GetMapping("/userlogout")
 	public String Logout() {
 		
 		// セッションを切ってログインページに移動する
 		session.invalidate();
-		return "redirect:/adminlogin";
+		return "redirect:/userlogin";
 	}
+
 }
