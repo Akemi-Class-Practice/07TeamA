@@ -5,9 +5,12 @@ import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import teamA.ex.model.dao.CourseDao;
 import teamA.ex.model.entity.CourseEntity;
 
+@Service
 public class CourseService {
 	
 	@Autowired 
@@ -20,5 +23,13 @@ public class CourseService {
 	
 	public List<CourseEntity> findAll(){
 		return courseDao.findAll();
+	}
+	
+	public CourseEntity getCourse(Long courseId) {
+		if (courseId == null) {
+			return null;
+		} else {
+			return courseDao.findByCourseId(courseId);
+		}
 	}
 }

@@ -14,7 +14,5 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	 // CourseEntityのオブジェクトを引数として受け取り、そのオブジェクトをデータベースに保存
 	 CourseEntity save(CourseEntity courseEntity);
 	 
-	 
-	 
-
+	 CourseEntity findByCourseId(Long courseId);
 }
