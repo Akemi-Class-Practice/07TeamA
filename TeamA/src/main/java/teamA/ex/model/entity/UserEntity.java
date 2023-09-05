@@ -1,6 +1,7 @@
 package teamA.ex.model.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,6 +25,10 @@ import lombok.RequiredArgsConstructor;
 @Table(name = "students")
 public class UserEntity {
 
+	public UserEntity(String name2, String email2, String password2, LocalDateTime registerDate2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	
 	@Column(name = "student_id")
@@ -34,11 +39,11 @@ public class UserEntity {
 	
 	@NonNull
 	@Column(name = "student_name")
-	private String studentName;
+	private String name;
 	
 	@NonNull
 	@Column(name = "student_email")
-	private String studentEmail;
+	private String email;
 	
 	@NonNull
 	@Column(name = "register_date")
@@ -50,7 +55,7 @@ public class UserEntity {
 	
 	@NonNull
 	@Column(name = "student_icon")
-	private String studentIcon;
+	private String icon;
 	
 	@NonNull
 	@Column(name = "password")
