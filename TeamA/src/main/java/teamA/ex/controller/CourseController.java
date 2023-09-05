@@ -64,6 +64,6 @@ public class CourseController {
 		return "user_view_courses.html";
 	}
 	
-	
+
 
 }
