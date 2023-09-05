@@ -2308,3 +2308,208 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2023-09-05T13:22:57.752+09:00  INFO 1448 --- [RMI TCP Connection(3)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-09-05T13:22:57.757+09:00  INFO 1448 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-09-05T13:22:57.778+09:00  INFO 1448 --- [RMI TCP Connection(3)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-05T14:16:57.341+09:00  INFO 75280 --- [main] teamA.ex.TeamAApplication                : Starting TeamAApplication using Java 17.0.7 with PID 75280 (/Users/acerola714/Desktop/gitTeam/07TeamA/TeamA/target/classes started by acerola714 in /Users/acerola714/Desktop/gitTeam/07TeamA/TeamA)
+2023-09-05T14:16:57.343+09:00  INFO 75280 --- [main] teamA.ex.TeamAApplication                : No active profile set, falling back to 1 default profile: "default"
+2023-09-05T14:16:57.633+09:00  INFO 75280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-05T14:16:57.659+09:00  INFO 75280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2023-09-05T14:16:57.866+09:00  INFO 75280 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-05T14:16:57.871+09:00  INFO 75280 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-05T14:16:57.871+09:00  INFO 75280 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-05T14:16:57.920+09:00  INFO 75280 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-05T14:16:57.920+09:00  INFO 75280 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 556 ms
+2023-09-05T14:16:57.996+09:00  INFO 75280 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-05T14:16:58.023+09:00  INFO 75280 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-05T14:16:58.025+09:00  INFO 75280 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-05T14:16:58.086+09:00  INFO 75280 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:16:58.146+09:00  INFO 75280 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-05T14:16:58.154+09:00  INFO 75280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-05T14:16:58.233+09:00  INFO 75280 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fd7b79
+2023-09-05T14:16:58.233+09:00  INFO 75280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-05T14:16:58.339+09:00  INFO 75280 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:16:58.605+09:00  INFO 75280 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-05T14:16:58.631+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists admins alter column admin_icon set data type varchar(255)
+2023-09-05T14:16:58.642+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists admins alter column password set data type varchar(255)
+2023-09-05T14:16:58.648+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists admins alter column register_date set data type date
+2023-09-05T14:16:58.652+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists admins alter column salt set data type varchar(255)
+2023-09-05T14:16:58.653+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists courses add column coure_fee integer
+2023-09-05T14:16:58.655+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists courses alter column course_image set data type varchar(255)
+2023-09-05T14:16:58.660+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists courses alter column lesson_start_time set data type time(6)
+2023-09-05T14:16:58.661+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists courses alter column register_date set data type date
+2023-09-05T14:16:58.664+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists students alter column password set data type varchar(255)
+2023-09-05T14:16:58.669+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists students alter column register_date set data type timestamp(6)
+2023-09-05T14:16:58.670+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists students alter column salt set data type varchar(255)
+2023-09-05T14:16:58.670+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : alter table if exists students alter column student_icon set data type varchar(255)
+2023-09-05T14:16:58.675+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : create sequence admins_seq start with 1 increment by 50
+2023-09-05T14:16:58.677+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : create sequence courses_seq start with 1 increment by 50
+2023-09-05T14:16:58.678+09:00 DEBUG 75280 --- [main] org.hibernate.SQL                        : create sequence students_seq start with 1 increment by 50
+2023-09-05T14:16:58.681+09:00  INFO 75280 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:16:58.818+09:00  WARN 75280 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseController': Unsatisfied dependency expressed through field 'courseService': No qualifying bean of type 'teamA.ex.service.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-05T14:16:58.819+09:00  INFO 75280 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:16:58.820+09:00  INFO 75280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-05T14:16:58.822+09:00  INFO 75280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-05T14:16:58.823+09:00  INFO 75280 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-05T14:16:58.829+09:00  INFO 75280 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-05T14:16:58.839+09:00 ERROR 75280 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field courseService in teamA.ex.controller.CourseController required a bean of type 'teamA.ex.service.CourseService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'teamA.ex.service.CourseService' in your configuration.
+
+2023-09-05T14:20:42.773+09:00  INFO 75388 --- [main] teamA.ex.TeamAApplication                : Starting TeamAApplication using Java 17.0.7 with PID 75388 (/Users/acerola714/Desktop/gitTeam/07TeamA/TeamA/target/classes started by acerola714 in /Users/acerola714/Desktop/gitTeam/07TeamA/TeamA)
+2023-09-05T14:20:42.774+09:00  INFO 75388 --- [main] teamA.ex.TeamAApplication                : No active profile set, falling back to 1 default profile: "default"
+2023-09-05T14:20:43.006+09:00  INFO 75388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-05T14:20:43.029+09:00  INFO 75388 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2023-09-05T14:20:43.224+09:00  INFO 75388 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-05T14:20:43.228+09:00  INFO 75388 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-05T14:20:43.229+09:00  INFO 75388 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-05T14:20:43.274+09:00  INFO 75388 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-05T14:20:43.274+09:00  INFO 75388 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 483 ms
+2023-09-05T14:20:43.337+09:00  INFO 75388 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-05T14:20:43.363+09:00  INFO 75388 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-05T14:20:43.364+09:00  INFO 75388 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-05T14:20:43.418+09:00  INFO 75388 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:20:43.466+09:00  INFO 75388 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-05T14:20:43.474+09:00  INFO 75388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-05T14:20:43.547+09:00  INFO 75388 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46b6701e
+2023-09-05T14:20:43.548+09:00  INFO 75388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-05T14:20:43.641+09:00  INFO 75388 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:20:43.897+09:00  INFO 75388 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-05T14:20:43.918+09:00 DEBUG 75388 --- [main] org.hibernate.SQL                        : alter table if exists courses alter column lesson_start_time set data type time(6)
+2023-09-05T14:20:43.920+09:00 DEBUG 75388 --- [main] org.hibernate.SQL                        : alter table if exists students alter column register_date set data type timestamp(6)
+2023-09-05T14:20:43.921+09:00  INFO 75388 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:20:44.052+09:00  WARN 75388 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseController': Unsatisfied dependency expressed through field 'courseService': No qualifying bean of type 'teamA.ex.service.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-05T14:20:44.052+09:00  INFO 75388 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:20:44.054+09:00  INFO 75388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-05T14:20:44.055+09:00  INFO 75388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-05T14:20:44.056+09:00  INFO 75388 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-05T14:20:44.062+09:00  INFO 75388 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-05T14:20:44.070+09:00 ERROR 75388 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field courseService in teamA.ex.controller.CourseController required a bean of type 'teamA.ex.service.CourseService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'teamA.ex.service.CourseService' in your configuration.
+
+2023-09-05T14:24:05.184+09:00  INFO 75458 --- [main] teamA.ex.TeamAApplication                : Starting TeamAApplication using Java 17.0.7 with PID 75458 (/Users/acerola714/Desktop/gitTeam/07TeamA/TeamA/target/classes started by acerola714 in /Users/acerola714/Desktop/gitTeam/07TeamA/TeamA)
+2023-09-05T14:24:05.186+09:00  INFO 75458 --- [main] teamA.ex.TeamAApplication                : No active profile set, falling back to 1 default profile: "default"
+2023-09-05T14:24:05.483+09:00  INFO 75458 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-05T14:24:05.512+09:00  INFO 75458 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 3 JPA repository interfaces.
+2023-09-05T14:24:05.753+09:00  INFO 75458 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-05T14:24:05.758+09:00  INFO 75458 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-05T14:24:05.758+09:00  INFO 75458 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-05T14:24:05.808+09:00  INFO 75458 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-05T14:24:05.808+09:00  INFO 75458 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2023-09-05T14:24:05.882+09:00  INFO 75458 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-05T14:24:05.907+09:00  INFO 75458 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-05T14:24:05.908+09:00  INFO 75458 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-05T14:24:05.965+09:00  INFO 75458 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:24:06.025+09:00  INFO 75458 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-05T14:24:06.035+09:00  INFO 75458 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-05T14:24:06.133+09:00  INFO 75458 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46b6701e
+2023-09-05T14:24:06.134+09:00  INFO 75458 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-05T14:24:06.243+09:00  INFO 75458 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:24:06.534+09:00  INFO 75458 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-05T14:24:06.557+09:00 DEBUG 75458 --- [main] org.hibernate.SQL                        : alter table if exists courses alter column lesson_start_time set data type time(6)
+2023-09-05T14:24:06.558+09:00 DEBUG 75458 --- [main] org.hibernate.SQL                        : alter table if exists students alter column register_date set data type timestamp(6)
+2023-09-05T14:24:06.560+09:00  INFO 75458 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:24:06.712+09:00  WARN 75458 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseController': Unsatisfied dependency expressed through field 'courseService': No qualifying bean of type 'teamA.ex.service.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-05T14:24:06.712+09:00  INFO 75458 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:24:06.714+09:00  INFO 75458 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-05T14:24:06.716+09:00  INFO 75458 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-05T14:24:06.717+09:00  INFO 75458 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-05T14:24:06.723+09:00  INFO 75458 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-05T14:24:06.733+09:00 ERROR 75458 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field courseService in teamA.ex.controller.CourseController required a bean of type 'teamA.ex.service.CourseService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'teamA.ex.service.CourseService' in your configuration.
+
+2023-09-05T14:34:04.438+09:00  INFO 75659 --- [main] teamA.ex.TeamAApplication                : Starting TeamAApplication using Java 17.0.7 with PID 75659 (/Users/acerola714/Desktop/gitTeam/07TeamA/TeamA/target/classes started by acerola714 in /Users/acerola714/Desktop/gitTeam/07TeamA/TeamA)
+2023-09-05T14:34:04.439+09:00  INFO 75659 --- [main] teamA.ex.TeamAApplication                : No active profile set, falling back to 1 default profile: "default"
+2023-09-05T14:34:04.679+09:00  INFO 75659 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-05T14:34:04.701+09:00  INFO 75659 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2023-09-05T14:34:04.897+09:00  INFO 75659 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-05T14:34:04.901+09:00  INFO 75659 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-05T14:34:04.901+09:00  INFO 75659 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-05T14:34:04.945+09:00  INFO 75659 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-05T14:34:04.946+09:00  INFO 75659 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 490 ms
+2023-09-05T14:34:05.005+09:00  INFO 75659 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-05T14:34:05.027+09:00  INFO 75659 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.7.Final
+2023-09-05T14:34:05.028+09:00  INFO 75659 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-05T14:34:05.081+09:00  INFO 75659 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:34:05.129+09:00  INFO 75659 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-05T14:34:05.136+09:00  INFO 75659 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-05T14:34:05.209+09:00  INFO 75659 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4fd7b79
+2023-09-05T14:34:05.209+09:00  INFO 75659 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-05T14:34:05.299+09:00  INFO 75659 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-05T14:34:05.580+09:00  INFO 75659 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-05T14:34:05.605+09:00 DEBUG 75659 --- [main] org.hibernate.SQL                        : alter table if exists courses alter column lesson_start_time set data type time(6)
+2023-09-05T14:34:05.606+09:00 DEBUG 75659 --- [main] org.hibernate.SQL                        : alter table if exists students alter column register_date set data type timestamp(6)
+2023-09-05T14:34:05.608+09:00  INFO 75659 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:34:05.741+09:00  WARN 75659 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'courseController': Unsatisfied dependency expressed through field 'courseService': No qualifying bean of type 'teamA.ex.service.CourseService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-05T14:34:05.741+09:00  INFO 75659 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-05T14:34:05.743+09:00  INFO 75659 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-05T14:34:05.746+09:00  INFO 75659 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-05T14:34:05.747+09:00  INFO 75659 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-05T14:34:05.753+09:00  INFO 75659 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-05T14:34:05.761+09:00 ERROR 75659 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field courseService in teamA.ex.controller.CourseController required a bean of type 'teamA.ex.service.CourseService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'teamA.ex.service.CourseService' in your configuration.
+
