@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import teamA.ex.model.entity.CourseEntity;
+
 public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	
 	// コース全てを見るためのメソッド
