@@ -65,4 +65,22 @@ public class CourseEntity {
 	@NonNull
 	@Column(name = "delete_flag")
 	private int deleteFlag;
+
+	public CourseEntity(@NonNull String courseName, @NonNull int courseFee, String courseImage,
+			@NonNull LocalDate registerDate, LocalDate startDate, LocalDate finishDate, LocalTime lessonStartTime,
+			int lessonDuration, @NonNull Long adminId, @NonNull int deleteFlag) {
+		this.courseName = courseName;
+		this.courseFee = courseFee;
+		this.courseImage = courseImage;
+		this.registerDate = registerDate;
+		this.startDate = startDate;
+		this.finishDate = finishDate;
+		this.lessonStartTime = lessonStartTime;
+		this.lessonDuration = lessonDuration;
+		this.adminId = adminId;
+		this.deleteFlag = deleteFlag;
+	}
+
+	
+	
 }
