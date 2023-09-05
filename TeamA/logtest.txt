@@ -2499,12 +2499,3 @@ Consider defining a bean of type 'teamA.ex.service.CourseService' in your config
 2023-09-05T14:50:15.135+09:00  INFO 16968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2023-09-05T14:50:16.295+09:00  INFO 16968 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52ca0ad4
 2023-09-05T14:50:16.298+09:00  INFO 16968 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-05T14:50:46.783+09:00  INFO 16968 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-05T14:50:51.425+09:00  INFO 16968 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-09-05T14:50:52.100+09:00 DEBUG 16968 --- [main] org.hibernate.SQL                        : alter table if exists courses alter column lesson_start_time set data type time(6)
-2023-09-05T14:50:52.198+09:00 DEBUG 16968 --- [main] org.hibernate.SQL                        : alter table if exists students alter column register_date set data type timestamp(6)
-2023-09-05T14:50:52.227+09:00  INFO 16968 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-05T14:50:53.249+09:00  WARN 16968 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-05T14:50:53.915+09:00  WARN 16968 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2023-09-05T14:50:55.195+09:00  INFO 16968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-09-05T14:50:55.229+09:00  INFO 16968 --- [main] teamA.ex.TeamAApplication                : Started TeamAApplication in 46.885 seconds (process running for 48.738)
