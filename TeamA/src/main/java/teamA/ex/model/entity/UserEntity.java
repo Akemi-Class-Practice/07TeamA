@@ -24,11 +24,6 @@ import lombok.RequiredArgsConstructor;
 //table名を指定します
 @Table(name = "students")
 public class UserEntity {
-
-	public UserEntity(String name2, String email2, String password2, LocalDateTime registerDate2) {
-		// TODO Auto-generated constructor stub
-	}
-
 	@Id
 	
 	@Column(name = "student_id")
@@ -39,15 +34,15 @@ public class UserEntity {
 	
 	@NonNull
 	@Column(name = "student_name")
-	private String name;
+	private String studentName;
 	
 	@NonNull
 	@Column(name = "student_email")
-	private String email;
+	private String studentEmail;
 	
 	@NonNull
 	@Column(name = "register_date")
-	private LocalDate registerDate;
+	private LocalDateTime registerDate;
 	
 	@NonNull
 	@Column(name = "delete_flag")
@@ -55,7 +50,7 @@ public class UserEntity {
 	
 	@NonNull
 	@Column(name = "student_icon")
-	private String icon;
+	private String studentIcon;
 	
 	@NonNull
 	@Column(name = "password")
@@ -64,4 +59,5 @@ public class UserEntity {
 	@NonNull
 	@Column(name = "salt")
 	private String salt;
+	
 }
