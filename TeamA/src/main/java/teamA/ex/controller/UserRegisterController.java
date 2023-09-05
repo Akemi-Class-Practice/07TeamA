@@ -1,5 +1,10 @@
 package teamA.ex.controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
+import teamA.ex.service.UserService;
 
 @Controller
 public class UserRegisterController {
@@ -30,7 +36,15 @@ public class UserRegisterController {
 	public String register(@RequestParam MultipartFile user_icon, @RequestParam String user_name, 
 			@RequestParam String email, @RequestParam String password) {
 		
-		userService.createAccount(user_icon, user_name, email, password);
+		String imgFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + user_icon.getOriginalFilename();
+
+		try {
+			Files.copy(user_icon.getInputStream(), Path.of("src/main/resources/static/user-img/" + imgFileName));
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		userService.createAccount(imgFileName, user_name, email, password);
 		return "redirect:/userlogin";
 	}
 }
