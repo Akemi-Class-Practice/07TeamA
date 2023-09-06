@@ -40,13 +40,12 @@ public class CourseService {
 	public boolean editCoursePost(String courseName, int courseFee, String courseImage, 
 			LocalDate registerDate, LocalDate startDate, LocalDate finishDate, 
 			LocalTime lessonStartTime,int lessonDuration, 
-			Long adminId, int deleteFlag, Long courseId) {
+			String courseInfo, Long courseId) {
 		
 		CourseEntity courseList = courseDao.findByCourseId(courseId);
-		if (adminId == null) {
+		if (courseList == null) {
 			return false;
 		}else {
-			courseList.setCourseId(courseId);
 			courseList.setCourseName(courseName);
 			courseList.setCourseFee(courseFee);
 			courseList.setCourseImage(courseImage);
@@ -55,8 +54,7 @@ public class CourseService {
 			courseList.setFinishDate(finishDate);
 			courseList.setLessonStartTime(lessonStartTime);
 			courseList.setLessonDuration(lessonDuration);
-			courseList.setAdminId(adminId);
-			courseList.setDeleteFlag(deleteFlag);
+			courseList.setCourseInfo(courseInfo);
 			courseDao.save(courseList);
 			return true;
 		}

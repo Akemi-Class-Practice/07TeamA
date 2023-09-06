@@ -126,4 +126,43 @@ public class CourseController {
 		courseService.createCourse(courseName, courseFee, fileName, registerDate, courseStartDate, courseFinishDate, lessonStartTime, lessonDuration, adminId, deleteFlag, courseInfo);
 		return "redirect:/home/admin/view/courses";
 	}
+	
+	// 講座編集機能
+	@GetMapping("/admin/view/courses/editcourse/{postId}")
+		public String getEditPage(@PathVariable Long courseId, Model model) {
+		// courseIdを使ってCourseEntityを作って
+		CourseEntity course = courseService.getCourse(courseId);
+		
+		if (course == null) {
+			return "redirect:/home/admin/view/courses";
+		} else {
+			// 行き先のページにCourseのインスタンスをモデルでビューに渡して
+			model.addAttribute("course", course);
+			return "admin_edit_course.html";
+		}
+	}
+	
+
+	@PostMapping("/admin/view/courses/editcourse/save")
+	public String saveEdit(@RequestParam String courseName, @RequestParam int courseFee,
+			@RequestParam MultipartFile courseImage,
+			@RequestParam LocalDate courseStartDate, @RequestParam LocalDate courseFinishDate,
+			@RequestParam LocalTime lessonStartTime, @RequestParam int lessonDuration,
+			@RequestParam String courseInfo, @RequestParam Long courseId) {
+		
+		LocalDate registerDate = LocalDate.now();
+		
+		// courseImageの名前を習得し保存する処理
+		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + courseImage.getOriginalFilename();
+		try {
+			// 保存処理
+			Files.copy(courseImage.getInputStream(), Path.of("src/main/resources/static/course-img/" + fileName));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		courseService.editCoursePost(courseName, courseFee, fileName, registerDate, courseStartDate, courseFinishDate, lessonStartTime, lessonDuration, courseInfo, courseId);
+		return "redirect:/home/admin/view/courses";
+	}
+	
 }
