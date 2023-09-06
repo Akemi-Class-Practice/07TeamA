@@ -11,7 +11,7 @@ import teamA.ex.model.entity.CourseEntity;
 public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	
 	// コース全てを見るためのメソッド
-	
+
 	List<CourseEntity> findAll();
 		 
 	// CourseEntityのオブジェクトを引数として受け取り、そのオブジェクトをデータベースに保存
@@ -30,4 +30,5 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 			
 	@Transactional
 	List<CourseEntity> deleteByCourseId(Long courseId);
+
 }
