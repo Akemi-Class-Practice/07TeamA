@@ -39,13 +39,13 @@
                 <img id ="user_icon" src="img/kiko.jpg" height="200px" width="200px" alt="">
                 <input type="file" id="imgInp">
             </div>
-                <form id="form" method="post" onSubmit="return checkPassword(this)">
+                <form id="form" method="post" onSubmit="return checkPassword(this)" th:action="@{/edituserinfo/confirmuserinfo}">
                     <label for="">ユーザーの名前</label>
-                    <input type="text" name="" id="" placeholder="ユーザーの名前" required>
+                    <input type="text" name="newName" id="" placeholder="ユーザーの名前" required>
                     <label for="">ユーザーのメール</label>
-                    <input type="text" name="" id="" placeholder="ユーザーのメール" required>
+                    <input type="text" name="newEmail" id="" placeholder="ユーザーのメール" required>
                     <label for="">パスワード</label>
-                    <input type="password" name="password" id="password" placeholder="パスワード" required>
+                    <input type="password" name="newPassword" id="password" placeholder="パスワード" required>
                     <input type="checkbox" id="toggle-password" />
                     <label for="toggle-password" id="hide-text">Show Password</label>
                     <label for="">パスワード確認</label>
@@ -107,12 +107,6 @@
 			else if (password1 != password2) {
 				alert("\nPassword did not match: Please try again...")
 				return false;
-			}
-
-			// If same return True.
-			else {
-				alert("Password Match: Your account has been created!")
-				return true;
 			}
 		}
 </script>
