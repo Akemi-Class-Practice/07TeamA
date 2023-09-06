@@ -78,7 +78,7 @@
 			<section id="courses">
 				<article class="course" th:each="course:${courseList}">
 					<div class="course-image">
-						<img th:src="@{/course-img/{img}(img=${courseImage})}" alt="" height="200px" width="200px">
+						<img th:src="@{/course-img/{img}(img=${course.courseImage})}" alt="" height="200px" width="200px">
 					</div>
 					<div class ="course-info">
 						<div class="course-name-price">
