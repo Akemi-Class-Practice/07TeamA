@@ -55,6 +55,23 @@ public class UserService {
 			}
 		}
 		
+		public boolean updateUser(String currentUserEmail, String newUserName, String newUserEmail, String newUserPassword) {
+			UserEntity user = userDao.findByStudentEmail(currentUserEmail);
+			String salt = user.getSalt();
+			String newPasswordHash = hashPassword(newUserPassword+salt);
+			
+			if (user==null) {
+				return false;
+			} else {
+				user.setStudentName(newUserName);
+				user.setStudentEmail(newUserEmail);
+				user.setPassword(newPasswordHash);
+				userDao.save(user);
+				return true;
+			}
+			
+		}
+		
 		private String hashPassword(String password) {
 			try {
 				MessageDigest digest = MessageDigest.getInstance("SHA-256");

@@ -40,11 +40,11 @@
             </div>
                 <form id="form" method="post" onSubmit="return checkPassword(this)">
                     <label for="">ユーザーの名前</label>
-                    <p>User Name</p>
+                    <input type="text" name="newName" id="user_name" value="user_name" required>
                     <label for="">ユーザーのメール</label>
-                    <p>User Email</p>
+                    <input type="text" name="newEmail" id="user_email" value="user_email" required>
                     <label for="">パスワード</label>
-                    <input type="password" name="password" id="password" value="password" placeholder="パスワード" required>
+                    <input type="password" name="newPassword" id="password" value="password" required>
                     <input type="checkbox" id="toggle-password" />
                     <label for="toggle-password" id="hide-text">Show Password</label>
                 </form>
