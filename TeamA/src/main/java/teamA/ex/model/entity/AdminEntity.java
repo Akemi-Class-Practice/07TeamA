@@ -1,6 +1,7 @@
 package teamA.ex.model.entity;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,7 +43,7 @@ public class AdminEntity {
 	
 	@NonNull
 	@Column(name = "register_date")
-	private LocalDate registerDate;
+	private LocalDateTime registerDate;
 	
 	@NonNull
 	@Column(name = "delete_flag")
