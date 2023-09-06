@@ -18,8 +18,8 @@ public class CourseService {
 	private CourseDao courseDao;
 	
 	// 以下はコースを追加するためのメソッド
-	public boolean createCourse(String courseName, int courseFee, String courseImage, LocalDate registerDate, LocalDate startDate, LocalDate finishDate, LocalTime lessonStartTime, int lessonDuration, Long adminId, int deleteFlag) {
-		courseDao.save(new CourseEntity(courseName, courseFee, courseImage, registerDate, startDate, finishDate, lessonStartTime, lessonDuration, adminId, deleteFlag));
+	public boolean createCourse(String courseName, int courseFee, String courseImage, LocalDate registerDate, LocalDate startDate, LocalDate finishDate, LocalTime lessonStartTime, int lessonDuration, Long adminId, int deleteFlag, String courseInfo) {
+		courseDao.save(new CourseEntity(courseName, courseFee, courseImage, registerDate, startDate, finishDate, lessonStartTime, lessonDuration, adminId, deleteFlag, courseInfo));
 		return true;
 	}
 	

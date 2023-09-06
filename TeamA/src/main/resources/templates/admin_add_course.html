@@ -42,7 +42,7 @@
 
         <section class="course">
             <div class="course-container">
-				<form class="course-item" method="post">
+				<form class="course-item" th:action="@{/home/admin/view/courses/addcourse/save}" method="post" enctype="multipart/form-data">
                 <div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file" name="courseImage"></div>
                 <div class="course-info">
 
@@ -84,18 +84,14 @@
                             <div class="body">
                                 <label>講座の情報</label>
                                 <textarea name="courseInfo" id="body" placeholder="講座の情報を入力してください"></textarea>
-                               
                             </div>
                         </div>
+                        
+                        <input type="submit" id="add-course-button" value="講座を登録">
                     </form>
 
                 </div>
             </div>
-
-           
-
-            <button name="add-course-button" id="add-course-button">講座を登録</button>
-
         </section>
 
     </main>
