@@ -103,13 +103,13 @@ public class CourseController {
 			@RequestParam MultipartFile courseImage, @RequestParam LocalDate registerDate,
 			@RequestParam LocalDate startDate, @RequestParam LocalDate finishDate,
 			@RequestParam LocalTime lessonStartTime, @RequestParam int lessonDuration, 
-			@RequestParam Long adminId, @RequestParam int deleteFlag, Model model) {
+			@RequestParam int deleteFlag, Model model) {
 		
 		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
 		AdminEntity adminList = (AdminEntity) session.getAttribute("admin");
 		
 		// adminListから現在ログインしている人のユーザー名を取得
-			String adminName = adminList.getAdminName();
+		Long adminId = adminList.getAdminId();
 			
 		// courseImageの名前を習得し保存する処理
 		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + courseImage.getOriginalFilename();

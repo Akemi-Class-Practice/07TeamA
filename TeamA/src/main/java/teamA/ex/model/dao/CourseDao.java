@@ -20,14 +20,14 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 		 
 	//courseNameとregisterDateを検査条件として、CourseEntityを取得
 		
-	CourseEntity findByCourseNameAndregisterDate(String courseName,LocalDate registerDate);
+	CourseEntity findByCourseNameAndRegisterDate(String courseName,LocalDate registerDate);
 		 
 	//findByCourseId methodを定義し、DBのCourseEntityを検索
 			
-	CourseEntity findByCourseId(Long blogId);
+	CourseEntity findByCourseId(Long courseId);
 			
 	//トランザクション管理は複数BD操作をまとめ、一括処理	
 			
 	@Transactional
-	List<CourseEntity> deleteByCourseId(Long blogId);
+	List<CourseEntity> deleteByCourseId(Long courseId);
 }
