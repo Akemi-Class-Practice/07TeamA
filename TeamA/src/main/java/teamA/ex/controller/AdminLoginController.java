@@ -37,7 +37,7 @@ public class AdminLoginController {
 			return "redirect:/adminlogin";
 		} else {
 			session.setAttribute("admin", admin);
-			return "redirect:/admin/viewcourses";
+			return "redirect:/home/admin/view/courses";
 		}
 	}
 	
