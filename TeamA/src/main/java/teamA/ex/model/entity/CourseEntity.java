@@ -36,7 +36,7 @@ public class CourseEntity {
 	private String courseName;
 	
 	@NonNull
-	@Column(name = "coure_fee")
+	@Column(name = "course_fee")
 	private int courseFee;
 	
 	@Column(name = "course_image")
@@ -65,10 +65,13 @@ public class CourseEntity {
 	@NonNull
 	@Column(name = "delete_flag")
 	private int deleteFlag;
+	
+	@Column(name = "course_info")
+	private String courseInfo;
 
 	public CourseEntity(@NonNull String courseName, @NonNull int courseFee, String courseImage,
 			@NonNull LocalDate registerDate, LocalDate startDate, LocalDate finishDate, LocalTime lessonStartTime,
-			int lessonDuration, @NonNull Long adminId, @NonNull int deleteFlag) {
+			int lessonDuration, @NonNull Long adminId, @NonNull int deleteFlag, String courseInfo) {
 		this.courseName = courseName;
 		this.courseFee = courseFee;
 		this.courseImage = courseImage;
@@ -79,6 +82,7 @@ public class CourseEntity {
 		this.lessonDuration = lessonDuration;
 		this.adminId = adminId;
 		this.deleteFlag = deleteFlag;
+		this.courseInfo = courseInfo;
 	}
 
 	
