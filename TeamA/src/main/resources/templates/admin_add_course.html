@@ -8,10 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/admin_add_course.css">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/admin_add_course.css}">
     <title>HTML | Template</title>
 </head>
 
@@ -20,7 +20,7 @@
         <h1><a href="">07TeamA</a></h1>
         <nav>
             <ul>
-                <li><img src="img/kiko.jpg" alt="admin_icon"></li>
+                <li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
                 <li>
                     <p>管理者名前</p>
                 </li>

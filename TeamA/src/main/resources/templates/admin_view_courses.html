@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/view_courses.css">
-    <link rel="stylesheet" href="css/admin_view_courses.css">
+     <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/view_courses.css}">
+    <link rel="stylesheet" th:href="@{/css/admin_view_courses.css}">
     <title>07TeamA</title>
 </head>
 
@@ -20,7 +20,7 @@
         <h1><a href="">07TeamA</a></h1>
         <nav>
             <ul>
-                <li><img src="img/kiko.jpg" alt="admin_icon"></li>
+                <li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
                 <li><p>管理者名前</p></li>
                 <li><a href="#">情報変更</a></li>
                 <li><a href="#">管理者追加</a></li>
