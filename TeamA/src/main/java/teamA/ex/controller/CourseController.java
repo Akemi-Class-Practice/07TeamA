@@ -1,7 +1,11 @@
 package teamA.ex.controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,15 +88,16 @@ public class CourseController {
 	}
 	
 	
-	//講座追加機能
+//講座追加機能
 	//講座追加画面(admin_add_course.html)を表示
 	@GetMapping("/add/course/{adminId}")
 	public String getAddCoursePage(@PathVariable Long adminId, Model model) {
+		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
 		CourseEntity adminList = (CourseEntity) session.getAttribute("admin");
 		return "admin_add_course.html";
 	}
 	
-	
+	//講座追加内容を習得しDBに保存
 	@PostMapping("/add/course/{adminId}")
 	public String addCoures(@RequestParam String courseName, @RequestParam int courseFee,
 			@RequestParam MultipartFile courseImage, @RequestParam LocalDate registerDate,
@@ -100,8 +105,22 @@ public class CourseController {
 			@RequestParam LocalTime lessonStartTime, @RequestParam int lessonDuration, 
 			@RequestParam Long adminId, @RequestParam int deleteFlag, Model model) {
 		
-		CourseEntity createCourse = (CourseEntity) session.getAttribute("admin");
-		Long adminId = adminList.getAdminId();
-				
+		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
+		AdminEntity adminList = (AdminEntity) session.getAttribute("admin");
+		
+		// adminListから現在ログインしている人のユーザー名を取得
+			String adminName = adminList.getAdminName();
+			
+		// courseImageの名前を習得し保存する処理
+		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + courseImage.getOriginalFilename();
+		try {
+			// 保存処理
+			Files.copy(courseImage.getInputStream(), Path.of("src/main/resources/static/img/" + fileName));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		courseService.createCourse(courseName, courseFee, courseName, registerDate, startDate, finishDate, lessonStartTime, lessonDuration, adminId, deleteFlag);
+		return "redirect:/admin/view/courses";
 	}
 }
