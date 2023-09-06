@@ -90,26 +90,26 @@ public class CourseController {
 	
 //講座追加機能
 	//講座追加画面(admin_add_course.html)を表示
-	@GetMapping("/add/course/{adminId}")
-	public String getAddCoursePage(@PathVariable Long adminId, Model model) {
-		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
-		CourseEntity adminList = (CourseEntity) session.getAttribute("admin");
+	@GetMapping("/add/course")
+	public String getAddCoursePage() {
 		return "admin_add_course.html";
 	}
 	
 	//講座追加内容を習得しDBに保存
-	@PostMapping("/add/course/{adminId}")
-	public String addCoures(@RequestParam String courseName, @RequestParam int courseFee,
+	@PostMapping("/add/course/save")
+	public String addCourse(@RequestParam String courseName, @RequestParam int courseFee,
 			@RequestParam MultipartFile courseImage, @RequestParam LocalDate registerDate,
-			@RequestParam LocalDate startDate, @RequestParam LocalDate finishDate,
-			@RequestParam LocalTime lessonStartTime, @RequestParam int lessonDuration, 
-			@RequestParam int deleteFlag, Model model) {
+			@RequestParam LocalDate courseStartDate, @RequestParam LocalDate courseFinishDate,
+			@RequestParam LocalTime lessonStartTime, @RequestParam int lessonDuration,  Model model) {
 		
 		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
 		AdminEntity adminList = (AdminEntity) session.getAttribute("admin");
 		
 		// adminListから現在ログインしている人のユーザー名を取得
 		Long adminId = adminList.getAdminId();
+		
+		// deleteFlagを宣言する
+		int deleteFlag = 0;
 			
 		// courseImageの名前を習得し保存する処理
 		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + courseImage.getOriginalFilename();
@@ -120,7 +120,7 @@ public class CourseController {
 			e.printStackTrace();
 		}
 		
-		courseService.createCourse(courseName, courseFee, courseName, registerDate, startDate, finishDate, lessonStartTime, lessonDuration, adminId, deleteFlag);
+		courseService.createCourse(courseName, courseFee, courseName, registerDate, courseStartDate, courseFinishDate, lessonStartTime, lessonDuration, adminId, deleteFlag);
 		return "redirect:/admin/view/courses";
 	}
 }
