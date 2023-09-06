@@ -2,7 +2,9 @@ package teamA.ex.service;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
 import java.util.Base64;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,4 +46,26 @@ public class AdminService {
 				throw new RuntimeException("Hashing Algorithm not found", e);
 			}
 		}
+		
+	//Registerの処理
+	public boolean createAdmin(String adminIcon, String adminName, String adminEmail, String password) {
+		AdminEntity adminEntity = adminDao.findByAdminEmail(adminEmail);
+		LocalDateTime registerDate = LocalDateTime.now();
+		int deleteFlag = 0;
+		// UUIDを使ってRandom文字を作る
+		UUID uuid = UUID.randomUUID();
+		// あの文字配列を文字配列化
+		String saltStr = uuid.toString();
+		// あの文字配列を最初の１０文字に絞り込む
+		String salt = saltStr.substring(0,10);
+		// あの文字配列をユーザーを入力したパスワードと組み合わせてHasedPasswordに渡してHashedPasswordを作る
+		String hashedPassword = hashPassword(password+salt);
+		
+		if(adminEntity==null) {
+			adminDao.save(new AdminEntity(adminName, adminEmail, registerDate, deleteFlag, adminIcon, hashedPassword, salt));
+			return true;
+		}else {
+			return false;
+		}
+	}
 }
