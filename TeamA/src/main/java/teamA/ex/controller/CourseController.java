@@ -90,13 +90,13 @@ public class CourseController {
 	
 //講座追加機能
 	//講座追加画面(admin_add_course.html)を表示
-	@GetMapping("/add/course")
+	@GetMapping("/addcourse")
 	public String getAddCoursePage() {
 		return "admin_add_course.html";
 	}
 	
 	//講座追加内容を習得しDBに保存
-	@PostMapping("/add/course/save")
+	@PostMapping("/addcourse/save")
 	public String addCourse(@RequestParam String courseName, @RequestParam int courseFee,
 			@RequestParam MultipartFile courseImage, @RequestParam LocalDate registerDate,
 			@RequestParam LocalDate courseStartDate, @RequestParam LocalDate courseFinishDate,
