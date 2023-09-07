@@ -87,7 +87,7 @@
 						</div>
 						<p th:text="${course.courseInfo}" class="course-description"></p>
 						<div class="buttons">
-                            <a class="course-bttn course-edit-bttn" href="#">講座編集</a>
+                            <a class="course-bttn course-edit-bttn" th:href="@{/home/admin/view/courses/editcourse/{courseId}(courseId=${course.courseId})}">講座編集</a>
                             <a class="course-bttn course-delete-bttn" href="#">講座削除</a>
                         </div>
 					</div>

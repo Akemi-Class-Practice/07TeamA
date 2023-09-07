@@ -128,7 +128,7 @@ public class CourseController {
 	}
 	
 	// 講座編集機能
-	@GetMapping("/admin/view/courses/editcourse/{postId}")
+	@GetMapping("/admin/view/courses/editcourse/{courseId}")
 		public String getEditPage(@PathVariable Long courseId, Model model) {
 		// courseIdを使ってCourseEntityを作って
 		CourseEntity course = courseService.getCourse(courseId);
@@ -150,7 +150,6 @@ public class CourseController {
 			@RequestParam LocalTime lessonStartTime, @RequestParam int lessonDuration,
 			@RequestParam String courseInfo, @RequestParam Long courseId) {
 		
-		LocalDate registerDate = LocalDate.now();
 		
 		// courseImageの名前を習得し保存する処理
 		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + courseImage.getOriginalFilename();
@@ -161,8 +160,22 @@ public class CourseController {
 			e.printStackTrace();
 		}
 		
-		courseService.editCoursePost(courseName, courseFee, fileName, registerDate, courseStartDate, courseFinishDate, lessonStartTime, lessonDuration, courseInfo, courseId);
+		courseService.editCoursePost(courseName, courseFee, fileName, courseStartDate, courseFinishDate, lessonStartTime, lessonDuration, courseInfo, courseId);
 		return "redirect:/home/admin/view/courses";
 	}
+	
+	
+	//削除機能
+	@PostMapping("/course/delete{courseId}")
+	public String courseDelete(@RequestParam Long courseId,Model model) {
+		//現在ログインしている管理者情報を取得する
+		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+		//現在ログインしている人の名前を取得する
+		String loginAdminName = admin.getAdminName();
+		courseService.deleteCourse(courseId);
+		model.addAttribute("loginAdminName",loginAdminName);
+		return "redirect:/admin/view/courses";
+		}
+	
 	
 }
