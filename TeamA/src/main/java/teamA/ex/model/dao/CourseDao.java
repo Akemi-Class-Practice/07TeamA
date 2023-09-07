@@ -17,7 +17,7 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	
 	// 生徒の見える講座リストメソッド
 	@Query(value="SELECT * FROM courses WHERE delete_flag = 0 AND start_date >= CURRENT_DATE", nativeQuery = true) 
-	List<CourseEntity> findByDeleteFlagAndCurrentDate();
+	List<CourseEntity> findCoursesForUser();
 	
 	// CourseEntityのオブジェクトを引数として受け取り、そのオブジェクトをデータベースに保存
 		 

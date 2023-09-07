@@ -27,8 +27,8 @@ public class CourseService {
 		return courseDao.findAll();
 	}
 	
-	public List<CourseEntity> findByDeleteFlagAndCurrentDate(){
-		return courseDao.findByDeleteFlagAndCurrentDate();
+	public List<CourseEntity> findCoursesForUser(){
+		return courseDao.findCoursesForUser();
 	}
 	
 	// CourseIdに基づいて、CourseDaoから該当するCourseEntityを取得して返す。

@@ -68,10 +68,10 @@ public class CourseController {
 		
 		//courseServiceのfindAllCoursePostメソッドを呼び出し、現在の管理者に関する講座を取得
 		//戻り値はCourseEntityのリストで、このリストをmodelに追加
-		 List<CourseEntity> courselist = courseService.findByDeleteFlagAndCurrentDate();
+		 List<CourseEntity> courseList = courseService.findCoursesForUser();
 		
 		model.addAttribute("userName", userName);
-		model.addAttribute("courselist", courselist);
+		model.addAttribute("courseList", courseList);
 		return "user_view_courses.html";
 	}
 
