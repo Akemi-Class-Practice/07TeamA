@@ -32,6 +32,10 @@ public class UserService {
 			}			
 		}
 		
+		
+		public UserEntity findByStudentId(Long studentId) {
+			return userDao.findByStudentId(studentId);
+		}
 		//Registerの処理
 		public boolean createAccount(String studentIcon,String studentName,String studentEmail, String password) {
 			UserEntity userEntity = userDao.findByStudentEmail(studentEmail);
@@ -55,21 +59,32 @@ public class UserService {
 			}
 		}
 		
-		public boolean updateUser(String currentUserEmail, String newUserName, String newUserEmail, String newUserPassword) {
+		public boolean updateUser(String currentUserEmail, String newIcon, String newUserName, String newUserEmail) {
 			UserEntity user = userDao.findByStudentEmail(currentUserEmail);
-			String salt = user.getSalt();
-			String newPasswordHash = hashPassword(newUserPassword+salt);
 			
 			if (user==null) {
 				return false;
 			} else {
+				user.setStudentIcon(newIcon);
 				user.setStudentName(newUserName);
 				user.setStudentEmail(newUserEmail);
+				userDao.save(user);
+				return true;
+			}
+		}
+		
+		public boolean updateUserPassword(String currentUserEmail, String newPassword) {
+			UserEntity user = userDao.findByStudentEmail(currentUserEmail);
+			String salt = user.getSalt();
+			String newPasswordHash = hashPassword(newPassword+salt);
+			
+			if (user==null) {
+				return false;
+			} else {
 				user.setPassword(newPasswordHash);
 				userDao.save(user);
 				return true;
 			}
-			
 		}
 		
 		private String hashPassword(String password) {
