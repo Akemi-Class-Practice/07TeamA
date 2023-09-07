@@ -42,7 +42,7 @@ public class CourseService {
 	
 //	 講座のタイトル、登録日、詳細などの情報を受け取り、指定されたCourseIdに対応する講座を更新
 	public boolean editCoursePost(String courseName, int courseFee, String courseImage, 
-			LocalDate registerDate, LocalDate startDate, LocalDate finishDate, 
+			LocalDate startDate, LocalDate finishDate, 
 			LocalTime lessonStartTime,int lessonDuration, 
 			String courseInfo, Long courseId) {
 		
@@ -53,7 +53,6 @@ public class CourseService {
 			courseList.setCourseName(courseName);
 			courseList.setCourseFee(courseFee);
 			courseList.setCourseImage(courseImage);
-			courseList.setRegisterDate(registerDate);
 			courseList.setStartDate(startDate);
 			courseList.setFinishDate(finishDate);
 			courseList.setLessonStartTime(lessonStartTime);

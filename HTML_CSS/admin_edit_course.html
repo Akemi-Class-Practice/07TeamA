@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/admin_edit_course.css">
+    <script src="./js/delect_confirm.js"></script>
     <title>HTML | Template</title>
 </head>
 
@@ -39,11 +40,13 @@
         </div>
 
         <h2 class="page-title">講座編集</h2>
-        <button name="delete" id="delete">講座を削除</button>
+        <form action="href=/home/course/delete{courseId}" method="post">
+            <button name="delete" id="delete">講座を削除</button>
+        </form>
 
         <section class="course">
             <div class="course-container">
-                <div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file" ></div>
+                <div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file"></div>
                 <div class="course-info">
 
                     <form class="course-item" method="post">
@@ -65,7 +68,7 @@
                                 <label>開始日</label>
                                 <input type="date" name="course-start-date">
                             </div>
-                            
+
                             <div class="course-finish-date">
                                 <label>終了日</label>
                                 <input type="date" name="course-finish-date">
@@ -83,7 +86,7 @@
                             <div class="body">
                                 <label>講座の情報</label>
                                 <textarea name="body" id="body" placeholder=""></textarea>
-                              
+
                             </div>
                         </div>
                     </form>
@@ -113,6 +116,14 @@
         </ul>
         <p>Copyright @ 2023 Learner All Right Reserved.</p>
     </footer>
+    <script>
+        var button = document.getElementById("delete");
+
+        button.addEventListener("click", deleteConfirm);
+
+    </script>
+
+
 </body>
 
 </html>

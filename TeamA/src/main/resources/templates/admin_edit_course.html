@@ -39,18 +39,21 @@
         </div>
 
         <h2 class="page-title">講座編集</h2>
-        <button name="delete" id="delete">講座を削除</button>
+        <form th:action="@{/home/course/delete{courseId}(courseId=${course.courseId})}" method="post">
+            <button name="delete" id="delete">講座を削除</button>
+        </form>
 
         <section class="course">
-            <div class="course-container">
-                <div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file" ></div>
-                <div class="course-info">
+            
 
-                    <form class="course-item" method="post">
-						<input id="course-id" type="text" value="courseId" style="display:none">
+                    <form th:action="@{/home/admin/view/courses/editcourse/save}" class="course-item" method="post" enctype="multipart/form-data">						
+						<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
+						<div class="course-container">
+                		<div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file" name="courseImage" ></div>
+                		<div class="course-info">
                         <div class="heading">
                             <label>講座名</label>
-                            <input type="text" name="title" placeholder="">
+                            <input type="text" name="courseName" placeholder="">
                         </div>
 
                         <!-- <p>(概要)Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -58,34 +61,35 @@
                         <div class="item">
                             <div class="course-price">
                                 <label>料金</label>
-                                <input type="text" name="course-price" placeholder="">
+                                <input type="text" name="courseFee" placeholder="">
                             </div>
 
                             <div class="course-start-date">
                                 <label>開始日</label>
-                                <input type="date" name="course-start-date">
+                                <input type="date" name="courseStartDate">
                             </div>
                             
                             <div class="course-finish-date">
                                 <label>終了日</label>
-                                <input type="date" name="course-finish-date">
+                                <input type="date" name="courseFinishDate">
                             </div>
 
                             <div class="course-start-time">
                                 <label>レッスン開始時間</label>
-                                <input type="text" name="course-start-time" placeholder="">
+                                <input type="time" name="lessonStartTime" placeholder="">
                             </div>
 
                             <div class="course-duration">
                                 <label>レッスン時間</label>
-                                <input type="text" name="course-duration" placeholder="">
+                                <input type="text" name="lessonDuration" placeholder="">
                             </div>
                             <div class="body">
                                 <label>講座の情報</label>
-                                <textarea name="body" id="body" placeholder=""></textarea>
+                                <textarea name="courseInfo" id="body" placeholder=""></textarea>
                               
                             </div>
                         </div>
+                        <Input type="submit" name="save-button" id="save-button"></Input>
                     </form>
 
                 </div>
@@ -96,8 +100,8 @@
                 <textarea name="body" id="body" placeholder="講座の情報を入力してください"></textarea>
             </div> -->
 
-            <button name="back-button" id="back-button">戻る</button>
-            <button name="save-button" id="save-button">変更を保存</button>
+            <button name="back-button" id="back-button">戻る</button>          
+            
 
         </section>
 
