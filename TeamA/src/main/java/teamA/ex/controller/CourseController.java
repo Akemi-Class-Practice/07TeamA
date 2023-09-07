@@ -166,7 +166,7 @@ public class CourseController {
 	
 	
 	//削除機能
-	@PostMapping("/course/delete{courseId}")
+	@PostMapping("/course/delete")
 	public String courseDelete(@RequestParam Long courseId,Model model) {
 		//現在ログインしている管理者情報を取得する
 		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
@@ -174,8 +174,8 @@ public class CourseController {
 		String loginAdminName = admin.getAdminName();
 		courseService.deleteCourse(courseId);
 		model.addAttribute("loginAdminName",loginAdminName);
-		return "redirect:/admin/view/courses";
-		}
+		return "redirect:/home/admin/view/courses";
+	}
 	
 	
 }

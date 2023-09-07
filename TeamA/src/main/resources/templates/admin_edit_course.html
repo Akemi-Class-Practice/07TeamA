@@ -39,7 +39,8 @@
         </div>
 
         <h2 class="page-title">講座編集</h2>
-        <form th:action="@{/home/course/delete{courseId}(courseId=${course.courseId})}" method="post">
+        <form th:action="@{/home/course/delete}" method="post">
+			<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
             <button name="delete" id="delete">講座を削除</button>
         </form>
 

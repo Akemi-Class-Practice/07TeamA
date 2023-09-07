@@ -82,10 +82,12 @@ public class CourseService {
 	
 	// 削除処理を行うためのメソッド
 	public boolean deleteCourse(Long courseId) {
-		if(courseId == null) {
+		CourseEntity courseList = courseDao.findByCourseId(courseId);
+		if(courseList == null) {
 			return false;
 		}else {
-			courseDao.deleteByCourseId(courseId);
+			courseList.setDeleteFlag(1);
+			courseDao.save(courseList);			
 			return true;
 		}
 	}

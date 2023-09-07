@@ -11,8 +11,7 @@ import teamA.ex.model.entity.CourseEntity;
 
 public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	
-	// コース全てを見るためのメソッド
-
+	// コース全てを見るためのメソッド	
 	List<CourseEntity> findAll();
 	
 	// 生徒の見える講座リストメソッド
