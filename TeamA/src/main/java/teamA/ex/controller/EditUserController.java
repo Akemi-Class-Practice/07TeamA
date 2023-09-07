@@ -1,5 +1,10 @@
 package teamA.ex.controller;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,28 +37,65 @@ public class EditUserController {
 	}
 	
 	// Get new user info and pass the info to the confirmation page
-	@PostMapping("/confirmuserinfo")
-	public String enterNewUserInfo(@RequestParam String newName, @RequestParam String newEmail, @RequestParam String newPassword, Model model) {
-		model.addAttribute("new_name", newName);
-		model.addAttribute("new_name", newEmail);
-		model.addAttribute("new_name", newPassword);
+	@PostMapping("/edituserinfo/confirmuserinfo")
+	public String enterNewUserInfo(@RequestParam(required=false) MultipartFile newIcon, @RequestParam String newName, @RequestParam String newEmail, @RequestParam String newPassword, Model model) {
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		String newFileName;
+		
+		if (!newIcon.isEmpty()) {
+			newFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + newIcon.getOriginalFilename();
+			try {
+				// 保存処理
+				Files.copy(newIcon.getInputStream(), Path.of("src/main/resources/static/user-img/" + newFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+				}
+		} else {
+			newFileName = user.getStudentIcon();
+		}
+		
+		model.addAttribute("user", user);
+		model.addAttribute("newIcon", newFileName);
+		model.addAttribute("newName", newName);
+		model.addAttribute("newEmail", newEmail);
+		model.addAttribute("newPassword", newPassword);
 		return "user_edit_user_confirm.html";
 	}
 	
-	@PostMapping("/updateuserinfo")
-	public String updateNewUserInfo(@RequestParam String newName, @RequestParam String newEmail, @RequestParam String newPassword, Model model) {
+	@PostMapping("/edituserinfo/updateuserinfo")
+	public String updateNewUserInfo(@RequestParam String newIcon, @RequestParam String newName, @RequestParam String newEmail, @RequestParam(required=false) String newPassword, Model model) {
 		UserEntity oldUser = (UserEntity)  session.getAttribute("user");
 		String currentEmail = oldUser.getStudentEmail();
-		
-		if (userService.updateUser(currentEmail, newName, newEmail, newPassword)) {
-			session.invalidate();
-			UserEntity user = userService.login(newEmail, newPassword);
-			session.setAttribute("user", user);
-			model.addAttribute("user", user);
-			return "redirect:/user/viewcourses";
+
+		// if new password save password
+		System.out.println(newPassword);
+		if (!newPassword.isEmpty()) {
+			userService.updateUserPassword(currentEmail, newPassword);
+			if (userService.updateUser(currentEmail, newIcon, newName, newEmail)) {
+				session.invalidate();
+				UserEntity user = userService.login(newEmail, newPassword);
+				session.setAttribute("user", user);
+				model.addAttribute("user", user);
+				return "redirect:/home/user/view/courses";
+			} else {
+				return "user_edit_personal_info.html";
+			}
 		} else {
-			return "user_edit_personal_info.html";
+			if (userService.updateUser(currentEmail, newIcon, newName, newEmail)) {
+				UserEntity user = (UserEntity) session.getAttribute("user");
+				Long userId = user.getStudentId();
+				UserEntity newUser = (UserEntity) userService.findByStudentId(userId);
+				session.setAttribute("user", newUser);
+				model.addAttribute("user", newUser);
+				return "redirect:/home/user/view/courses";
+			} else {
+				return "user_edit_personal_info.html";
+			}
 		}
+				
 	}
 	
 }
+
+
+

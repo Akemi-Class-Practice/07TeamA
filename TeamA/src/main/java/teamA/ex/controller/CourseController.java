@@ -63,14 +63,12 @@ public class CourseController {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		Long userId = user.getStudentId();
 		
-		// adminListから現在ログインしている人のユーザー名を取得
-		String userName = user.getStudentName();
 		
 		//courseServiceのfindAllCoursePostメソッドを呼び出し、現在の管理者に関する講座を取得
 		//戻り値はCourseEntityのリストで、このリストをmodelに追加
 		 List<CourseEntity> courseList = courseService.findCoursesForUser();
 		
-		model.addAttribute("userName", userName);
+		model.addAttribute("user", user);
 		model.addAttribute("courseList", courseList);
 		return "user_view_courses.html";
 	}

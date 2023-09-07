@@ -19,8 +19,10 @@
 		<h1><a href="#">07TeamA</a></h1>
 		<nav>
 			<ul>
-				<li><a href="#"><img th:src="@{/img/kiko.jpg}" alt="user_icon"></a></li>
-				<li><a href="#">ユーザー名前</a></li>
+				<li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
+				<li>
+					<p th:text="${user.getStudentName}"></p>
+				</li>
 				<li><a href="#">購入履歴</a></li>
 				<li><a href="#">情報変更</a></li>
 				<li><a href="#">ログアウト</a></li>
@@ -35,16 +37,17 @@
             <h2>この変更はよろしいですか？</h2>
             <div id="form-container">
             <section id="change-user-info-form">
-                <div id="choose_user_icon">
-                <img id ="user_icon" src="img/kiko.jpg" height="200px" width="200px" alt="">
-            </div>
-                <form id="form" method="post" onSubmit="return checkPassword(this)">
+            	<div id="choose_user_icon">
+                	<img id ="user_icon" th:src="@{/user-img/{img}(img=${newIcon})}" height="200px" width="200px" alt="">
+            	</div>
+                <form id="form" method="post" th:action="@{/home/edituserinfo/updateuserinfo}">
+            		<input type="text" name="newIcon" th:value="${newIcon}">
                     <label for="">ユーザーの名前</label>
-                    <input type="text" name="newName" id="user_name" value="user_name" required>
+                    <input type="text" name="newName" id="user_name" th:value="${newName}" >
                     <label for="">ユーザーのメール</label>
-                    <input type="text" name="newEmail" id="user_email" value="user_email" required>
+                    <input type="text" name="newEmail" id="user_email" th:value="${newEmail}" >
                     <label for="">パスワード</label>
-                    <input type="password" name="newPassword" id="password" value="password" required>
+                    <input type="password" name="newPassword" id="password" th:value="${newPassword}" >
                     <input type="checkbox" id="toggle-password" />
                     <label for="toggle-password" id="hide-text">Show Password</label>
                 </form>
