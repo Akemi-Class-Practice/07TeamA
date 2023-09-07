@@ -38,7 +38,7 @@ public class UserLoginController {
 			return "redirect:/userlogin";
 		} else {
 			session.setAttribute("user", user);
-			return "redirect:/user/viewcourses";
+			return "redirect:/home/user/view/courses";
 		}
 	}
 	

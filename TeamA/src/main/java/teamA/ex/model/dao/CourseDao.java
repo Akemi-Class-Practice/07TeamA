@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import jakarta.transaction.Transactional;
 import teamA.ex.model.entity.CourseEntity;
@@ -13,7 +14,11 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	// コース全てを見るためのメソッド
 
 	List<CourseEntity> findAll();
-		 
+	
+	// 生徒の見える講座リストメソッド
+	@Query(value="SELECT * FROM courses WHERE delete_flag = 0 AND start_date >= CURRENT_DATE", nativeQuery = true) 
+	List<CourseEntity> findByDeleteFlagAndCurrentDate();
+	
 	// CourseEntityのオブジェクトを引数として受け取り、そのオブジェクトをデータベースに保存
 		 
 	CourseEntity save(CourseEntity courseEntity);

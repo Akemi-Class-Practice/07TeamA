@@ -21,7 +21,7 @@
         <nav>
             <ul>
                 <li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
-                <li><p>管理者名前</p></li>
+                <li><p th:text="${userName}"></p></li>
                 <li><a href="#">情報変更</a></li>
                 <li><a href="#">管理者追加</a></li>
                 <li><a href="#">ログアウト</a></li>
