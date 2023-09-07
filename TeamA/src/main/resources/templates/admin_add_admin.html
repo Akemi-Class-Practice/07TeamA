@@ -30,19 +30,19 @@
 
     <main>
         <div id="add-admin-container">
-            <a href="#" class="return_link">&lt;&lt; 講座一覧に戻る</a>
+            <a th:href="@{/home/admin/view/courses}" class="return_link">&lt;&lt; 講座一覧に戻る</a>
             <h2>管理者を追加</h2>
             <div id="form-container">
             <section id="add-admin-form">
                 <div id="choose_admin_icon">
-                <img id ="admin_icon" src="img/kiko.jpg" height="200px" width="200px" alt="">
+                <img id ="admin_icon" th:src="@{/img/kiko.jpg} height="200px" width="200px" alt="">
                 <input type="file" id="imgInp">
             </div>
                 <form id="form" method="post" onSubmit="return checkPassword(this)">
                     <label for="">管理者の名前</label>
-                    <input type="text" name="" id="" placeholder="admin name" required>
+                    <input type="text" name="admin_name" placeholder="admin name" required>
                     <label for="">管理者のメール</label>
-                    <input type="text" name="" id="" placeholder="admin email" required>
+                    <input type="text" name="admin_email" placeholder="admin email" required>
                     <label for="">パスワード</label>
                     <input type="password" name="password" id="password" placeholder="admin password" required>
                     <input type="checkbox" id="toggle-password" />
@@ -52,7 +52,7 @@
                 </form>
             </section>
             <div id="form-buttons">
-                <a href="#" id="return">戻る</a>
+                <a th:href="@{/home/admin/view/courses}" id="return">戻る</a>
                 <input type="submit" form="form" id="submit" value="登録">
                 <!-- <a href="#" id="submit" form="form">登録</a> -->
             </div>
