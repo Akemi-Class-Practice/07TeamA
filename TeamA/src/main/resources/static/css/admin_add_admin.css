@@ -19,7 +19,7 @@
     margin-top: 50px;
 }
 
-#form-container img {
+#choose_admin_icon img {
     border-radius: 100px;
     border: 1px solid var(--text);
     margin-bottom: 5px;
@@ -27,8 +27,8 @@
 
 #form {
     display: flex;
-    flex-direction: column;
-    width: 300px;
+    flex-direction: row;
+    width: 550px;
 }
 
 #form label {
@@ -37,37 +37,14 @@
     font-size: 14px;
 }
 
-#form input{
-	width: 100%;
+#form-inputs input{
+	width: 300px;
 	padding: 5px 5px;
 	margin: 5px 0px;
 	border: 1px solid #b8b4b4;
     border-radius: 5px;
 	outline: none;
 } 
-
-#password {  
-    background-image: url("https://img.icons8.com/material-sharp/20/000000/visible.png");
-    background-position: 97% center;
-    background-repeat: no-repeat;
-  }
-  #password.visible {
-    background-image: url("https://img.icons8.com/material-outlined/20/000000/invisible.png");
-  }
-
-  #toggle-password {
-    display: none;
-  }
-  #toggle-password + label{
-    text-indent: -9999px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 275px;
-    margin-top: -30px;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
 
 #form-buttons {
     display: flex;
@@ -117,4 +94,42 @@ filter:brightness(90%);
 
 #submit {
     background-color: var(--green);
+}
+
+
+#form {
+	display: flex;
+	justify-content: space-between;
+}
+
+#form-inputs {
+	width: 300px;
+}
+
+#choose-user-icon{
+	width: 200px;
+}
+
+
+
+
+/* Password stuff */
+
+#password-container {
+	margin-bottom: -35px;
+}
+#eyeicon {
+	position: relative;
+	top: -19px;
+	left: 270px;
+	transform: translateY(-50%);
+	cursor: pointer;
+	opacity: 0.4;
+	width: 35px;
+	cursor: pointer;
+	border: none;
+}
+
+#eyeicon:hover {
+	opacity: 0.6;
 }

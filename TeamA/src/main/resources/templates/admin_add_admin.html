@@ -34,7 +34,6 @@
 		<div id="add-admin-container">
 			<a th:href="@{/home/admin/view/courses}" class="return_link">&lt;&lt; 講座一覧に戻る</a>
 			<h2>管理者を追加</h2>
-			<div id="form-container">
 				<section id="add-admin-form">
 					<form id="form" method="post" onSubmit="return checkPassword(this)"
 						th:action="@{/home/admin/register/process}" enctype="multipart/form-data">
@@ -42,24 +41,25 @@
 							<img id="admin_icon" th:src="@{/img/kiko.jpg}" height="200px" width="200px" alt="">
 							<input type="file" id="imgInp" name="admin_icon">
 						</div>
-						<label for="">管理者の名前</label>
-						<input type="text" name="admin_name" placeholder="admin name" required>
-						<label for="">管理者のメール</label>
-						<input type="text" name="admin_email" placeholder="admin email" required>
-						<label for="">パスワード</label>
-						<input type="password" name="password" id="password" placeholder="admin password" required>
-						<input type="checkbox" id="toggle-password" />
-						<label for="toggle-password" id="hide-text">Show Password</label>
-						<label for="">パスワード確認</label>
-						<input type="password" name="confirm_password" id="" placeholder="confrim admin password"
-							required>
-						<div id="form-buttons">
-							<a th:href="@{/home/admin/view/courses}" id="return">戻る</a>
-							<input type="submit" form="form" id="submit" value="登録">
+						<div id="form-inputs">
+							<label for="">管理者の名前</label>
+							<input type="text" name="admin_name" placeholder="admin name" required>
+							<label for="">管理者のメール</label>
+							<input type="text" name="admin_email" placeholder="admin email" required>
+							<label for="">パスワード</label>
+							<div id="password-container">
+								<input type="password" name="password" id="password" placeholder="password" required>
+								<img src="/img/close-eye.png" id="eyeicon">
+							</div>
+							<label for="">パスワード確認</label>
+							<input type="password" name="confirm_password" id="" placeholder="confrim admin password" required>
 						</div>
 					</form>
 				</section>
-			</div>
+				<div id="form-buttons">
+					<a th:href="@{/home/admin/view/courses}" id="return">戻る</a>
+					<input type="submit" form="form" id="submit" value="登録">
+				</div>
 		</div>
 	</main>
 
@@ -75,20 +75,25 @@
 	</footer>
 </body>
 <script>
-	const password = document.getElementById("password");
-	const togglePassword = document.getElementById("toggle-password");
+	let eyeicon = document.getElementById("eyeicon");
+	let password = document.getElementById("password");
 
-	togglePassword.addEventListener("click", toggleClicked);
-
-	function toggleClicked() {
-		password.classList.toggle("visible");
-		if (this.checked) {
+	eyeicon.onclick = function () {
+		if (password.type == "password") {
 			password.type = "text";
+			eyeicon.src = "/img/open-eye.png";
 		} else {
 			password.type = "password";
+			eyeicon.src = "/img/close-eye.png";
 		}
-	};
+	}
 
+	imgInp.onchange = evt => {
+		const [file] = imgInp.files
+		if (file) {
+			user_icon.src = URL.createObjectURL(file)
+		}
+	}
 	imgInp.onchange = evt => {
 		const [file] = imgInp.files
 		if (file) {
