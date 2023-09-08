@@ -19,7 +19,7 @@ import teamA.ex.model.entity.UserEntity;
 import teamA.ex.service.CourseService;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/home")
 public class UserCurtController {
 	
 	// 講座(Course)にアクセスして操作するため、CourseServiceクラスを使えるようにする。
@@ -33,13 +33,13 @@ public class UserCurtController {
 	
 	// 購入履歴情報テーブル(transaction_history)にアクセスして操作するため、
 	// TransasctionHistoryServiceクラス　を使えるようにする
-	@Autowired
-	TransactoinHistoryService transactoinHistoryService;
+//	@Autowired
+//	TransactionHistoryService transactionHistoryService;
 	
 	// 購入履歴情報テーブル(transaction_history)にアクセスして操作するため、
 	// TransactoinItemServiceクラス を使えるようにしておく
-	@Autowired
-	TransactoinItemService transactoinItemService;
+//	@Autowired
+//	TransactionItemService transactionItemService;
 	
 	
 	// メール送信用クラス
@@ -52,34 +52,34 @@ public class UserCurtController {
 //	SubscriptionService subscriptionService;
 	
 	
-	// メニュー画面 表示の処理
-	@GetMapping("")
-	public String getCourseViewPage(Model model) {
-		
-		// courseテーブルから公開されている講座情報のみ取得する
-		List<CourseEntity> courseList = courseService.findByDeleteFlagAndCurrentDate();
-		
-		// modelへ、courseテーブルから取得した情報をセットする。
-		model.addAttribute("courseList", courseList);
-		
-		// modelへ、logincheckメソッドから取得した情報をセットする
-//		model.addAttribute("loginflg",logincheck());
-		
-		//modelへ、loginUserNameメソッドから取得した情報をセットする。
-//		model.addAttribute("userName",loginUserName());
-		
-		return"user_view_courses.html";
-	
-	
-	}
-	
+//	// メニュー画面 表示の処理
+//	@GetMapping("")
+//	public String getCourseViewPage(Model model) {
+//		
+//		// courseテーブルから公開されている講座情報のみ取得する
+//		List<CourseEntity> courseList = courseService.findCoursesForUser();
+//		
+//		// modelへ、courseテーブルから取得した情報をセットする。
+//		model.addAttribute("courseList", courseList);
+//		
+//		// modelへ、logincheckメソッドから取得した情報をセットする
+////		model.addAttribute("loginflg",logincheck());
+//		
+//		//modelへ、loginUserNameメソッドから取得した情報をセットする。
+////		model.addAttribute("userName",loginUserName());
+//		
+//		return"user_view_courses.html";
+//	
+//	
+//	}
+//	
 	
 	// ログアウトの処理
-	@GetMapping("")
+	@GetMapping("/guest/view/courses")
 	public String getCourseLogoutViewPage(Model model) {
 		
 		// courseテーブルから公開されている講座情報のみ取得する
-		List<CourseEntity> courseList = courseService.findByDeleteFlagAndCurrentDate();
+		List<CourseEntity> courseList = courseService.findCoursesForUser();
 		
 		// modelへ、courseテーブルから取得した情報をセットする。
 		model.addAttribute("courseList", courseList);
@@ -95,16 +95,16 @@ public class UserCurtController {
 	}
 	
 	// 講座詳細の表示処理
-	@GetMapping("")
+	@GetMapping("/guest/view/courseinfo")
 	public String getCourseInfoViewPage(@PathVariable Long courseId,Model model) {
-		CourseEntity course = courseService.findByDeleteFlagAndCurrentDate(courseId);
+		CourseEntity course = courseService.getCourse(courseId);
 		model.addAttribute("course",course);
 //		model.addAttribute("loginFlg",logincheck());
 //		model.addAttribute("userName",loginUserName());
 		return"user_view_course_info.html";
 	}
 	
-	public boolean isCourseExist(Long CourseId,LinkedList<CourseEntity> list) {
+	public boolean isCourseExist(Long courseId,LinkedList<CourseEntity> list) {
 		Iterator<CourseEntity>ite = list.iterator();
 		boolean isExist = false;
 		while (ite.hasNext()) {
