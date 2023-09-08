@@ -135,7 +135,35 @@ public class UserCartController {
 //			return null;
 //		}
 //	}
-//	
+		
+	
+	// カートへの追加機能
+	@GetMapping("add/to/cart/{courseId}")
+	public String addCourseToCart(@PathVariable Long courseId) {
+//		Long courseId = course.getCourseId();
+		LinkedList<CourseEntity> cartList = (LinkedList<CourseEntity>) session.getAttribute("cart");
+		CourseEntity course = courseService.getCourse(courseId);
+		cartList.add(course);
+		return"redirect:/home/view/user/courses";
+	}
+		
+	
+	// カートからの削除機能
+	@GetMapping("delete/from/cart/{courseId}")
+	public String deleteCourseFromCart(@PathVariable Long courseId) {
+//		Long courseId = course.getCourseId();
+		
+		LinkedList<CourseEntity> cartList = (LinkedList<CourseEntity>) session.getAttribute("cart");
+		
+		for(int idx = 0; idx < cartList.size(); idx++) {
+			if(cartList.get(idx).getCourseId().equals(courseId)) {
+				cartList.remove(idx);
+				break;
+			}
+		};
+		return "redirect:/home/user/view/cart";
+	}
+	
 	
 	
 	
