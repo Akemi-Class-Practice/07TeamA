@@ -20,7 +20,7 @@ import teamA.ex.service.CourseService;
 
 @Controller
 @RequestMapping("/home")
-public class UserCurtController {
+public class UserCartController {
 	
 	// 講座(Course)にアクセスして操作するため、CourseServiceクラスを使えるようにする。
 	@Autowired
