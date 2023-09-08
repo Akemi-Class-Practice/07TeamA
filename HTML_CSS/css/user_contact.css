@@ -1,0 +1,39 @@
+#main-wrapper {
+    position: relative;
+    top: 100px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#return{
+    margin-bottom: 20px;
+}
+
+#return a:link, #return a:active, #return a:visited, #return a:hover {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+#message{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#body{
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+#contact-button{
+    height: 35px;
+    width: auto;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+}
