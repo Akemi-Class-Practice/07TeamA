@@ -22,9 +22,9 @@
             <ul>
                 <li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
                 <li><p th:text="${userName}"></p></li>
-                <li><a href="#">情報変更</a></li>
-                <li><a href="#">管理者追加</a></li>
-                <li><a href="#">ログアウト</a></li>
+                <li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
+                <li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+                <li><a th:href="@{/adminlogout}">ログアウト</a></li>
             </ul>
         </nav>
     </header>

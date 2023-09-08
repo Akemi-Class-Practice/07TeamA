@@ -2,118 +2,124 @@
 <html lang="jp">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
-     <link rel="stylesheet" th:href="@{/css/base.css}">
-    <link rel="stylesheet" th:href="@{/css/header.css}">
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
-    <link rel="stylesheet" th:href="@{/css/admin_add_admin.css}">
-    <title>07TeamA</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/base.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+	<link rel="stylesheet" th:href="@{/css/footer.css}">
+	<link rel="stylesheet" th:href="@{/css/admin_add_admin.css}">
+	<title>07TeamA</title>
 </head>
 
 <body>
-    <header>
-        <h1><a href="">07TeamA</a></h1>
-        <nav>
-            <ul>
-                <li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
-                <li><p>管理者名前</p></li>
-                <li><a href="#">情報変更</a></li>
-                <li><a href="#">管理者追加</a></li>
-                <li><a href="#">ログアウト</a></li>
-            </ul>
-        </nav>
-    </header>
+	<header>
+		<h1><a href="">07TeamA</a></h1>
+		<nav>
+			<ul>
+				<li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
+				<li>
+					<p th:text="${userName}"></p>
+				</li>
+				<li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
+				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
+			</ul>
+		</nav>
+	</header>
 
-    <main>
-        <div id="add-admin-container">
-            <a th:href="@{/home/admin/view/courses}" class="return_link">&lt;&lt; 講座一覧に戻る</a>
-            <h2>管理者を追加</h2>
-            <div id="form-container">
-            <section id="add-admin-form">
-                <form id="form" method="post" onSubmit="return checkPassword(this)" th:action="@{/home/admin/register/process}" enctype="multipart/form-data">
-					<div id="choose_admin_icon">
-                		<img id ="admin_icon" th:src="@{/img/kiko.jpg}" height="200px" width="200px" alt="">
-                		<input type="file" id="imgInp" name="admin_icon">
-            		</div>
-                    <label for="">管理者の名前</label>
-                    <input type="text" name="admin_name" placeholder="admin name" required>
-                    <label for="">管理者のメール</label>
-                    <input type="text" name="admin_email" placeholder="admin email" required>
-                    <label for="">パスワード</label>
-                    <input type="password" name="password" id="password" placeholder="admin password" required>
-                    <input type="checkbox" id="toggle-password" />
-                    <label for="toggle-password" id="hide-text">Show Password</label>
-                    <label for="">パスワード確認</label>
-                    <input type="password" name="confirm_password" id="" placeholder="confrim admin password" required>
-                    <div id="form-buttons">
-                		<a th:href="@{/home/admin/view/courses}" id="return">戻る</a>
-                		<input type="submit" form="form" id="submit" value="登録">
-           	 		</div>
-                </form>
-            </section>
-            </div>
-        </div>
-    </main>
+	<main>
+		<div id="add-admin-container">
+			<a th:href="@{/home/admin/view/courses}" class="return_link">&lt;&lt; 講座一覧に戻る</a>
+			<h2>管理者を追加</h2>
+			<div id="form-container">
+				<section id="add-admin-form">
+					<form id="form" method="post" onSubmit="return checkPassword(this)"
+						th:action="@{/home/admin/register/process}" enctype="multipart/form-data">
+						<div id="choose_admin_icon">
+							<img id="admin_icon" th:src="@{/img/kiko.jpg}" height="200px" width="200px" alt="">
+							<input type="file" id="imgInp" name="admin_icon">
+						</div>
+						<label for="">管理者の名前</label>
+						<input type="text" name="admin_name" placeholder="admin name" required>
+						<label for="">管理者のメール</label>
+						<input type="text" name="admin_email" placeholder="admin email" required>
+						<label for="">パスワード</label>
+						<input type="password" name="password" id="password" placeholder="admin password" required>
+						<input type="checkbox" id="toggle-password" />
+						<label for="toggle-password" id="hide-text">Show Password</label>
+						<label for="">パスワード確認</label>
+						<input type="password" name="confirm_password" id="" placeholder="confrim admin password"
+							required>
+						<div id="form-buttons">
+							<a th:href="@{/home/admin/view/courses}" id="return">戻る</a>
+							<input type="submit" form="form" id="submit" value="登録">
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
+	</main>
 
-    <footer>
-        <ul>
-            <li><a href="">情報変更</a></li>
-            <li><p> | </p></li>
-            <li><a href="">ログアウト</a></li>
-        </ul>
-        <p>Copyright @ 2023 Learner All Right Reserved.</p>
-    </footer>
+	<footer>
+		<ul>
+			<li><a href="">情報変更</a></li>
+			<li>
+				<p> | </p>
+			</li>
+			<li><a href="">ログアウト</a></li>
+		</ul>
+		<p>Copyright @ 2023 Learner All Right Reserved.</p>
+	</footer>
 </body>
 <script>
-    const password = document.getElementById("password");
-    const togglePassword = document.getElementById("toggle-password");
+	const password = document.getElementById("password");
+	const togglePassword = document.getElementById("toggle-password");
 
-    togglePassword.addEventListener("click", toggleClicked);
+	togglePassword.addEventListener("click", toggleClicked);
 
-    function toggleClicked() {
-        password.classList.toggle("visible");
-        if (this.checked) {
-            password.type = "text";
-        } else {
-            password.type = "password";
-        }
-    };
-
-    imgInp.onchange = evt => {
-        const [file] = imgInp.files
-        if (file) {
-            admin_icon.src = URL.createObjectURL(file)
-        }
-    }
-
-    function checkPassword(form) {
-			const password1 = form.password.value;
-			const password2 = form.confirm_password.value;
-
-			// If password not entered
-			if (password1 == '')
-				alert("Please enter Password");
-
-			// If confirm password not entered
-			else if (password2 == '')
-				alert("Please enter confirm password");
-
-			// If Not same return False.    
-			else if (password1 != password2) {
-				alert("\nPassword did not match: Please try again...")
-				return false;
-			}
-
-			// If same return True.
-			else {
-				alert("Password Match: Your account has been created!")
-				return true;
-			}
+	function toggleClicked() {
+		password.classList.toggle("visible");
+		if (this.checked) {
+			password.type = "text";
+		} else {
+			password.type = "password";
 		}
+	};
+
+	imgInp.onchange = evt => {
+		const [file] = imgInp.files
+		if (file) {
+			admin_icon.src = URL.createObjectURL(file)
+		}
+	}
+
+	function checkPassword(form) {
+		const password1 = form.password.value;
+		const password2 = form.confirm_password.value;
+
+		// If password not entered
+		if (password1 == '')
+			alert("Please enter Password");
+
+		// If confirm password not entered
+		else if (password2 == '')
+			alert("Please enter confirm password");
+
+		// If Not same return False.    
+		else if (password1 != password2) {
+			alert("\nPassword did not match: Please try again...")
+			return false;
+		}
+
+		// If same return True.
+		else {
+			alert("Password Match: Your account has been created!")
+			return true;
+		}
+	}
 </script>
 
 </html>
