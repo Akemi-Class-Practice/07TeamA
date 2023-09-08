@@ -1,6 +1,7 @@
 package teamA.ex.controller;
 
 import java.nio.file.Files;
+
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,12 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
 import teamA.ex.service.AdminService;
 
+@RequestMapping("/home")
 @Controller
 public class AdminRegisterController {
 	
@@ -43,6 +46,6 @@ public class AdminRegisterController {
 		}
 		
 		adminService.createAdmin(adminImgFileName, admin_name, admin_email, password);
-		return "redirect:/admin/register";
+		return "redirect:/home/admin/register";
 	}
 }
