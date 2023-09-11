@@ -42,16 +42,13 @@ public class CourseController {
 	public String getAdminCourseViewPage(Model model) {
 		
 		// セッションから現在の管理者情報を取得するため、sessionオブジェクトを使用
-		AdminEntity adminList = (AdminEntity) session.getAttribute("admin");
-		
-		// adminListから現在ログインしている人のユーザー名を取得
-		String adminName = adminList.getAdminName();
+		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
 		
 		//courseServiceのfindAllCoursePostメソッドを呼び出し、現在の管理者に関する講座を取得
 		//戻り値はCourseEntityのリストで、このリストをmodelに追加
 		List<CourseEntity> courseList = courseService.findAll();
 		
-		model.addAttribute("adminName", adminName);
+		model.addAttribute("admin", admin);
 		model.addAttribute("courseList", courseList);
 		return "admin_view_courses.html";
 	}

@@ -15,4 +15,5 @@ public interface AdminDao extends JpaRepository<AdminEntity, Long> {
 	// データベース内のAdminEntityの中から、emailとpasswordと一致するものを検索し、それを返す
 	AdminEntity findByAdminEmailAndPassword(String email, String password);
 
+	AdminEntity findByAdminId(Long adminId);
 }
