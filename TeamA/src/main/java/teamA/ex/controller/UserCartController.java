@@ -77,32 +77,13 @@ public class UserCartController {
 
 	}
 
-//	public boolean loginCheck() {
-//		if (session.getAttribute("user") == null) {
-//			return false;
-//		} else {
-//			return true;
-//		}
-//	}
-//
-//	public String loginUserName() {
-//		if (loginCheck() == true) {
-//			UserEntity student = (UserEntity) session.getAttribute("user");
-//			String userName = user.getUserName();
-//			return userName;
-//		} else {
-//			return null;
-//		}
-//	}
-
 	// カートへの追加機能
 	@GetMapping("/add/to/cart/{courseId}")
 	public String addCourseToCart(@PathVariable Long courseId) {
-//		Long courseId = course.getCourseId();
 		LinkedList<CourseEntity> cartList = (LinkedList<CourseEntity>) session.getAttribute("cart");
 		CourseEntity course = courseService.getCourse(courseId);
 		cartList.add(course);
-		return "redirect:/home/view/user/courses";
+		return "redirect:/home/user/view/courses";
 	}
 
 	// カートからの削除機能

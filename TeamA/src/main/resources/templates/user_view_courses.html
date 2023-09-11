@@ -54,7 +54,7 @@
 							<p th:text="${course.courseFee}" class="course-price"></p>
 						</div>
 						<p th:text="${course.courseInfo}" class="course-description"></p>
-						<a class="course-buy-bttn" href="#">カートに入れる</a>
+						<a class="course-buy-bttn" th:href="@{/home/add/to/cart/{courseId}(courseId=${course.courseId})}">カートに入れる</a>
 					</div>
 				</article>
 
