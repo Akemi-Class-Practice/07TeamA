@@ -99,7 +99,7 @@ public class UserCartController {
 				break;
 			}
 		};
-		return "redirect:/home/user/view/cart";
+		return "redirect:/home/cart";
 	}
 
 //	// カートの中身を見るための機能(もしかしたらいらない)
