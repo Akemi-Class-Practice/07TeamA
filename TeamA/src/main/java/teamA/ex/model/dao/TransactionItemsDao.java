@@ -10,6 +10,6 @@ public interface TransactionItemsDao extends JpaRepository<TransactionItemsEntit
 	TransactionItemsEntity save(TransactionItemsEntity transactionItemsEntity);
 	
 	@Transactional
-	List<TransactionItemsEntity> deleteByTransactionId(Long transactiionId);
+	List<TransactionItemsEntity> deleteByTransactionId(Long transactionId);
 
 }
