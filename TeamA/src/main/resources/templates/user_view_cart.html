@@ -16,16 +16,16 @@
 
 <body>
 	<header>
-		<h1><a href="#">07TeamA</a></h1>
+		<h1><a th:href="@{/home/user/view/courses}">07TeamA</a></h1>
 		<nav>
 			<ul>
-				<li><a href="#"><img th:src="@{/img/kiko.jpg}" alt="user_icon"></a></li>
-				<li><a href="#">ユーザー名前</a></li>
+				<li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
+				<li><p th:text="${user.getStudentName}"></p></li>
 				<li><a href="#">購入履歴</a></li>
-				<li><a href="#">情報変更</a></li>
+				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
 				<li><a href="#">お問い合わせ</a></li>
-				<li><a href="#">ログアウト</a></li>
-				<li><a href="#"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+				<li><a th:href="@{/userlogout}">ログアウト</a></li>
+				<li><a th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
 			</ul>
 		</nav>
 	</header>
@@ -35,42 +35,28 @@
             <section id="total">
                 <div id="total-header">
                     <h2>カート</h2>
-                    <p class="total-price">2,000yen</p>
+                    <p class="total-price" th:text="${totalPrice}"></p>
                 </div>
             </section>
 
             <section id="cart">
-                <article class="course">
+                <article class="course" th:each="course:${list}">
 					<div class="course-image">
-						<img src="img/kiko.jpg" alt="" height="200px" width="200px">
+						<img th:src="@{/course-img/{img}(img=${course.courseImage})}" alt="" height="200px" width="200px">
 					</div>
 					<div class ="course-info">
 						<div class="course-name-price">
-							<h2>Course name</h2>
-							<p class="course-price">1,000yen</p>
+							<h2 th:text="${course.courseName}"></h2>
+							<p class="course-price" th:text="${course.courseFee}"> yen</p>
 						</div>
-						<p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-						<a class="course-delete-bttn" href="#">カートから削除</a>
-					</div>
-				</article>
-
-                <article class="course">
-					<div class="course-image">
-						<img src="img/kiko.jpg" alt="" height="200px" width="200px">
-					</div>
-					<div class ="course-info">
-						<div class="course-name-price">
-							<h2>Course name</h2>
-							<p class="course-price">1,000yen</p>
-						</div>
-						<p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-						<a class="course-delete-bttn" href="#">カートから削除</a>
+						<p class="course-description" th:text="${course.courseInfo}"></p>
+						<a class="course-delete-bttn" th:href="@{/home/delete/from/cart/{courseId}(courseId=${course.courseId})}" onclick="alert('カートから削除しました')">カートから削除</a>
 					</div>
 				</article>
             </section>
             
             <section id="total-footer">
-                <p class="total-price">2,000yen</p>
+                <p class="total-price" th:text="${totalPrice}"></p>
             </section>
 
             <section id="buy-button">

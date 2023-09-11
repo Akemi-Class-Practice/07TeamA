@@ -88,9 +88,8 @@ public class UserCartController {
 
 	// カートからの削除機能
 	@GetMapping("/delete/from/cart/{courseId}")
-	public String deleteCourseFromCart(@PathVariable Long courseId) {
+	public String deleteCourseFromCart(@PathVariable Long courseId, Model model) {
 //		Long courseId = course.getCourseId();
-
 		LinkedList<CourseEntity> cartList = (LinkedList<CourseEntity>) session.getAttribute("cart");
 
 		for (int idx = 0; idx < cartList.size(); idx++) {
@@ -117,6 +116,14 @@ public class UserCartController {
 	@GetMapping("/cart")
 	public String getCartPage(Model model) {
 		LinkedList<CourseEntity> list = (LinkedList<CourseEntity>) session.getAttribute("cart");
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		int totalPrice = 0;
+		for (int idx = 0; idx < list.size(); idx++) {
+			totalPrice += list.get(idx).getCourseFee();
+		};
+		
+		model.addAttribute("user", user);
+		model.addAttribute("totalPrice", totalPrice);
 		model.addAttribute("list", list);
 		return "user_view_cart.html";
 	}
