@@ -36,6 +36,7 @@ public class UserService {
 		public UserEntity findByStudentId(Long studentId) {
 			return userDao.findByStudentId(studentId);
 		}
+		
 		//Registerの処理
 		public boolean createAccount(String studentIcon,String studentName,String studentEmail, String password) {
 			UserEntity userEntity = userDao.findByStudentEmail(studentEmail);

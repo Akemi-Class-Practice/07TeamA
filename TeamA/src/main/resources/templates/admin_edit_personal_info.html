@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="jp">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" th:href="@{/css/base.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+	<link rel="stylesheet" th:href="@{/css/footer.css}">
+	<link rel="stylesheet" th:href="@{/css/user_edit_personal_info.css}">
+	<title>HTML | Template</title>
+</head>
+
+<body>
+	<header>
+		<h1><a href="#">07TeamA</a></h1>
+		<nav>
+            <ul>
+                <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
+                <li><p th:text="${admin.getAdminName}"></p></li>
+                <li><a href="#">情報変更</a></li>
+                <li><a href="#">管理者追加</a></li>
+                <li><a href="#">ログアウト</a></li>
+            </ul>
+        </nav>
+	</header>
+
+	<main>
+		<div id="change-user-info-container">
+			<a href="#" class="return_link">&lt;&lt; 講座一覧に戻る</a>
+			<h2>ユーザー情報を変更</h2>
+			<section id="change-user-info-form">
+				<form id="form" method="post"
+					th:action="@{/home/editadmininfo/confirmadmininfo}" enctype="multipart/form-data">
+					<div id="choose-user-icon">
+						<img id="admin_icon" th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" height="200px" width="200px" alt="">
+						<input type="file" id="imgInp" name="newIcon">
+					</div>
+					<div id="form-inputs">
+						<label for="">ユーザーの名前</label>
+						<input type="text" name="newName" id="" th:value="${admin.getAdminName}" >
+						<label for="">ユーザーのメール</label>
+						<input type="text" name="newEmail" id="" th:value="${admin.getAdminEmail}" >
+						<label for="">パスワード</label>
+						<div id="password-container">
+							<input type="password" name="newPassword" id="password" >
+							<img src="/img/close-eye.png" id="eyeicon">
+						</div>
+						<label for="">パスワード確認</label>
+						<input type="password" name="confirm_password" id="" placeholder="パスワード確認" >
+					</div>
+				</form>
+			</section>
+			<div id="form-buttons">
+				<a href="#" id="return">戻る</a>
+				<input type="submit" form="form" id="submit" value="変更">
+			</div>
+
+		</div>
+	</main>
+
+    <footer>
+        <ul>
+            <li><a href="">情報変更</a></li>
+            <li><p> | </p></li>
+            <li><a href="">ログアウト</a></li>
+        </ul>
+        <p>Copyright @ 2023 Learner All Right Reserved.</p>
+    </footer>
+</body>
+<script>
+	let eyeicon = document.getElementById("eyeicon");
+	let password = document.getElementById("password");
+
+	eyeicon.onclick = function () {
+		if (password.type == "password") {
+			password.type = "text";
+			eyeicon.src = "/img/open-eye.png";
+		} else {
+			password.type = "password";
+			eyeicon.src = "/img/close-eye.png";
+		}
+	}
+
+	imgInp.onchange = evt => {
+		const [file] = imgInp.files
+		if (file) {
+			user_icon.src = URL.createObjectURL(file)
+		}
+	}
+</script>
+</html>

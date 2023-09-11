@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import teamA.ex.model.dao.AdminDao;
 import teamA.ex.model.entity.AdminEntity;
+import teamA.ex.model.entity.UserEntity;
 
 @Service
 public class AdminService {
@@ -47,6 +48,10 @@ public class AdminService {
 			}
 		}
 		
+	public AdminEntity findByAdminId(Long adminId) {
+		return adminDao.findByAdminId(adminId);
+	}
+		
 	//Registerの処理
 	public boolean createAdmin(String adminIcon, String adminName, String adminEmail, String password) {
 		AdminEntity adminEntity = adminDao.findByAdminEmail(adminEmail);
@@ -66,6 +71,34 @@ public class AdminService {
 			return true;
 		}else {
 			return false;
+		}
+	}
+	
+	public boolean updateAdmin(String currentUserEmail, String newIcon, String newUserName, String newUserEmail) {
+		AdminEntity admin = adminDao.findByAdminEmail(currentUserEmail);
+		
+		if (admin==null) {
+			return false;
+		} else {
+			admin.setAdminIcon(newIcon);
+			admin.setAdminName(newUserName);
+			admin.setAdminEmail(newUserEmail);
+			adminDao.save(admin);
+			return true;
+		}
+	}
+	
+	public boolean updateAdminPassword(String currentUserEmail, String newPassword) {
+		AdminEntity admin = adminDao.findByAdminEmail(currentUserEmail);
+		String salt = admin.getSalt();
+		String newPasswordHash = hashPassword(newPassword+salt);
+		
+		if (admin==null) {
+			return false;
+		} else {
+			admin.setPassword(newPasswordHash);
+			adminDao.save(admin);
+			return true;
 		}
 	}
 }
