@@ -19,7 +19,7 @@ public class TransactionHistoryService {
 		transactionHistoryDao.save(new TransactionHistoryEntity(studentId,amount,transactionDate));
 	}
 	public TransactionHistoryEntity getTransactoinId(Long studentId) {
-		return transactionHistoryDao.findByStudentId(studentId);
+		return transactionHistoryDao.getLatestByStudentId(studentId);
 	}
 	//取引履歴の削除処理
 	public List<TransactionHistoryEntity> deleteTransactoinId(Long transactionId) {
