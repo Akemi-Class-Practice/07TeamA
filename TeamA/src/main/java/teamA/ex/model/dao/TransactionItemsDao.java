@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import jakarta.transaction.Transactional;
 
-public interface TransactionItemsDao extends JpaRepository<TransactionItemEntity, Long> {
-	TransactionItemEntity save(TransactionItemEntity transactionItemEntity);
+public interface TransactionItemsDao extends JpaRepository<TransactionItemsEntity, Long> {
+	TransactionItemsEntity save(TransactionItemsEntity transactionItemsEntity);
 	
 	@Transactional
-	List<TransactionItemEntity> deleteByTransactionId(Long transactiionId);
+	List<TransactionItemsEntity> deleteByTransactionId(Long transactiionId);
 
 }
