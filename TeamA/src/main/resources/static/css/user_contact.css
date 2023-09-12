@@ -15,15 +15,33 @@
     text-decoration: none;
 }
 
+#main-body{
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+}
+
 #message{
     text-align: center;
     margin-bottom: 10px;
 }
 
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.title{
+    display: flex;
+    width: 390px;
+    padding: 3px;
+    margin: 10px 0;
+}
+
 #body{
     min-width: 400px;
     min-height: 300px;
-    margin: 20px auto;
+    margin: 10px auto;
     display: block;
 }
 
