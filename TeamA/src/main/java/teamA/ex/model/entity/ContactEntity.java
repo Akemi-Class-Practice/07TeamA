@@ -38,8 +38,8 @@ public class ContactEntity {
 	private String contactDetail;
 	
 	@NonNull
-	@Column(name = "user_id")
-	private Long userId;
+	@Column(name = "student_id")
+	private Long studentId;
 	
 	@NonNull
 	@Column(name = "is_done")
