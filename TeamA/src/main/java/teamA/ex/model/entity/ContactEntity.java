@@ -1,7 +1,5 @@
 package teamA.ex.model.entity;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,8 +27,11 @@ public class ContactEntity {
 	@Column(name = "contact_id")
 	//PKを自動生成する方法を指定します
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
 	private Long contactId;
+	
+	@NonNull
+	@Column(name = "contact_title")
+	private String contactTitle;
 	
 	@NonNull
 	@Column(name = "contact_detail")
@@ -38,6 +39,10 @@ public class ContactEntity {
 	
 	@NonNull
 	@Column(name = "user_id")
-	private Long userId;	
+	private Long userId;
+	
+	@NonNull
+	@Column(name = "is_done")
+	private int isDone;
 
 }
