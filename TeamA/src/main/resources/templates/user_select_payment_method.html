@@ -34,50 +34,67 @@
     <main>
         <div id="main-wrapper">
             <section id="return">
-                <a href="">＜＜カートに戻る</a>
+                <a th:href="@{/home/cart}">＜＜カートに戻る</a>
             </section>
+            
+            <h2>支払い方法を選択してください</h2>
 
             <section id="total">
                 <div id="total-header">
                     <p>合計金額</p>
-                    <p class="total-price">4,000円</p>
+                    <p class="total-price" th:text="${totalPrice} + '円'"></p>
                 </div>
             </section>
+            
+            <section id="course-list">
+				<ul>
+					<li th:each="course:${cartList}">
+						<p th:text="${course.courseName}"></p>
+						<p th:text="${course.courseFee}"></p>
+					</li>
+				</ul>
+			</section>
+			
+			<div id="total-footer">
+                   <p>合計金額</p>
+                    <p class="total-price" th:text="${totalPrice} + '円'"></p>
+            </div>
+			
+			<h2>支払い方法を選択してください</h2>
+							
             <div>
                 <a href="#" class="payment-method-button" id="credit-card">
-                    <img src="./img/credit-card.jpg" alt="クレジットカード">
+                    <img th:src="@{/img/credit-card.jpg}" alt="クレジットカード">
                     <span>クレジットカード</span>
                 </a>
 
                 <a href="#" class="payment-method-button">
-                    <img src="./img/paypay.jpg" alt="ペイペイ">
+                    <img th:src="@{/img/paypay.jpg}" alt="ペイペイ">
                     <span>PayPay</span>
                 </a>
 
                 <a href="#" class="payment-method-button">
-                    <img src="./img/bank-transfer.jpg" alt="口座振込">
+                    <img th:src="@{/img/bank-transfer.jpg}" alt="口座振込">
                     <span>口座振込</span>
                 </a><br>
 
                 <a href="#" class="payment-method-button" id="PayPal">
-                    <img src="./img/PayPal.jpg" alt="ペイパル">
+                    <img th:src="@{/img/PayPal.jpg}" alt="ペイパル">
                     <span>PayPal</span>
                 </a>
 
                 <a href="#" class="payment-method-button">
-                    <img src="./img/convenience-store.jpg" alt="コンビニ決済">
+                    <img th:src="@{/img/convenience-store.jpg}" alt="コンビニ決済">
                     <span>コンビニ決済</span>
                 </a>
             </div>
             <div>
-                <section>
-                    <h2>支払い方法を選択してください</h2>
-                </section>
+
 
 
 
                 <section id="payment-button">
-                    <a class="payment-button" href="">支払いに進む</a>
+                    <a class="payment-button" th:href="@{/home/paymentdetails}">支払いに進む</a>
                 </section>
             </div>
 

@@ -40,7 +40,7 @@
             <section id="total">
                 <div id="total-header">
                     <h2>合計金額</h2>
-                    <p class="total-price">4,000円</p>
+                    <p class="total-price" th:text="${totalPrice} + '円'"></p>
                 </div>
             </section>
 
@@ -48,38 +48,17 @@
                 <h2>支払い情報を入力してください</h2>
             </section>
 
-            <section id="total-course">
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-            </section>
+                        <section id="course-list">
+				<ul>
+					<li th:each="course:${cartList}">
+						<p th:text="${course.courseName}"></p>
+						<p th:text="${course.courseFee}"></p>
+					</li>
+				</ul>
+			</section>
 
             <section id="credit-card">
-                <form th:action="@{}" id="credit" method="post">
+                <form id="credit" method="post">
                     <input type="text" id="credit-number" placeholder="クレジットカード番号" required>
                     <input type="text" id="credit-name" placeholder="クレジットカード名前" required>
                     <div id="credit-card-cvv">
@@ -90,7 +69,7 @@
             </section>
 
             <section id="buy-button">
-                <a class="total-buy-bttn" href="">支払い</a>
+                <a class="total-buy-bttn" th:href="@{/home/makepayment}">支払い</a>
             </section>
 
 

@@ -14,10 +14,11 @@ public class TransactionHistoryService {
 	@Autowired
 	private TransactionHistoryDao transactionHistoryDao;
 	//取引履歴の保存処理
-	public void createTransactoinHistory(Long studentId,int amount) {
+	public void createTransactionHistory(Long studentId,int amount) {
 		LocalDateTime transactionDate = LocalDateTime.now();
 		transactionHistoryDao.save(new TransactionHistoryEntity(studentId,amount,transactionDate));
 	}
+	
 	public TransactionHistoryEntity getTransactoinId(Long studentId) {
 		return transactionHistoryDao.getLatestByStudentId(studentId);
 	}

@@ -25,11 +25,9 @@ import lombok.RequiredArgsConstructor;
 public class ContactEntity {
 	
 	@Id
-	
 	@Column(name = "contact_id")
 	//PKを自動生成する方法を指定します
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
 	private Long contactId;
 	
 	@NonNull

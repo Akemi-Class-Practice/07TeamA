@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Entity
-@Table(name="transaction_item")
+@Table(name="transaction_items")
 public class TransactionItemsEntity {
 	@Id
 	@Column(name="id")
