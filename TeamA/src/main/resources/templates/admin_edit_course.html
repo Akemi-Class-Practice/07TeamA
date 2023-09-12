@@ -28,6 +28,7 @@
 				</li>
 				<li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
 				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+				<li><a href="#">お問い合わせ</a></li>
 				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
 			</ul>
 		</nav>
@@ -114,12 +115,10 @@
 
 	<footer>
 		<ul>
-			<li><a href="">情報変更</a></li>
-			<li>
-				<p> | </p>
-			</li>
-			<li><a href="">ログアウト</a></li>
-		</ul>
+            <li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
+            <li><p> | </p></li>
+            <li><a th:href="@{/adminlogout}">ログアウト</a></li>
+        </ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
 	</footer>
 </body>
