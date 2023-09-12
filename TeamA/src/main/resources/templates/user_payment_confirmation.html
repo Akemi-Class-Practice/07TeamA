@@ -33,13 +33,13 @@
 	<main>
         <div id="main-wrapper">
             <section id="return">
-                <a href="">＜＜講座一覧に戻る</a>
+                <a th:href="@{/home/user/view/courses}">＜＜講座一覧に戻る</a>
             </section>
 
             <section id="total">
                 <div id="total-header">
                     <h2>合計金額</h2>
-                    <p class="total-price">4,000円</p>
+                    <p class="total-price" th:text="${totalPrice} + '円'"></p>
                 </div>
             </section>
     
@@ -47,35 +47,14 @@
                 <h2><span id="check">✔</span>お支払い完了</h2>
             </section>
     
-            <section id="total-course">
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-    
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-    
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-    
-                <li class="total-list">
-                    <div class="course-name-price">
-                        <p class="course-name">講座名</p>
-                        <p class="course-price">1,000円</p>
-                    </div>
-                </li>
-            </section>
+                        <section id="course-list">
+				<ul>
+					<li th:each="course:${cartList}">
+						<p th:text="${course.courseName}"></p>
+						<p th:text="${course.courseFee} + '円'"></p>
+					</li>
+				</ul>
+			</section>
 
             <section id="move-page">
                 <a href="" class="course-list">講座一覧に戻る</a>

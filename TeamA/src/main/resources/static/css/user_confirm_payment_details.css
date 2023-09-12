@@ -111,3 +111,25 @@
     transition: all .2s ease;
     filter:brightness(90%);
 }
+
+#course-list {
+    width: 550px;
+    background-color: var(--content_background);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    margin: 0 auto;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+#course-list ul {
+    margin: 0 auto;
+}
+
+#course-list ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px 5px 10px;
+}
+
+#course-list ul li:nth-child(odd) {
+ background-color: rgb(226, 226, 226);
+}

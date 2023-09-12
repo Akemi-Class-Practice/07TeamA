@@ -33,9 +33,14 @@
 	<main>
         <div id="main-wrapper">
             <section id="total">
+				
+			<section id="return">
+                <a th:href="@{/home/cart}">＜＜カートに戻る</a>
+            </section>
+            
                 <div id="total-header">
                     <h2>カート</h2>
-                    <p class="total-price" th:text="${totalPrice}"></p>
+                    <p class="total-price" th:text="${totalPrice} + '円'"></p>
                 </div>
             </section>
 
@@ -47,7 +52,7 @@
 					<div class ="course-info">
 						<div class="course-name-price">
 							<h2 th:text="${course.courseName}"></h2>
-							<p class="course-price" th:text="${course.courseFee}"> yen</p>
+							<p class="course-price" th:text="${course.courseFee} + '円'"></p>
 						</div>
 						<p class="course-description" th:text="${course.courseInfo}"></p>
 						<a class="course-delete-bttn" th:href="@{/home/delete/from/cart/{courseId}(courseId=${course.courseId})}" onclick="alert('カートから削除しました')">カートから削除</a>
@@ -56,11 +61,11 @@
             </section>
             
             <section id="total-footer">
-                <p class="total-price" th:text="${totalPrice}"></p>
+                <p class="total-price" th:text="${totalPrice} + '円'"></p>
             </section>
 
             <section id="buy-button">
-                <a class="total-buy-bttn" href="">購入</a>
+                <a class="total-buy-bttn" th:href="@{/home/choosepaymentmethod}">購入</a>
             </section>
 
 
