@@ -1,0 +1,67 @@
+#main-wrapper {
+    position: relative;
+    top: 100px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#return{
+    margin-bottom: 20px;
+}
+
+#return a:link, #return a:active, #return a:visited, #return a:hover {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+.total{
+    list-style: none;
+    padding-left: 0;
+    height: auto;
+    width: 550px;
+    background-color: var(--content_background);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.date-price{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.course{
+    display: flex;
+    margin : 10px auto;
+}
+
+.total-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.course-name {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.course-price{
+    /* display: flex; */
+    font-weight: bold;
+    text-align: right;
+}
+
+.course-name-price{
+    display:flex;
+    justify-content:space-between;
+    width: 50%;
+}
+
+.footer-price{
+    display: flex;
+    justify-content: right;
+    margin: 10px auto;
+}
