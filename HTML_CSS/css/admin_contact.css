@@ -16,7 +16,8 @@ li{
 .content .page-title{
     display: flex;
 	justify-content: center;
-	margin-bottom: 1.5rem;
+    margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 section{
@@ -26,41 +27,124 @@ section{
 	font-size: 1.1rem;
 }
 
+.messages-button button{
+    width: 80px;
+	height: 35px;
+	margin: 50px 20px;
+	border-radius: 3px;
+	outline: none;
+	cursor: pointer;
+}
+
+#unread{
+    background: var(--green);
+    color: var(--text);
+    font-weight: 500;
+}
+
+#read{
+    background: var(--blue);
+    color: var(--text);
+    font-weight: 500;
+}
+
 .messages-item{
     border-bottom: 1px solid #d3d3d3;
     padding: 20px 5px;
-    text-align: left;
+    /* text-align: left; */
 }
 
 .messages-item ul {
     display: flex;
     justify-content:space-between;
-    /* transform: translate(-60px); */
+}
+
+.messages-item ul li{
+   width: 20%;
+   text-align: left;
+}
+
+.messages-item ul li:nth-child(-n+2){
+    width: 10%;
+    text-align: left;
+ }
+
+ .messages-item ul li:nth-child(4){
+    width: 30%;
+    text-align: left;
+ }
+
+ .messages-item ul li:nth-child(last){
+    width: 10%;
+    text-align: left;
+ }
+
+.visible p{
+    width: 20%;
+    text-align: left;
+}
+
+.visible p:nth-child(-n+2){
+    width: 10%;
+    text-align: left;
+}
+
+.visible p:nth-child(4){
+    width: 30%;
+    text-align: left;
+}
+
+.visible p:nth-child(last){
+    width: 10%;
+    text-align: left;
 }
 
 
 .messages-detail ul{
+    display: flex;
+    flex-direction: column;
+    /* border-bottom: 1px solid #d3d3d3; */
+}
+
+
+.messages-detail ul li{
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #d3d3d3;
 }
 
-.messages-detail #visible{
+.toggle{
+    text-decoration: none;
+    color: var(--orange);
+}
+
+
+.messages-detail .visible{
     display: flex;
     justify-content: space-between;
 }
 
-.messages-detail #hidden{
-    padding: 20px;
+.messages-detail li{
+    display: flex;
+    justify-content: space-between;
 }
 
 .messages-detail li {
     display: inline-block;
 	padding:5px;
-	/* text-align: left; */
 	color: var(--text);
 }
 
 
-
+.hidden{
+    padding: 20px;
+    position: relative;
+    background: var(--background);
+    color: var(--text);
+    display: none;
+    border: transparent;
+    box-shadow: -6px 4px 5px -1px #ccc inset ;
+}
 
 .delete{
     color: var(--red);
