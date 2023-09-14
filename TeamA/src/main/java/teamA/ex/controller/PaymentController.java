@@ -83,10 +83,10 @@ public class PaymentController {
 			Long courseId = cartList.get(idx).getCourseId();
 			transactionItemsService.createTransactionHistory(transactionId, courseId);
 		}
-		
+		cartList.clear();
 		model.addAttribute("totalPrice", totalPrice);
 		model.addAttribute("cartList", cartList);
-		model.addAttribute("user", user);
+		model.addAttribute("user", user);		
 		return "user_payment_confirmation.html";
 	}
 }
