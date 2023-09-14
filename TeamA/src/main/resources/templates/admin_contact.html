@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="jp">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/admin_contact.css">
+    <title>HTML | Template</title>
+</head>
+
+<body>
+    <header>
+        <h1><a href="">07TeamA</a></h1>
+        <nav>
+            <ul>
+                <li><img src="img/kiko.jpg" alt="admin_icon"></li>
+                <li>
+                    <p>管理者名前</p>
+                </li>
+                <li><a href="#">情報変更</a></li>
+                <li><a href="#">管理者追加</a></li>
+                <li><a href="#">ログアウト</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="content">
+            <h2 class="page-title">お問い合わせリスト</h2>
+
+            <section id="messages">
+
+                <div class="messages-button">
+                    <button name="unread" id="unread">未読</button>
+                    <button name="read" id="read">既読</button>
+                </div>
+
+                <div class="messages-item">
+                    <ul>
+                        <li>既読</li>
+                        <li>ID：</li>
+                        <li>Email</li>
+                        <li>タイトル</li>
+                        <li>日付</li>
+                        <li>削除</li>
+                    </ul>
+                </div>
+
+                <div class="messages-detail">
+                    <ul id="message-list">
+                        <li>
+                            <div class="visible">
+                                <p><input type="checkbox"></p>
+                                <p>1</p>
+                                <p>test@test.com</p>
+                                <p><a href="#" class="toggle">Javaに関するお問合せ</a></p>
+                                <p>2023/09/12</p>
+                                <p><a href="#" class="delete"><span class="material-symbols-outlined">Close</span></a></p>
+                            </div>
+                            <div class="hidden">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="visible">
+                                <p><input type="checkbox"></p>
+                                <p>1</p>
+                                <p>tester@test.com</p>
+                                <p><a href="#" class="toggle">PHPに関するお問合せ</a></p>
+                                <p>2023/12/12</p>
+                                <p><a href="#" class="delete"><span class="material-symbols-outlined">Close</span></a></p>
+                            </div>
+                            <div class="hidden">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="">情報変更</a></li>
+            <li>
+                <p> | </p>
+            </li>
+            <li><a href="">ログアウト</a></li>
+        </ul>
+        <p>Copyright @ 2023 Learner All Right Reserved.</p>
+    </footer>
+
+    <script>
+
+        // すべての要素に同じクラスを持つ要素を取得
+        const contactToggles = document.querySelectorAll(".toggle");
+        const contactContents = document.querySelectorAll(".hidden");
+
+        // 各要素にイベントリスナーを適用
+        for (let i = 0; i < contactToggles.length; i++) {
+            contactToggles[i].addEventListener("click", function () {
+                // 対応するコンテンツ要素を取得
+                const content = contactContents[i];
+
+                // コンテンツの表示/非表示を切り替える
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
