@@ -22,5 +22,9 @@ public class TransactionItemsService {
 	public List<TransactionItemsEntity> deleteTransactionId(Long transactionId) {
 		return transactionItemsDao.deleteByTransactionId(transactionId);
 	}
+	
+	public List<TransactionItemsEntity> findByTransactionId(Long transactionId) {
+		return transactionItemsDao.findByTransactionId(transactionId);
+	}
 
 }

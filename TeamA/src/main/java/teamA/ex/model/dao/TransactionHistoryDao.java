@@ -17,5 +17,9 @@ public interface TransactionHistoryDao extends JpaRepository<TransactionHistoryE
 	
 	@Transactional
 	List<TransactionHistoryEntity> deleteByTransactionId(Long transactionId);
+	
+	//ユーザーのTransactionをすべて取得するクエリ
+	@Query(value="SELECT * FROM transaction_history WHERE student_id = ? ORDER BY transaction_date DESC", nativeQuery = true)
+	List<TransactionHistoryEntity> findUserTransactionHistoryByUserId(Long user_id);
 
 }
