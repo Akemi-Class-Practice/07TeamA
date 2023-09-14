@@ -69,16 +69,19 @@ public class CourseController {
 	}
 
 
-	@GetMapping("/editcourse/{courseId}")
-	public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
-		CourseEntity course = courseService.getCourse(courseId);
-		if(course == null) {
-			return "redirect:/home/admin/view/courses";
-		} else {
-			model.addAttribute("course", course);
-			return "admin_edit_course.html";
-		}
-	}
+//	@GetMapping("/editcourse/{courseId}")
+//	public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
+//		CourseEntity course = courseService.getCourse(courseId);
+//		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+//		
+//		if(course == null) {
+//			return "redirect:/home/admin/view/courses";
+//		} else {
+//			model.addAttribute("admin", admin);
+//			model.addAttribute("course", course);
+//			return "admin_edit_course.html";
+//		}
+//	}
 	
 	
 //講座追加機能
@@ -127,11 +130,12 @@ public class CourseController {
 		public String getEditPage(@PathVariable Long courseId, Model model) {
 		// courseIdを使ってCourseEntityを作って
 		CourseEntity course = courseService.getCourse(courseId);
-		
+		AdminEntity admin = (AdminEntity) session.getAttribute("admin");	
 		if (course == null) {
 			return "redirect:/home/admin/view/courses";
 		} else {
 			// 行き先のページにCourseのインスタンスをモデルでビューに渡して
+			model.addAttribute("admin", admin);
 			model.addAttribute("course", course);
 			return "admin_edit_course.html";
 		}
@@ -163,13 +167,14 @@ public class CourseController {
 	//削除機能
 	@GetMapping("/course/delete/{courseId}")
 	public String courseDelete(@PathVariable Long courseId,Model model) {
-		//現在ログインしている管理者情報を取得する
-		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
-		//現在ログインしている人の名前を取得する
-		String loginAdminName = admin.getAdminName();
-		courseService.deleteCourse(courseId);
-		model.addAttribute("loginAdminName",loginAdminName);
-		return "redirect:/home/admin/view/courses";
+		CourseEntity course = (CourseEntity) courseService.getCourse(courseId);
+		
+		if (course == null ) {
+			return "redirect:/home/admin/view/courses";
+		} else {
+			courseService.deleteCourse(courseId);
+			return "redirect:/home/admin/view/courses";
+		}
 	}
 	
 	
