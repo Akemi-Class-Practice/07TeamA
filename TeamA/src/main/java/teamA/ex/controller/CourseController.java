@@ -161,8 +161,8 @@ public class CourseController {
 	
 	
 	//削除機能
-	@PostMapping("/course/delete")
-	public String courseDelete(@RequestParam Long courseId,Model model) {
+	@GetMapping("/course/delete/{courseId}")
+	public String courseDelete(@PathVariable Long courseId,Model model) {
 		//現在ログインしている管理者情報を取得する
 		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
 		//現在ログインしている人の名前を取得する
