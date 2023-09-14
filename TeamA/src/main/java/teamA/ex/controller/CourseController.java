@@ -86,7 +86,9 @@ public class CourseController {
 //講座追加機能
 	//講座追加画面(admin_add_course.html)を表示
 	@GetMapping("/admin/view/courses/addcourse")
-	public String getAddCoursePage() {
+	public String getAddCoursePage(Model model) {
+		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+		model.addAttribute("admin", admin);
 		return "admin_add_course.html";
 	}
 	

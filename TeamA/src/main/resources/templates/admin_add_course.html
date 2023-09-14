@@ -20,7 +20,7 @@
 		<h1><a href="">07TeamA</a></h1>
 		<nav>
 			<ul>
-				<li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
+				<li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
 				<li>
 				<li>
 					<p th:text="${userName}"></p>
@@ -28,7 +28,7 @@
 				</li>
 				<li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
 				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-				<li><a href="#">お問い合わせ</a></li>
+				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
 			</ul>
 		</nav>
@@ -38,7 +38,7 @@
 
 		<div class="back-button">
 			<!-- <button name="back-view-courses" id="back-view-courses"><< 講座一覧に戻る</button> -->
-			<a href="#" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
+			<a th:href="@{/home/admin/view/courses}" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
 		</div>
 
 		<h2 class="page-title">新規講座登録</h2>
@@ -47,7 +47,7 @@
 			<div class="course-container">
 				<form class="course-item" th:action="@{/home/admin/view/courses/addcourse/save}" method="post"
 					enctype="multipart/form-data">
-					<div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file" name="courseImage">
+					<div id="userIcon"><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"><input type="file" name="courseImage">
 					</div>
 					<div class="course-info">
 

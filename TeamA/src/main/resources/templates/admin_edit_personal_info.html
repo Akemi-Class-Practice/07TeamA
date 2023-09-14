@@ -23,7 +23,7 @@
                 <li><p th:text="${admin.getAdminName}"></p></li>
                 <li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
                 <li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-                <li><a href="#">お問い合わせ</a></li>
+                <li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
                 <li><a th:href="@{/adminlogout}">ログアウト</a></li>
             </ul>
         </nav>
@@ -31,7 +31,7 @@
 
 	<main>
 		<div id="change-user-info-container">
-			<a href="#" class="return_link">&lt;&lt; 講座一覧に戻る</a>
+			<a th:href="@{/home/admin/view/courses}" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
 			<h2>ユーザー情報を変更</h2>
 			<section id="change-user-info-form">
 				<form id="form" method="post"
@@ -48,7 +48,7 @@
 						<label for="">パスワード</label>
 						<div id="password-container">
 							<input type="password" name="newPassword" id="password" >
-							<img src="/img/close-eye.png" id="eyeicon">
+							<img th:src="@{/img/close-eye.png}" id="eyeicon">
 						</div>
 						<label for="">パスワード確認</label>
 						<input type="password" name="confirm_password" id="" placeholder="パスワード確認" >
@@ -56,7 +56,7 @@
 				</form>
 			</section>
 			<div id="form-buttons">
-				<a href="#" id="return">戻る</a>
+				<a th:href="@{/home/admin/view/courses}" id="return">戻る</a>
 				<input type="submit" form="form" id="submit" value="変更">
 			</div>
 

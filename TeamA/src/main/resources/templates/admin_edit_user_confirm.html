@@ -23,7 +23,7 @@
                 <li><p th:text="${admin.getAdminName}"></p></li>
                 <li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
 				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-				<li><a href="#">お問い合わせ</a></li>
+				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
             </ul>
         </nav>
@@ -31,7 +31,7 @@
 
     <main>
         <div id="change-user-info-container">
-            <a href="#" class="return_link">&lt;&lt; 講座一覧に戻る</a>
+           <a th:href="@{/home/admin/view/courses}" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
             <h2>この変更はよろしいですか？</h2>
             <div id="form-container">
             <section id="change-user-info-form">

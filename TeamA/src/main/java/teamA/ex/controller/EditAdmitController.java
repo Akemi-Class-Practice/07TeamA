@@ -31,7 +31,7 @@ public class EditAdmitController {
 	@Autowired
 	private HttpSession session;
 	
-	@GetMapping("/editadmininfo")
+	@GetMapping("/admin/editadmininfo")
 	public String getEditAdminInfoPage(Model model) {
 		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
 		model.addAttribute("admin", admin);
