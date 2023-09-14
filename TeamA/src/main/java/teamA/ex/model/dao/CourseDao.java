@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.Query;
 
 import jakarta.transaction.Transactional;
 import teamA.ex.model.entity.CourseEntity;
+import teamA.ex.model.entity.TransactionHistoryEntity;
+
 
 public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	
@@ -19,20 +21,18 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	List<CourseEntity> findCoursesForUser();
 	
 	// CourseEntityのオブジェクトを引数として受け取り、そのオブジェクトをデータベースに保存
-		 
 	CourseEntity save(CourseEntity courseEntity);
 		 
 	//courseNameとregisterDateを検査条件として、CourseEntityを取得
-		
 	CourseEntity findByCourseNameAndRegisterDate(String courseName,LocalDate registerDate);
 		 
 	//findByCourseId methodを定義し、DBのCourseEntityを検索
-			
 	CourseEntity findByCourseId(Long courseId);
 			
 	//トランザクション管理は複数BD操作をまとめ、一括処理	
-			
 	@Transactional
 	List<CourseEntity> deleteByCourseId(Long courseId);
+	
+
 
 }

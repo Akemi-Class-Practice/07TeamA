@@ -11,7 +11,7 @@
     <link rel="stylesheet" th:href="@{/css/base.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
-    <link rel="stylesheet" th:href="@{css/user_purchase_history.css}">
+    <link rel="stylesheet" th:href="@{/css/user_purchase_history.css}">
     <title>購入履歴</title>
 </head>
 
@@ -37,63 +37,29 @@
                 <a th:href="@{/home/user/view/courses}">＜＜講座一覧に戻る</a>
             </section>
 
-            <ul class="total">
+            <ul class="total" th:each="transaction:${transactions}">
                 <li class="date-price">
-                    <p class="message">購入日付 23.09.13</p>
-                    <p class="total-price">2,000円</p>
+                    <p class="message" th:text="'購入日付: ' + ${transaction.date}"></p>
+                    <p class="total-price" th:text="${transaction.amount} + '円'"></p>
                 </li>
 
-                <li class="total-list">
+                <li class="total-list" th:each="course:${transaction.courses}">
                     <article class="course">
                         <div class="course-image">
-                            <img src="img/kiko.jpg" alt="" height="100px" width="100px">
+                            <img th:src="@{/course-img/{img}(img=${course.courseImage})}" alt="" height="100px" width="100px">
                         </div>
                         <div class="course-name-price">
-                            <h2 class="course-name">講座名</h2>
-                            <p class="course-price">111,222,000円</p>
-                        </div>
-                    </article>
-                </li>
-
-                <li class="total-list">
-                    <article class="course">
-                        <div class="course-image">
-                            <img src="img/kiko.jpg" alt="" height="100px" width="100px">
-                        </div>
-                        <div class="course-name-price">
-                            <h2 class="course-name">講座名</h2>
-                            <p class="course-price">1,000円</p>
+                            <h2 class="course-name" th:text="${course.courseName}"></h2>
+                            <p class="course-price" th:text="${course.courseFee}"></p>
                         </div>
                     </article>
                 </li>
 
                 <li class="footer-price">
-                    <p class="total-price">2,000円</p>
+                    <p class="total-price" th:text="${transaction.amount} + '円'"></p>
                 </li>
             </ul>
 
-            <ul class="total">
-                <li class="date-price">
-                    <p class="message">購入日付 23.09.14</p>
-                    <p class="total-price">1,000円</p>
-                </li>
-
-                <li class="total-list">
-                    <article class="course">
-                        <div class="course-image">
-                            <img src="img/kiko.jpg" alt="" height="100px" width="100px">
-                        </div>
-                        <div class="course-name-price">
-                            <h2 class="course-name">講座名</h2>
-                            <p class="course-price">1,000円</p>
-                        </div>
-                    </article>
-                </li>
-
-                <li class="footer-price">
-                    <p class="total-price">1,000円</p>
-                </li>
-            </ul>
         </div>
     </main>
 

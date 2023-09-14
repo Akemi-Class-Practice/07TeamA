@@ -26,4 +26,8 @@ public class TransactionHistoryService {
 	public List<TransactionHistoryEntity> deleteTransactoinId(Long transactionId) {
 		return transactionHistoryDao.deleteByTransactionId(transactionId);
 	}
+	
+	public List<TransactionHistoryEntity> findUserTransactionHistoryByUserId(Long studentId) {
+		return transactionHistoryDao.findUserTransactionHistoryByUserId(studentId);
+	}
 }
