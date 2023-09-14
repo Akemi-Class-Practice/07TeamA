@@ -25,7 +25,7 @@
 				</li>
 				<li><a th:href="@{/home/admin/edit/personal/info}">情報変更</a></li>
 				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-				<li><a href="#">お問い合わせ</a></li>
+				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
 			</ul>
 		</nav>
@@ -39,7 +39,7 @@
 					<form id="form" method="post" onSubmit="return checkPassword(this)"
 						th:action="@{/home/admin/register/process}" enctype="multipart/form-data">
 						<div id="choose_admin_icon">
-							<img id="admin_icon" th:src="@{/img/kiko.jpg}" height="200px" width="200px" alt="">
+							<img id="admin_icon" th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" height="200px" width="200px" alt="">
 							<input type="file" id="imgInp" name="admin_icon">
 						</div>
 						<div id="form-inputs">
@@ -50,7 +50,7 @@
 							<label for="">パスワード</label>
 							<div id="password-container">
 								<input type="password" name="password" id="password" placeholder="password" required>
-								<img src="/img/close-eye.png" id="eyeicon">
+								<img th:src="@{/img/close-eye.png}" id="eyeicon">
 							</div>
 							<label for="">パスワード確認</label>
 							<input type="password" name="confirm_password" id="" placeholder="confrim admin password" required>

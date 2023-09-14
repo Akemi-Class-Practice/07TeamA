@@ -13,7 +13,7 @@ public class ContactService {
 	@Autowired
 	private ContactDao contactDao;
 
-	// contactを追加するメソッドです
+	// ユーザー側のcontactを追加するメソッドです
 	public boolean createContact(String contactTitle, String contactDetail, Long studentId, int isDone) {
 		if (studentId == null) {
 			return false;
@@ -28,7 +28,7 @@ public class ContactService {
 		return contactDao.findAll();
 	}
 
-	
+	//管理者側のcontactの表示するメソッドです
 	public boolean isDone(Long contactId) {
 		ContactEntity ContactList = contactDao.findByContactId(contactId);
 		if (ContactList == null) {
