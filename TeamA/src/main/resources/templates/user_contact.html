@@ -20,13 +20,13 @@
         <h1><a href="#">07TeamA</a></h1>
         <nav>
             <ul>
-                <li><a href="#"><img src="img/kiko.jpg" alt="user_icon"></a></li>
-                <li><a href="#">ユーザー名前</a></li>
-                <li><a href="#">購入履歴</a></li>
-                <li><a href="#">情報変更</a></li>
-                <li><a href="#">お問い合わせ</a></li>
-                <li><a href="#">ログアウト</a></li>
-                <li><a href="#"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+                <li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
+				<li><p th:text="${user.getStudentName}"></p></li>
+				<li><a href="#">購入履歴</a></li>
+				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
+				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
+				<li><a th:href="@{/userlogout}">ログアウト</a></li>
+				<li><a th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>>
             </ul>
         </nav>
     </header>
@@ -34,7 +34,7 @@
     <main>
         <div id="main-wrapper">
             <section id="return">
-                <a href="">＜＜講座一覧に戻る</a>
+                <a th:href="@{/home/user/view/courses}">＜＜講座一覧に戻る</a>
             </section>
 
             <section id="main-body">
@@ -62,7 +62,7 @@
         <ul>
             <li><a href="#">購入履歴</a></li>
 			<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
-			<li><a href="#">お問い合わせ</a></li>
+			<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 			<li><a th:href="@{/userlogout}">ログアウト</a></li>
         </ul>
         <p>Copyright @ 2023 Learner All Right Reserved.</p>

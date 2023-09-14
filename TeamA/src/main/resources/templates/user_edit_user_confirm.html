@@ -23,7 +23,7 @@
 				<li><p th:text="${user.getStudentName}"></p></li>
 				<li><a href="#">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
-				<li><a href="#">お問い合わせ</a></li>
+				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/userlogout}">ログアウト</a></li>
 				<li><a th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
 			</ul>
@@ -32,7 +32,7 @@
 
     <main>
         <div id="change-user-info-container">
-            <a href="#" class="return_link">&lt;&lt; 講座一覧に戻る</a>
+            <a th:href="@{/home/user/view/courses}" class="return_link">&lt;&lt; 講座一覧に戻る</a>
             <h2>この変更はよろしいですか？</h2>
             <div id="form-container">
             <section id="change-user-info-form">
@@ -52,7 +52,7 @@
                 </form>
             </section>
             <div id="form-buttons">
-                <a href="#" id="return">もう一度編集</a>
+                <a th:href="/home/edituserinfo" id="return">もう一度編集</a>
                 <input type="submit" form="form" id="submit" value="変更">
             </div>
             </div>
@@ -63,7 +63,7 @@
 		<ul>
 			<li><a href="#">購入履歴</a></li>
 			<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
-			<li><a href="#">お問い合わせ</a></li>
+			<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 			<li><a th:href="@{/userlogout}">ログアウト</a></li>
 		</ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>

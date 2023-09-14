@@ -23,7 +23,7 @@
 				<li><p th:text="${user.getStudentName}"></p></li>
 				<li><a href="#">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
-				<li><a href="#">お問い合わせ</a></li>
+				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/userlogout}">ログアウト</a></li>
 				<li><a th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
 			</ul>
@@ -67,7 +67,7 @@
 		<ul>
 			<li><a href="#">購入履歴</a></li>
 			<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
-			<li><a href="#">お問い合わせ</a></li>
+			<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 			<li><a th:href="@{/userlogout}">ログアウト</a></li>
 		</ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>

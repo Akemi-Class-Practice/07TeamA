@@ -24,7 +24,7 @@
 				<li><p th:text="${user.getStudentName}"></p></li>
 				<li><a href="#">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
-				<li><a href="#">お問い合わせ</a></li>
+				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/userlogout}">ログアウト</a></li>
 				<li><a th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
 			</ul>
@@ -35,7 +35,7 @@
 
 		<div class="back-button">
 			<!-- <button name="back-view-courses" id="back-view-courses"><< 講座一覧に戻る</button> -->
-			<a href="#" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
+			<a th:href="@{/home/user/view/courses}" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
 		</div>
 
 		<section class="course">
@@ -77,7 +77,7 @@
 		<ul>
 			<li><a href="#">購入履歴</a></li>
 			<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
-			<li><a href="#">お問い合わせ</a></li>
+			<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 			<li><a th:href="@{/userlogout}">ログアウト</a></li>
 		</ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
