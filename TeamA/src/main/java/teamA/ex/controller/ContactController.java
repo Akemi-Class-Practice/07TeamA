@@ -25,30 +25,30 @@ public class ContactController {
 	@Autowired
 	HttpSession session;
 	// お問い合わせの画面の表示
-	@GetMapping("/user/")
+	@GetMapping("/user/contact")
 	public String getContactViewPage() {
 		return "user_contact.html";
 	}
 	//ユーザー側のお問い合わせ内容の保存
-	@PostMapping("#")
+	@PostMapping("/user/contact/process")
 	public String ContactView( @RequestParam String contactTitle,
 		@RequestParam String contactDetail,  Model model) {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		int isDone = 0;
 		Long studentId = user.getStudentId();
 		if (contactService.createContact( contactTitle, contactDetail, studentId, isDone)) {
-			return "#";
+			return "redirect:/home/user/contact";
 		}else {
-			return "#";
+			return "redirect:/home/user/contact";
 		}
 		
 	}
 	//管理者側のお問い合わせの一覧画面
-	@GetMapping("#")
+	@GetMapping("/admin/contact")
 	public String contactNoView( Model model) {
 		List<ContactEntity> contactList = contactService.findAll();
 		model.addAttribute("contactList", contactList);
-		return "#";
+		return "admin_contact.html";
 
 	}
 
