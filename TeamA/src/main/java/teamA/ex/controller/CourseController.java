@@ -37,6 +37,7 @@ public class CourseController {
 	// HTTP GETリクエストを受け取るメソッド
 	@Autowired
 	private HttpSession session;
+
 	
 	@GetMapping("/admin/view/courses")
 	public String getAdminCourseViewPage(Model model) {
@@ -66,6 +67,22 @@ public class CourseController {
 		model.addAttribute("user", user);
 		model.addAttribute("courseList", courseList);
 		return "user_view_courses.html";
+	}
+	
+	
+	//
+	//user_view_courses_info.htmlを表示する
+	@GetMapping("/user/view/courses/{courseId}")
+	public String getCourseInfoPage(@PathVariable Long courseId, Model model) {
+		
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		model.addAttribute("user", user);
+		
+		CourseEntity course = courseService.getCourse(courseId);
+		model.addAttribute("course", course);
+		
+		return "user_view_course_info.html";
+		
 	}
 
 
