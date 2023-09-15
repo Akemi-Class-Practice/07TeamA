@@ -50,42 +50,23 @@
                         <li>Email</li>
                         <li>タイトル</li>
                         <li>日付</li>
-                        <li>削除</li>
+                        <li>返信済み</li>
                     </ul>
                 </div>
 
                 <div class="messages-detail">
                     <ul id="message-list">
-                        <li>
+                        <li th:each="contact:${contactList}">
                             <div class="visible">
-                                <p><input type="checkbox"></p>
-                                <p>1</p>
-                                <p>test@test.com</p>
-                                <p><a href="#" class="toggle">Javaに関するお問合せ</a></p>
-                                <p>2023/09/12</p>
-                                <p><a href="#" class="delete"><span class="material-symbols-outlined">Close</span></a></p>
+                                <p><a class="" th:href="@{/home/admin/contact/isDone/{contactId}(contactId=${contact.contactId})}">既読</a></p>
+                                <p th:text="${contact.contactId}"></p>
+                                <p th:text="${contact.studentId}"></p>
+                                <p><a href="#" class="toggle"　th:text="${contact.contactTitle}"></a></p>
+                                <p th:text="${contact.contactDate}"></p>
+                                <p th:text="${contact.isDone}"></p>
                             </div>
                             <div class="hidden">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="visible">
-                                <p><input type="checkbox"></p>
-                                <p>1</p>
-                                <p>tester@test.com</p>
-                                <p><a href="#" class="toggle">PHPに関するお問合せ</a></p>
-                                <p>2023/12/12</p>
-                                <p><a href="#" class="delete"><span class="material-symbols-outlined">Close</span></a></p>
-                            </div>
-                            <div class="hidden">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+                                <p th:text="${contact.contactDetail}"></p>
                             </div>
                         </li>
                     </ul>

@@ -1,4 +1,6 @@
 package teamA.ex.controller;
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +37,9 @@ public class ContactController {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		int isDone = 0;
 		Long studentId = user.getStudentId();
-		if (contactService.createContact(contactTitle, contactDetail, studentId, isDone)) {
+		LocalDate contactDate = LocalDate.now();
+		
+		if (contactService.createContact(contactTitle, contactDetail, contactDate, studentId, isDone)) {
 			return "redirect:/user/contact/view";
 		} else {
 			return "redirect:/userlogin";

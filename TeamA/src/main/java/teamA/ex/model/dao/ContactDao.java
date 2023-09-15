@@ -15,5 +15,5 @@ public interface ContactDao extends JpaRepository<ContactEntity, Long> {
 	ContactEntity findByContactId(Long contactId);
 	
 	//全てを見るためのメソッド
-	List<ContactEntity> findAll();
+	List<ContactEntity> findAllByOrderByIsDoneAsc();
 }
