@@ -125,6 +125,7 @@ public class CourseController {
 	// 講座編集機能
 	@GetMapping("/admin/view/courses/editcourse/{courseId}")
 		public String getEditPage(@PathVariable Long courseId, Model model) {
+		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
 		// courseIdを使ってCourseEntityを作って
 		CourseEntity course = courseService.getCourse(courseId);
 		
@@ -133,6 +134,7 @@ public class CourseController {
 		} else {
 			// 行き先のページにCourseのインスタンスをモデルでビューに渡して
 			model.addAttribute("course", course);
+			model.addAttribute("admin", admin);
 			return "admin_edit_course.html";
 		}
 	}
