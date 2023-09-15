@@ -3,6 +3,10 @@ footer{
     /* position: absolute;
     bottom: 0; */
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 0px 0px 30px 0px;
     justify-content: space-between;
     margin-top: auto;
