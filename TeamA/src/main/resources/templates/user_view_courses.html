@@ -49,7 +49,7 @@
 					</div>
 					<div class="course-info">
 						<div class="course-name-price">
-							<a th:href="@{#}" th:text="${course.courseName}" class="course-name">
+							<a th:href="@{/home/user/view/courses/{courseId}}" th:text="${course.courseName}" class="course-name">
 								<h2></h2>
 							</a>
 							<p th:text="${course.courseFee}" class="course-price"></p>
@@ -65,7 +65,7 @@
 
 	<footer>
 		<ul>
-			<li><a href="#">購入履歴</a></li>
+			<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
 			<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
 			<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 			<li><a th:href="@{/userlogout}">ログアウト</a></li>

@@ -21,7 +21,7 @@
 			<ul>
 				<li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
 				<li><p th:text="${user.getStudentName}"></p></li>
-				<li><a href="#">購入履歴</a></li>
+				<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
 				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/userlogout}">ログアウト</a></li>
@@ -74,7 +74,7 @@
 
 	<footer>
 		<ul>
-			<li><a href="#">購入履歴</a></li>
+			<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
 			<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
 			<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 			<li><a th:href="@{/userlogout}">ログアウト</a></li>

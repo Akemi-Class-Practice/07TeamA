@@ -15,7 +15,7 @@
 
 <body>
 	<header>
-		<h1><a href="#">07TeamA</a></h1>
+		<h1><a th:href="@{/home/user/view/courses}">07TeamA</a></h1>
 		<nav>
 			<ul>
 				<li><a href="#"><img src="img/kiko.jpg" alt="user_icon"></a></li>
@@ -33,10 +33,10 @@
 
 	<footer>
 		<ul>
-			<li><a href="#">購入履歴</a></li>
-			<li><a href="#">情報変更</a></li>
-			<li><a href="#">お問い合わせ</a></li>
-			<li><a href="#">ログアウト</a></li>
+			<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
+			<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
+			<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
+			<li><a th:href="@{/userlogout}">ログアウト</a></li>
 		</ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
 	</footer>
