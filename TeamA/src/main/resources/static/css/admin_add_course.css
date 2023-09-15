@@ -9,16 +9,19 @@ main{
     margin-bottom: 30px;
 }
 
-section img{
+
+#userIcon img{
     height: 250px;
     width: 250px;
     margin-top: 30px;
+    margin-bottom:15px;
 }
+
 
 div.back-button{
     width:auto;
     padding-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 div.back-button a{
@@ -26,13 +29,6 @@ div.back-button a{
     color: var(--text);
 }
 
-div.course-container{
-    display: flex;
-}
-
-div.course-info{
-    display: flex;
-}
 
 form div{
     display: flex;
@@ -47,9 +43,10 @@ form div{
 }
 
 form.course-item{
-    width: 600px;
+    display: flex;
+    width: 300px;
     padding: 5px;
-    /* margin-left: 15px; */
+    margin-left: 15px;
     margin-bottom: 30px;
     /* background-color: aqua; */
 }
@@ -67,12 +64,17 @@ div.course-price{
     margin-top: 20px;
 }
 
+.course-info{
+    width:500px;
+    transform: translate(100px);
+}
+
 .body{
     width: 960px;
     display: flex;
     flex-direction: column;
     /* margin-top: 50px; */
-    transform: translate(-370px);
+    transform: translate(-400px);
 }
 
 .body label{
@@ -82,12 +84,13 @@ div.course-price{
 }
 
 .body textarea{
+    width: 900px;
     min-height: 400px;
+   
 }
 
 #add-course-button{
     margin-top: 60px;
-    margin-left: 425px;
     margin-bottom: 50px;
     height: 35px;
     width: 110px;

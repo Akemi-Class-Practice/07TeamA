@@ -101,14 +101,14 @@
     background-color: var(--green);
     color:darkslategrey;
     text-decoration: none;
-    width: 100px;
+    width: 120px;
     height: 25px;
     border-radius: 3px;
     font-weight: bold;
     text-align: center;
     padding: 3px;
-    margin-left: 445px;
-    margin-top: 45px;
+    margin-left: 435px;
+    margin-top: 75px;
 }
 
 .course-buy-bttn:hover {
