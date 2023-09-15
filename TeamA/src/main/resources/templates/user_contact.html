@@ -42,18 +42,18 @@
                     <h2>お問い合わせ</h2>
                 </section>
 
-                <form id="contact">
-                    <div class="body">
+                <form method="post" id="contact" th:action="@{/home/user/contact/process}">
+                    <div class="body" >
                         <label>件名</label>
-                        <input type="text" class="title" placeholder="件名を入力してください">
+                        <input type="text" class="title" name="contactTitle" placeholder="件名を入力してください">
                         <label>内容</label>
-                        <textarea name="body" id="body" placeholder="お問い合わせ内容を入力してください"></textarea>
+                        <textarea id="body" name="contactDetail" placeholder="お問い合わせ内容を入力してください"></textarea>
                     </div>
+                     <div>
+                    	<input type="submit" id="contact-button">送信</input>
+                	</div>
                 </form>
 
-                <section>
-                    <button id="contact-button">送信</button>
-                </section>
             </section>
         </div>
     </main>

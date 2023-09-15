@@ -1,5 +1,7 @@
 package teamA.ex.model.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,10 @@ public class ContactEntity {
 	@NonNull
 	@Column(name = "contact_detail")
 	private String contactDetail;
+	
+	@NonNull
+	@Column(name = "contact_date")
+	private LocalDate contactDate;
 	
 	@NonNull
 	@Column(name = "student_id")
