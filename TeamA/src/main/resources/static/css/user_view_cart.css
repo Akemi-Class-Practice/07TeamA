@@ -21,6 +21,24 @@
     margin-bottom: 20px;
 }
 
+#return{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+#return a{
+	color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    border: none;
+    font-size: 15px;
+}
+
 .course {
     height: 180px;
     background-color: var(--content_background);
@@ -62,14 +80,14 @@
     background-color: var(--red);
     color:darkslategrey;
     text-decoration: none;
-    width: 100px;
-    height: 25px;
+    width: 120px;
+    height: 30px;
     border-radius: 3px;
     font-weight: bold;
     text-align: center;
     padding: 3px;
-    margin-left: 445px;
-    margin-top: 45px;
+    margin-left: 425px;
+    margin-top: 65px;
 }
 
 .course-delete-bttn:hover {

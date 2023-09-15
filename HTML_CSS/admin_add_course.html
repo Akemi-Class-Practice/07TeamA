@@ -42,18 +42,18 @@
 
         <section class="course">
             <div class="course-container">
-                <div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file" ></div>
-                <div class="course-info">
+                
+                <form class="course-item" method="post">
 
-                    <form class="course-item" method="post">
+                    <div id="userIcon"><img src="img/kiko.jpg" alt="user_icon"><input type="file"></div>
+
+                    <div class="course-info">
 
                         <div class="heading">
                             <label>講座名</label>
                             <input type="text" name="title" placeholder="講座名を入力してください">
                         </div>
 
-                        <!-- <p>(概要)Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                         <div class="item">
                             <div class="course-price">
                                 <label>料金</label>
@@ -64,7 +64,7 @@
                                 <label>開始日</label>
                                 <input type="date" name="course-start-date">
                             </div>
-                            
+
                             <div class="course-finish-date">
                                 <label>終了日</label>
                                 <input type="date" name="course-finish-date">
@@ -80,18 +80,24 @@
                                 <input type="text" name="course-duration" placeholder="レッスン時間を入力してください">
                             </div>
 
-                            <div class="body">
+                            <!-- <div class="body">
                                 <label>講座の情報</label>
                                 <textarea name="body" id="body" placeholder="講座の情報を入力してください"></textarea>
-                               
-                            </div>
-                        </div>
-                    </form>
 
-                </div>
+                            </div> -->
+                        </div>
+
+                        <div class="body">
+                            <label>講座の情報</label>
+                            <textarea name="body" id="body" placeholder="講座の情報を入力してください"></textarea>
+
+                        </div>
+                    </div>
+                </form>
+
             </div>
 
-           
+
 
             <button name="add-course-button" id="add-course-button">講座を登録</button>
 

@@ -76,7 +76,8 @@
     display: flex;
     gap: 10px;
     width: 200px;
-    margin-top: 35px;
+    /* transform: translate(355px 50px); */
+    margin-top: 30px;
     margin-left: 355px;
 }
 .buttons a {
