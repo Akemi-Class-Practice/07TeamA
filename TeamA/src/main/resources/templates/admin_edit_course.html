@@ -20,14 +20,10 @@
 		<h1><a href="">07TeamA</a></h1>
 		<nav>
 			<ul>
-				<li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
-				<li>
-				<li>
-					<p th:text="${userName}"></p>
-				</li>
-				</li>
-				 <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
-				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+        <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
+        <li><p th:text="${admin.getAdminName}"></p></li>
+        <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+        <li><a th:href="@{/home/admin/register}">管理者追加</a></li>
 				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
 			</ul>
@@ -37,15 +33,12 @@
 	<main>
 
 		<div class="back-button">
-			<!-- <button name="back-view-courses" id="back-view-courses"><< 講座一覧に戻る</button> -->
 			<a th:href="@{/home/admin/view/courses}" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
 		</div>
 
 		<h2 class="page-title">講座編集</h2>
-		<form th:action="@{/home/course/delete}" method="post">
-			<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
-			<button name="delete" id="delete">講座を削除</button>
-		</form>
+        <a class="course-bttn course-delete-bttn" th:href="@{/home/course/delete/{courseId}(courseId=${course.courseId})}">講座削除</a>
+
 
 		<section class="course">
 
@@ -54,44 +47,42 @@
 				enctype="multipart/form-data">
 				<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
 				<div class="course-container">
-					<div id="userIcon"><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"><input type="file" name="courseImage">
+					<div id="userIcon"><img th:src="@{/course-img/{img}(img=${course.getCourseImage})}" alt="course_image"><input type="file" name="courseImage">
 					</div>
 					<div class="course-info">
 						<div class="heading">
 							<label>講座名</label>
-							<input type="text" name="courseName" placeholder="">
+							<input type="text" name="courseName" th:value="${course.courseName}">
 						</div>
 
-						<!-- <p>(概要)Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
 						<div class="item">
 							<div class="course-price">
 								<label>料金</label>
-								<input type="text" name="courseFee" placeholder="">
+								<input type="text" name="courseFee" th:value="${course.courseFee}">
 							</div>
 
 							<div class="course-start-date">
 								<label>開始日</label>
-								<input type="date" name="courseStartDate">
+								<input type="date" name="courseStartDate" th:value="${course.StartDate}">
 							</div>
 
 							<div class="course-finish-date">
 								<label>終了日</label>
-								<input type="date" name="courseFinishDate">
+								<input type="date" name="courseFinishDate" th:value="${course.FinishDate}">
 							</div>
 
 							<div class="course-start-time">
 								<label>レッスン開始時間</label>
-								<input type="time" name="lessonStartTime" placeholder="">
+								<input type="time" name="lessonStartTime" th:value="${course.lessonStartTime}">
 							</div>
 
 							<div class="course-duration">
 								<label>レッスン時間</label>
-								<input type="text" name="lessonDuration" placeholder="">
+								<input type="text" name="lessonDuration" th:value="${course.lessonDuration}">
 							</div>
 							<div class="body">
 								<label>講座の情報</label>
-								<textarea name="courseInfo" id="body" placeholder=""></textarea>
+								<textarea name="courseInfo" id="body" th:value="${course.courseInfo}"></textarea>
 
 							</div>
 						</div>
@@ -100,16 +91,8 @@
 
 			</div>
 			</div>
-
-			<!-- <div class="body">
-                <label>講座の情報</label>
-                <textarea name="body" id="body" placeholder="講座の情報を入力してください"></textarea>
-            </div> -->
-
-			<button name="back-button" id="back-button"><a th:href="@{/home/admin/view/courses}">戻る</a></button>
-
-
-		</section>
+          <button name="back-button" id="back-button"><a th:href="@{/home/admin/view/courses}">戻る</a></button>
+     </section>
 
 	</main>
 

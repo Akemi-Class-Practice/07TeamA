@@ -37,6 +37,7 @@ public class CourseController {
 	// HTTP GETリクエストを受け取るメソッド
 	@Autowired
 	private HttpSession session;
+
 	
 	@GetMapping("/admin/view/courses")
 	public String getAdminCourseViewPage(Model model) {
@@ -67,18 +68,37 @@ public class CourseController {
 		model.addAttribute("courseList", courseList);
 		return "user_view_courses.html";
 	}
-
-
-	@GetMapping("/editcourse/{courseId}")
-	public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
+	
+	
+	//
+	//user_view_courses_info.htmlを表示する
+	@GetMapping("/user/view/courses/{courseId}")
+	public String getCourseInfoPage(@PathVariable Long courseId, Model model) {
+		
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		model.addAttribute("user", user);
+		
 		CourseEntity course = courseService.getCourse(courseId);
-		if(course == null) {
-			return "redirect:/home/admin/view/courses";
-		} else {
-			model.addAttribute("course", course);
-			return "admin_edit_course.html";
-		}
+		model.addAttribute("course", course);
+		
+		return "user_view_course_info.html";
+		
 	}
+
+
+//	@GetMapping("/editcourse/{courseId}")
+//	public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
+//		CourseEntity course = courseService.getCourse(courseId);
+//		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+//		
+//		if(course == null) {
+//			return "redirect:/home/admin/view/courses";
+//		} else {
+//			model.addAttribute("admin", admin);
+//			model.addAttribute("course", course);
+//			return "admin_edit_course.html";
+//		}
+//	}
 	
 	
 //講座追加機能
@@ -128,11 +148,12 @@ public class CourseController {
 		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
 		// courseIdを使ってCourseEntityを作って
 		CourseEntity course = courseService.getCourse(courseId);
-		
+		AdminEntity admin = (AdminEntity) session.getAttribute("admin");	
 		if (course == null) {
 			return "redirect:/home/admin/view/courses";
 		} else {
 			// 行き先のページにCourseのインスタンスをモデルでビューに渡して
+			model.addAttribute("admin", admin);
 			model.addAttribute("course", course);
 			model.addAttribute("admin", admin);
 			return "admin_edit_course.html";
@@ -163,15 +184,16 @@ public class CourseController {
 	
 	
 	//削除機能
-	@PostMapping("/course/delete")
-	public String courseDelete(@RequestParam Long courseId,Model model) {
-		//現在ログインしている管理者情報を取得する
-		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
-		//現在ログインしている人の名前を取得する
-		String loginAdminName = admin.getAdminName();
-		courseService.deleteCourse(courseId);
-		model.addAttribute("loginAdminName",loginAdminName);
-		return "redirect:/home/admin/view/courses";
+	@GetMapping("/course/delete/{courseId}")
+	public String courseDelete(@PathVariable Long courseId,Model model) {
+		CourseEntity course = (CourseEntity) courseService.getCourse(courseId);
+		
+		if (course == null ) {
+			return "redirect:/home/admin/view/courses";
+		} else {
+			courseService.deleteCourse(courseId);
+			return "redirect:/home/admin/view/courses";
+		}
 	}
 	
 	
