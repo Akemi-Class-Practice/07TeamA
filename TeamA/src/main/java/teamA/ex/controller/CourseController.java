@@ -76,29 +76,32 @@ public class CourseController {
 	public String getCourseInfoPage(@PathVariable Long courseId, Model model) {
 		
 		UserEntity user = (UserEntity) session.getAttribute("user");
-		model.addAttribute("user", user);
-		
 		CourseEntity course = courseService.getCourse(courseId);
-		model.addAttribute("course", course);
 		
-		return "user_view_course_info.html";
+		if(course == null) {
+			return "redirect:/home/admin/view/courses";
+		}else {
+			model.addAttribute("user", user);
+			model.addAttribute("course", course);
+			return "user_view_course_info.html";
+		}
 		
 	}
 
 
-//	@GetMapping("/editcourse/{courseId}")
-//	public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
-//		CourseEntity course = courseService.getCourse(courseId);
-//		AdminEntity admin = (AdminEntity) session.getAttribute("admin");
-//		
-//		if(course == null) {
-//			return "redirect:/home/admin/view/courses";
-//		} else {
-//			model.addAttribute("admin", admin);
-//			model.addAttribute("course", course);
-//			return "admin_edit_course.html";
-//		}
-//	}
+@GetMapping("/editcourse/{courseId}")
+public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
+	CourseEntity course = courseService.getCourse(courseId);
+	AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+		
+	if(course == null) {
+			return "redirect:/home/admin/view/courses";
+		} else {
+			model.addAttribute("admin", admin);
+			model.addAttribute("course", course);
+		return "admin_edit_course.html";
+		}
+	}
 	
 	
 //講座追加機能
@@ -145,7 +148,6 @@ public class CourseController {
 	// 講座編集機能
 	@GetMapping("/admin/view/courses/editcourse/{courseId}")
 		public String getEditPage(@PathVariable Long courseId, Model model) {
-		
 		// courseIdを使ってCourseEntityを作って
 		CourseEntity course = courseService.getCourse(courseId);
 		AdminEntity admin = (AdminEntity) session.getAttribute("admin");	
