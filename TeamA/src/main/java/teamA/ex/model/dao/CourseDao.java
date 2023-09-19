@@ -33,6 +33,8 @@ public interface CourseDao extends JpaRepository<CourseEntity, Long> {
 	@Transactional
 	List<CourseEntity> deleteByCourseId(Long courseId);
 	
-
+	//講座の名前で検索する処理
+	@Query(value="SELECT * FROM courses WHERE course_name ILIKE '%' || ?1 || '%'", nativeQuery = true)
+	List<CourseEntity> findByCourseName(String searchName);
 
 }
