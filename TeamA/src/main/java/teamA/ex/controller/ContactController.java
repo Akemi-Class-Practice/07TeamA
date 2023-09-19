@@ -40,7 +40,7 @@ public class ContactController {
 		LocalDate contactDate = LocalDate.now();
 		
 		if (contactService.createContact(contactTitle, contactDetail, contactDate, studentId, isDone)) {
-			return "redirect:/user/contact/view";
+			return "redirect:/home/user/contact/view";
 		} else {
 			return "redirect:/userlogin";
 		}
