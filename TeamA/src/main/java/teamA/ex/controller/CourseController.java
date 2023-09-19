@@ -198,5 +198,20 @@ public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
 		}
 	}
 	
+	//名前で講座を検索する機能
+	@GetMapping("/user/view/courses/search")
+	public String searchCourses(@RequestParam String searchName, Model model) {
+		List<CourseEntity> searchResults = courseService.searchCourses(searchName);
+		
+		if (searchResults.isEmpty()) {
+			return "redirect:/home/user/view/courses";
+
+		} else {
+			UserEntity user = (UserEntity) session.getAttribute("user");
+			model.addAttribute("user", user);
+			model.addAttribute("courseList", searchResults);
+			return "user_view_courses.html";
+		}
+	}
 	
 }

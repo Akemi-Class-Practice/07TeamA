@@ -35,8 +35,8 @@
 		<div id="main-wrapper">
 			<section id="search">
 				<p id="search-results">講座：リスト一覧</p>
-				<form action="">
-					<input type="text" class="search-box">
+				<form th:action="@{/home/user/view/courses/search}" method="get">
+					<input type="text" class="search-box" name="searchName">
 					<input type="submit" id="search-button" value="検索">
 				</form>
 			</section>
@@ -74,6 +74,6 @@
 	</footer>
 </body>
 <script>
-	
+
 </script>
 </html>

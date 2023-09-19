@@ -92,6 +92,10 @@ public class CourseService {
 		}
 	}
 	
+	// 検索機能のメソッド
+	public List<CourseEntity> searchCourses(String searchName){
+		return courseDao.findByCourseName(searchName);
+	}
 }
 
 
