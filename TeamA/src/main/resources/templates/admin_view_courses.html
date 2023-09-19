@@ -41,28 +41,33 @@
                     <h3>分析データ</h3>
                     <div class="todays-statistics">
                         <div class="statistics-line">
+                            <p>合アクセス数：　</p>
+                            <p th:text="${totalLogins}"></p>
+                        </div>
+                        <div class="todays-statistics">
+                        <div class="statistics-line">
                             <p>今日のアクセス数：　</p>
-                            <p>1000人</p>
+                            <p th:text="${totalLoginsToday}"></p>
                         </div>
                         <div class="statistics-line">
                             <p>今日の購入売上：</p>
-                            <p>　１０，０００円</p>
+                            <p th:text="${totalSalesToday} + '円'"></p>
                         </div>
                     </div>
                     <div class="this-months-statistics">
                         <div class="statistics-line">
                             <p>今月のアクセス数：</p>
-                            <p>３７３９３９２７人</p>
+                            <p th:text="${totalLoginsToday}" ></p>
                         </div>
                         <div class="statistics-line">
                         <p>今月の購入売上：</p>
-                        <p>１２３，４８４９円</p>
+                        <p th:text="${totalSalesThisMonth} + '円'"></p>
                         </div>
                     </div>
                     <div class="toriawase">
                         <div class="statistics-line last">
                         <p>未済み取り合わせ：</p>
-                        <p>３８件</p>
+                        <p th:text="${totalUnreadMail}"></p>
                         </div>
                     </div>
                 </section>

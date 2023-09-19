@@ -22,7 +22,9 @@ import jakarta.servlet.http.HttpSession;
 import teamA.ex.model.entity.AdminEntity;
 import teamA.ex.model.entity.CourseEntity;
 import teamA.ex.model.entity.UserEntity;
+import teamA.ex.service.ContactService;
 import teamA.ex.service.CourseService;
+import teamA.ex.service.LoginAnalyticService;
 
 
 @RequestMapping("/home")
@@ -33,6 +35,10 @@ public class CourseController {
 	// CourseServiceクラスのメソッドを呼び出し、指定した処理を実行できるようにする
 	@Autowired
 	private CourseService courseService;
+	@Autowired 
+	private LoginAnalyticService loginAnalyticService;
+	@Autowired
+	private ContactService contactService;
 	
 	// HTTP GETリクエストを受け取るメソッド
 	@Autowired
@@ -48,7 +54,18 @@ public class CourseController {
 		//courseServiceのfindAllCoursePostメソッドを呼び出し、現在の管理者に関する講座を取得
 		//戻り値はCourseEntityのリストで、このリストをmodelに追加
 		List<CourseEntity> courseList = courseService.findAll();
-		
+		Long totalLogins = loginAnalyticService.countTotal();
+		Long totalLoginsToday = loginAnalyticService.countTotalCountToday();
+		Long totalLoginsMonth = loginAnalyticService.countTotalCountMonth();
+		Long totalSalesToday = loginAnalyticService.countTotalSalesToday();
+		Long totalSalesThisMonth = loginAnalyticService.countTotalSalesThisMonth();
+		Long totalUnreadMail = contactService.countTotalUnread();
+		model.addAttribute("totalLogins", totalLogins);
+		model.addAttribute("totalLoginsToday", totalLoginsToday);
+		model.addAttribute("totalLoginsMonth", totalLoginsMonth);
+		model.addAttribute("totalSalesToday", totalSalesToday);
+		model.addAttribute("totalSalesThisMonth", totalSalesThisMonth);
+		model.addAttribute("totalUnreadMail", totalUnreadMail);
 		model.addAttribute("admin", admin);
 		model.addAttribute("courseList", courseList);
 		return "admin_view_courses.html";
