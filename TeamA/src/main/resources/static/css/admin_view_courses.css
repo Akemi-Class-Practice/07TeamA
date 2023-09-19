@@ -3,7 +3,7 @@
     height: 200px;
     display: flex;
     justify-content: space-between;
-    margin: 0px 0px 25px 0px;
+    margin: 0px 0px 50px 0px;
 }
 
 #new-course {
@@ -35,12 +35,12 @@
 }
 
 #statistics {
-    /* border: 1px solid black; */
     width: 500px;
     background-color: var(--content_background);
     box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     border-radius: 3px;
     padding: 10px;
+    height: 205px;
 }
 
 #statistics h3 {

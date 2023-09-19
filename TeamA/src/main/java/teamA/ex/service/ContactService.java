@@ -45,4 +45,8 @@ public class ContactService {
 		return contactDao.findByContactId(contactId);
 	}
 
+	// 未読の件数クエリ
+	public Long countTotalUnread() {
+		return contactDao.countTotalUnread();
+	}
 }
