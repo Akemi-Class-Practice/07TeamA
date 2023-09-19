@@ -11,13 +11,13 @@
     <link rel="stylesheet" th:href="@{/css/base.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
-    <link rel="stylesheet" th:href="@{css/user_contact.css}">
+    <link rel="stylesheet" th:href="@{/css/user_contact.css}">
     <title>お問い合わせ</title>
 </head>
 
 <body>
     <header>
-        <h1><a href="#">07TeamA</a></h1>
+       <h1><a th:href="@{/home/user/view/courses}">07TeamA</a></h1>
         <nav>
             <ul>
                 <li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
@@ -50,7 +50,7 @@
                         <textarea id="body" name="contactDetail" placeholder="お問い合わせ内容を入力してください"></textarea>
                     </div>
                      <div>
-                    	<input type="submit" id="contact-button">送信</input>
+                    	<input type="submit" id="contact-button" value="送信"></input>
                 	</div>
                 </form>
 
