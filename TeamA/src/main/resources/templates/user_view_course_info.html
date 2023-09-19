@@ -40,37 +40,28 @@
 
 		<section class="course">
 			<div class="course-container">
-				<img src="img/kiko.jpg" alt="" class="image-size">
+				<img th:src="@{/course-img/{img}(img=${course.courseImage})}" alt="" class="image-size">
 				<div class="course-info">
 					<div class="course-item">
 						<div class="heading">
-							<h2>Course name</h2>
+							<h2 th:text="${course.courseName}"></h2>
 						</div>
-						<p>(概要)Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 						<div class="item">
-							<p class="course-price">料金:1,000yen</p>
-							<p class="course-start-date">開始日 :  2023</p>
-							<p class="course-finish-date">終了日 :  2023</p>
-							<p class="course-start-time">レッスン開始時間 : 9PM</p>
-							<p class="course-duration">レッスン時間 : 90分</p>
+							<p class="course-price" th:text="${course.courseFee}"></p>
+							<p class="course-start-date" th:text="${course.startDate}"></p>
+							<p class="course-finish-date" th:text="${course.finishDate}"></p>
+							<p class="course-start-time" th:text="${course.lessonStartTime}"></p>
+							<p class="course-duration" th:text="${course.lessonDuration}"></p>
 						</div>
 					</div>
-					<button name="add-course-button-top" id="add-course-button-top">カートに追加</button>
 				</div>
 			</div>
-			<p class="course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmodtempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
-				consectetur
-				adipiscing elit,orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmodtempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
-				consecteturLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmodtempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
-				consectetur</p>
+			<p class="course-description" th:text="'test'+${course.courseInfo}"></p>
 		</section>
+		<form th:action="@{/home/add/to/cart/{courseId}(courseId=${course.courseId})}" method="get">
+			<input type="hidden" th:value="${course.courseId}">
 		<button name="add-course-button-bottom" id="add-course-button-bottom">カートに追加</button>
+		</form>
 	</main>
 
 	<footer>
