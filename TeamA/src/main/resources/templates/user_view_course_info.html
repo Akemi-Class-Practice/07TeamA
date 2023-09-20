@@ -8,9 +8,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-	 <link rel="stylesheet" th:href="@{/css/base.css}">
-    <link rel="stylesheet" th:href="@{/css/header.css}">
-    <link rel="stylesheet" th:href="@{/css/footer.css}">
+	<link rel="stylesheet" th:href="@{/css/base.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+	<link rel="stylesheet" th:href="@{/css/footer.css}">
 	<link rel="stylesheet" th:href="@{/css/user_view_course_info.css}">
 	<title>講座詳細</title>
 </head>
@@ -21,7 +21,9 @@
 		<nav>
 			<ul>
 				<li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
-				<li><p th:text="${user.getStudentName}"></p></li>
+				<li>
+					<p th:text="${user.getStudentName}"></p>
+				</li>
 				<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
 				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
@@ -47,11 +49,17 @@
 							<h2 th:text="${course.courseName}"></h2>
 						</div>
 						<div class="item">
-							<p class="course-price" th:text="${course.courseFee}"></p>
-							<p class="course-start-date" th:text="${course.startDate}"></p>
-							<p class="course-finish-date" th:text="${course.finishDate}"></p>
-							<p class="course-start-time" th:text="${course.lessonStartTime}"></p>
-							<p class="course-duration" th:text="${course.lessonDuration}"></p>
+
+							<p class="course-price">料金：<span th:text="${course.courseFee}"></span> yen</p>
+
+							<p class="course-start-date">開始日：<span th:text="${course.startDate}"></span></p>
+							<p class="course-finish-date">終了日：<span th:text="${course.finishDate}"></span> </p>
+							<p class="course-start-time">レッスン開始時間：<span th:text="${course.lessonStartTime}"></span> </p>
+							<p class="course-duration">レッスン時間：<span th:text="${course.lessonDuration}"></span></p>
+							<form th:action="@{/home/add/to/cart/{courseId}(courseId=${course.courseId})}" method="get">
+								<input type="hidden" th:value="${course.courseId}">
+								<button name="add-course-button-top" id="add-course-button-top" onclick="alert('カートに入れました')">カートに追加</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -60,7 +68,7 @@
 		</section>
 		<form th:action="@{/home/add/to/cart/{courseId}(courseId=${course.courseId})}" method="get">
 			<input type="hidden" th:value="${course.courseId}">
-		<button name="add-course-button-bottom" id="add-course-button-bottom">カートに追加</button>
+			<button name="add-course-button-bottom" id="add-course-button-bottom" onclick="alert('カートに入れました')">カートに追加</button>
 		</form>
 	</main>
 

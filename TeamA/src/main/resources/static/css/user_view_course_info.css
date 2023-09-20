@@ -27,13 +27,14 @@ section img{
 div.back-button{
     width:auto;
     margin-bottom: 50px;
-    margin-top: 50px;
+    margin-top: 140px;
 }
 
 div.back-button a{
     margin-top: 100px;
     text-decoration: none;
     color: var(--text);
+    font-weight: bold;
 
 }
 
@@ -52,6 +53,7 @@ div.course-info{
 
 div.heading{
     margin-bottom: 10px;
+    font-size: larger;
 }
 
 div.course-item{
@@ -60,6 +62,10 @@ div.course-item{
     margin-left: 15px;
     margin-bottom: 30px;
     /* background-color: aqua; */
+}
+
+.item p{
+	padding: 6px 0px;
 }
 
 p.course-price{
@@ -75,7 +81,7 @@ div.course-info button{
 	cursor: pointer;
     font-size:medium;
     font-weight: 500;
-    transform: translate(-120px,200px);
+    transform: translate(500px,50px);
 }
 div.course-info button:hover {
         transition: all .2s ease;
