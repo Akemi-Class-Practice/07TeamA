@@ -7,11 +7,12 @@
 
 #return{
     margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 #return a:link, #return a:active, #return a:visited, #return a:hover {
     display: block;
-    color: black;
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -104,7 +105,7 @@
     text-align: center;
     padding: 10px;
     display: block;
-    margin: 10px auto;
+    margin: 50px auto;
 }
 
 .total-buy-bttn:hover {
