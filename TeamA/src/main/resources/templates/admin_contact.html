@@ -60,7 +60,7 @@
                             <div class="visible">
                                 <p><a class="" th:href="@{/home/admin/contact/isDone/{contactId}(contactId=${contact.contactId})}">既読</a></p>
                                 <p th:text="${contact.contactId}"></p>
-                                <p th:text="${contact.studentId}"></p>
+                                <p th:text="${contact.studentEmail}"></p>
                                 <p><a href="#" class="toggle"　th:text="${contact.contactTitle}"></a></p>
                                 <p th:text="${contact.contactDate}"></p>
                                 <p th:text="${contact.isDone}"></p>
