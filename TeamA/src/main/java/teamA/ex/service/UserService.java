@@ -4,13 +4,16 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.Base64;
+import java.util.LinkedList;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jakarta.servlet.http.HttpSession;
 import teamA.ex.model.dao.AdminDao;
 import teamA.ex.model.dao.UserDao;
+import teamA.ex.model.entity.CourseEntity;
 import teamA.ex.model.entity.UserEntity;
 
 @Service
@@ -18,6 +21,9 @@ public class UserService {
 	
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired 
+	private HttpSession session;
 	
 	// Loginの処理
 		public UserEntity login(String email, String password) {
@@ -98,5 +104,11 @@ public class UserService {
 			}
 		}
 		
+		// Calculate amount of items in cart 
+		public int getCartContentNumber() {
+			LinkedList<CourseEntity> list = (LinkedList<CourseEntity>) session.getAttribute("cart");
+			int cartContentNumber = list.size();
+			return cartContentNumber;
+		}
 		
 }

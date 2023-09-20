@@ -101,17 +101,6 @@ public class UserCartController {
 		return "redirect:/home/cart";
 	}
 
-//	// カートの中身を見るための機能(もしかしたらいらない)
-//	@PostMapping("/home/user/view/cart")
-//	public String getCartPage(@RequestParam Long courseId, Model model) {
-//
-//		
-//			LinkedList<CourseEntity> list = (LinkedList<CourseEntity>) session.getAttribute("cart");
-//			return "user_view_cart.html";
-//		
-//
-//	}
-
 	// カートの中身を見るための機能
 	@GetMapping("/cart")
 	public String getCartPage(Model model) {
@@ -127,6 +116,8 @@ public class UserCartController {
 		model.addAttribute("list", list);
 		return "user_view_cart.html";
 	}
+
+	
 
 }
 
