@@ -87,3 +87,23 @@ header nav ul li img{
     /* padding: 20px 0px 0px 0px; */
     vertical-align: middle;
 }
+
+#cart-amount {
+  color: white;
+  font-weight: bold;
+  background-color: var(--red); 
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 20px;
+  position: relative;
+  top: 13px;
+  right: 25px;
+  font-size: 13px;
+  z-index: -1;
+}
+
+.cart-amount-hover {
+	margin-top: 3px;
+}

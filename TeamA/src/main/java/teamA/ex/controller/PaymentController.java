@@ -14,6 +14,7 @@ import teamA.ex.model.entity.TransactionHistoryEntity;
 import teamA.ex.model.entity.UserEntity;
 import teamA.ex.service.TransactionHistoryService;
 import teamA.ex.service.TransactionItemsService;
+import teamA.ex.service.UserService;
 
 
 @RequestMapping("/home")
@@ -26,6 +27,9 @@ public class PaymentController {
 	
 	@Autowired
 	private TransactionItemsService transactionItemsService;
+	
+	@Autowired 
+	private UserService userService;
 	
 	@Autowired
 	private HttpSession session;
@@ -46,7 +50,8 @@ public class PaymentController {
 		for (int idx = 0; idx < cartList.size(); idx++) {
 			totalPrice += cartList.get(idx).getCourseFee();
 		};
-		
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		// 行き先のページに渡すためにtotalPriceの変数をMODELに設定する
 		model.addAttribute("totalPrice", totalPrice);
 		// 行き先のページに渡すためにuserの変数をMODELに設定する
