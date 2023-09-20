@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
+
 @Entity
 //table名を指定します
 @Table(name = "logins")
