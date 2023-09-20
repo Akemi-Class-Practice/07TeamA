@@ -103,3 +103,36 @@ div.course-price{
     font-weight: 500;
 }
 
+#buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 400px;
+}
+
+#back-button{
+
+    height: 35px;
+    width: 110px;
+    background-color: var(--orange);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}
+
+#save-button{
+
+    height: 35px;
+    width: 110px;
+    background-color: var(--green);
+    border-radius: 5px;
+    outline: none;
+    color: var(--text);
+	cursor: pointer;
+    font-size:medium;
+    font-weight: 500;
+}

@@ -51,40 +51,38 @@
 
 						<div class="heading">
 							<label>講座名</label>
-							<input type="text" name="courseName" placeholder="講座名を入力してください">
+							<input type="text" name="courseName" th:value="${course.courseName}">
 						</div>
 
-						<!-- <p>(概要)Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
 						<div class="item">
 							<div class="course-price">
 								<label>料金</label>
-								<input type="text" name="courseFee" placeholder="料金を入力してください">
+								<input type="text" name="courseFee" th:value="${course.courseFee}">
 							</div>
 
 							<div class="course-start-date">
 								<label>開始日</label>
-								<input type="date" name="courseStartDate">
+								<input type="date" name="courseStartDate" th:value="${course.StartDate}">
 							</div>
 
 							<div class="course-finish-date">
 								<label>終了日</label>
-								<input type="date" name="courseFinishDate">
+								<input type="date" name="courseFinishDate" th:value="${course.FinishDate}">
 							</div>
 
 							<div class="course-start-time">
 								<label>レッスン開始時間</label>
-								<input type="time" name="lessonStartTime" placeholder="レッスンの開始時間を入力してください">
+								<input type="time" name="lessonStartTime" th:value="${course.lessonStartTime}">
 							</div>
 
 							<div class="course-duration">
 								<label>レッスン時間</label>
-								<input type="text" name="lessonDuration" placeholder="レッスン時間を入力してください">
+								<input type="text" name="lessonDuration" th:value="${course.lessonDuration}">
 							</div>
 
 							<div class="body">
 								<label>講座の情報</label>
-								<textarea name="courseInfo" id="body" placeholder="講座の情報を入力してください"></textarea>
+								<textarea name="courseInfo" id="body" th:text="${course.courseInfo}"></textarea>
 							</div>
 						</div>
 

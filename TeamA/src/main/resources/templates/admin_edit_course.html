@@ -11,8 +11,8 @@
 	<link rel="stylesheet" th:href="@{/css/base.css}">
 	<link rel="stylesheet" th:href="@{/css/header.css}">
 	<link rel="stylesheet" th:href="@{/css/footer.css}">
-	<link rel="stylesheet" th:href="@{/css/admin_edit_course.css}">
-	<title>HTML | Template</title>
+	<link rel="stylesheet" th:href="@{/css/admin_add_course.css}">
+	<title>講座修正</title>
 </head>
 
 <body>
@@ -24,16 +24,15 @@
         <li><p th:text="${admin.getAdminName}"></p></li>
         <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
         <li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
-				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
+		<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
+		<li><a th:href="@{/adminlogout}">ログアウト</a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main>
-
 		<div class="back-button">
-			<a th:href="@{/home/admin/view/courses}" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
+			<a th:href="@{/home/admin/view/courses}" class="return_link"> &lt;&lt; 講座一覧に戻る </a>
 		</div>
 
 		<h2 class="page-title">講座編集</h2>
@@ -42,14 +41,16 @@
 
 		<section class="course">
 
-
-			<form th:action="@{/home/admin/view/courses/editcourse/save}" class="course-item" method="post"
+		<div class="course-container">
+			<form id="edit" th:action="@{/home/admin/view/courses/editcourse/save}" class="course-item" method="post"
 				enctype="multipart/form-data">
-				<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
-				<div class="course-container">
+				
+					<div class="course-info">
+						
+						<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
 					<div id="userIcon"><img th:src="@{/course-img/{img}(img=${course.getCourseImage})}" alt="course_image"><input type="file" name="courseImage">
 					</div>
-					<div class="course-info">
+						
 						<div class="heading">
 							<label>講座名</label>
 							<input type="text" name="courseName" th:value="${course.courseName}">
@@ -86,14 +87,14 @@
 
 							</div>
 						</div>
-						<Input type="submit" name="save-button" id="save-button"></Input>
+					</div>
 			</form>
-
+			<div id="buttons">
+				<Input type="submit" form="edit" name="save-button" id="save-button"></Input>
+				<button name="back-button" id="back-button"><a href="/home/admin/view/courses">戻る</a></button>
 			</div>
 			</div>
-          <button name="back-button" id="back-button"><a th:href="@{/home/admin/view/courses}">戻る</a></button>
      </section>
-
 	</main>
 
 	<footer>
