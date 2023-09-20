@@ -89,7 +89,7 @@
 					<div class ="course-info">
 						<div class="course-name-price">
 							<a th:href="@{#}" th:text="${course.courseName}" class="course-name"><h2></h2></a>
-							<p th:text="${course.deleteFlag}" class="course-price"></p>
+							<p th:text="${course.deleteFlag} + '円'" class="course-price"></p>
 							<p th:text="${course.courseFee}" class="course-price"></p>
 						</div>
 						<p th:text="${course.courseInfo}" class="course-description"></p>

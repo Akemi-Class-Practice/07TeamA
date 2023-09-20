@@ -11,7 +11,7 @@
 	<link rel="stylesheet" th:href="@{/css/header.css}">
 	<link rel="stylesheet" th:href="@{/css/footer.css}">
 	<link rel="stylesheet" th:href="@{/css/admin_add_admin.css}">
-	<title>07TeamA</title>
+	<title>管理者追加</title>
 </head>
 
 <body>
@@ -19,11 +19,9 @@
 		<h1><a href="">07TeamA</a></h1>
 		<nav>
 			<ul>
-				<li><img th:src="@{/img/kiko.jpg}" alt="admin_icon"></li>
-				<li>
-					<p th:text="${userName}"></p>
-				</li>
-				 <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+				<li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
+                <li><p th:text="${admin.getAdminName}"></p></li>
+                <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
 				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
 				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/adminlogout}">ログアウト</a></li>

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" th:href="@{/css/header.css}">
 	<link rel="stylesheet" th:href="@{/css/footer.css}">
 	<link rel="stylesheet" th:href="@{/css/user_edit_personal_info.css}">
-	<title>HTML | Template</title>
+	<title>情報変更</title>
 </head>
 
 <body>
@@ -21,17 +21,17 @@
             <ul>
                 <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
                 <li><p th:text="${admin.getAdminName}"></p></li>
-                <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>>
-                <li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-                <li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
-                <li><a th:href="@{/adminlogout}">ログアウト</a></li>
+                <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
+				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
             </ul>
         </nav>
 	</header>
 
 	<main>
 		<div id="change-user-info-container">
-			<a th:href="@{/home/admin/view/courses}" class="back-view-courses"> &lt;&lt; 講座一覧に戻る </a>
+			<a th:href="@{/home/admin/view/courses}" class="return_link"> &lt;&lt; 講座一覧に戻る </a>
 			<h2>ユーザー情報を変更</h2>
 			<section id="change-user-info-form">
 				<form id="form" method="post"

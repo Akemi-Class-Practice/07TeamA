@@ -110,7 +110,11 @@ filter:brightness(90%);
 	width: 200px;
 }
 
-
+.return_link a:link, .return_link a:active, .return_link a:visited, .return_link a:hover {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+}
 
 
 /* Password stuff */

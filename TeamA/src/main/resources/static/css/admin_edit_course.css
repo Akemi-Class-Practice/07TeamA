@@ -85,7 +85,6 @@ div.course-price{
     display: flex;
     flex-direction: column;
     /* margin-top: 50px; */
-    transform: translate(-370px);
 }
 
 .body label{
