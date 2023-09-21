@@ -51,7 +51,6 @@ section{
 .messages-item{
     border-bottom: 1px solid #d3d3d3;
     padding: 20px 5px;
-    /* text-align: left; */
 }
 
 .messages-item ul {
@@ -103,7 +102,6 @@ section{
 .messages-detail ul{
     display: flex;
     flex-direction: column;
-    /* border-bottom: 1px solid #d3d3d3; */
 }
 
 
