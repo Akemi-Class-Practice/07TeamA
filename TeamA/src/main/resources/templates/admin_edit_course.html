@@ -6,13 +6,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" th:href="@{/css/base.css}">
 	<link rel="stylesheet" th:href="@{/css/header.css}">
 	<link rel="stylesheet" th:href="@{/css/footer.css}">
 	<link rel="stylesheet" th:href="@{/css/admin_add_course.css}">
-	<title>講座修正</title>
+	<title>講座追加</title>
 </head>
 
 <body>
@@ -20,89 +19,97 @@
 		<h1><a href="">07TeamA</a></h1>
 		<nav>
 			<ul>
-        <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
-        <li><p th:text="${admin.getAdminName}"></p></li>
-        <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
-        <li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-		<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
-		<li><a th:href="@{/adminlogout}">ログアウト</a></li>
+				<li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
+				<li>
+					<p th:text="${admin.getAdminName}"></p>
+				</li>
+				<li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
+				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main>
+
+
+
+<section class="course">
+
+	<div class="course-container">
 		<div class="back-button">
 			<a th:href="@{/home/admin/view/courses}" class="return_link"> &lt;&lt; 講座一覧に戻る </a>
-		</div>
+		</div> <!--End of back-button div-->
 
-		<h2 class="page-title">講座編集</h2>
-        <a class="course-bttn course-delete-bttn" th:href="@{/home/course/delete/{courseId}(courseId=${course.courseId})}">講座削除</a>
-
-
-		<section class="course">
-
-		<div class="course-container">
-			<form id="edit" th:action="@{/home/admin/view/courses/editcourse/save}" class="course-item" method="post"
-				enctype="multipart/form-data">
-				
-					<div class="course-info">
-						
-						<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
-					<div id="userIcon"><img th:src="@{/course-img/{img}(img=${course.getCourseImage})}" alt="course_image"><input type="file" name="courseImage">
-					</div>
-						
+		<h2 class="page-title">新規講座登録</h2>
+		<div class="buttons delete-button">
+			<a th:if="${course.deleteFlag} == 0" class="course-bttn course-delete-bttn" th:href="@{/home/course/delete/{courseId}(courseId=${course.courseId})}">講座非公開</a>
+			<a th:if="${course.deleteFlag} == 1" class="course-bttn course-reactivate-bttn" th:href="@{/home/course/delete/{courseId}(courseId=${course.courseId})}">講座再公開</a>
+		</div><!-- End of buttons div-->
+		<form class="course-item" th:action="@{/home/admin/view/courses/editcourse/save}" method="post" enctype="multipart/form-data" id="edit">
+			<div id="course-picture-and-data">
+				<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
+				<div id="userIcon">
+					<img th:src="@{/course-img/{img}(img=${course.getCourseImage})}" alt="course_icon">
+					<input type="file" name="courseImage">
+				</div><!-- End of userIcon div -->
+				<div class="course-info">
+					<div class="item">
 						<div class="heading">
 							<label>講座名</label>
 							<input type="text" name="courseName" th:value="${course.courseName}">
-						</div>
+						</div> <!--End of heading div-->
+								
+						<div class="course-price">
+							<label>料金</label>
+							<input type="text" name="courseFee" th:value="${course.courseFee}">
+						</div> <!--End of course-price div-->
 
-						<div class="item">
-							<div class="course-price">
-								<label>料金</label>
-								<input type="text" name="courseFee" th:value="${course.courseFee}">
-							</div>
+						<div class="course-start-date">
+							<label>開始日</label>
+							<input type="date" name="courseStartDate" th:value="${course.StartDate}">
+						</div> <!--End of course-start-date div-->
 
-							<div class="course-start-date">
-								<label>開始日</label>
-								<input type="date" name="courseStartDate" th:value="${course.StartDate}">
-							</div>
+						<div class="course-finish-date">
+							<label>終了日</label>
+							<input type="date" name="courseFinishDate" th:value="${course.FinishDate}">
+						</div> <!--End of course-finish-date div-->
 
-							<div class="course-finish-date">
-								<label>終了日</label>
-								<input type="date" name="courseFinishDate" th:value="${course.FinishDate}">
-							</div>
+						<div class="course-start-time">
+							<label>レッスン開始時間</label>
+							<input type="time" name="lessonStartTime" th:value="${course.lessonStartTime}">
+						</div> <!--End of course-start-time div-->
 
-							<div class="course-start-time">
-								<label>レッスン開始時間</label>
-								<input type="time" name="lessonStartTime" th:value="${course.lessonStartTime}">
-							</div>
+						<div class="course-duration">
+							<label>レッスン時間</label>
+							<input type="text" name="lessonDuration" th:value="${course.lessonDuration}">
+						</div> <!--End of course-duration div-->
+					</div> <!--End of item div-->
+				</div> <!--End of course-info div-->
+			</div><!-- End of course-picture-and-date div-->
+			<div class="body">
+				<label>講座の情報</label>
+				<textarea name="courseInfo" id="body" th:text="${course.courseInfo}"></textarea>
+			</div> <!--End of body div-->
+		</form>
+		<div class="buttons">
+			<Input type="submit" form="edit" name="save-button" id="save-button"></Input>
+			<button name="back-button" id="back-button"><a href="/home/admin/view/courses">戻るfdsfsd</a></button>
+		</div> <!--End of Buttons div-->
+	</div><!-- End of course-container div-->	
+</section><!-- End of course section -->
 
-							<div class="course-duration">
-								<label>レッスン時間</label>
-								<input type="text" name="lessonDuration" th:value="${course.lessonDuration}">
-							</div>
-							<div class="body">
-								<label>講座の情報</label>
-								<textarea name="courseInfo" id="body" th:text="${course.courseInfo}"></textarea>
-
-							</div>
-						</div>
-					</div>
-			</form>
-			<div id="buttons">
-				<Input type="submit" form="edit" name="save-button" id="save-button"></Input>
-				<button name="back-button" id="back-button"><a href="/home/admin/view/courses">戻る</a></button>
-			</div>
-			</div>
-     </section>
 	</main>
 
 	<footer>
 		<ul>
-            <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
-            <li><p> | </p></li>
-            <li><a th:href="@{/adminlogout}">ログアウト</a></li>
-        </ul>
+			<li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+			<li>
+				<p> | </p>
+			</li>
+			<li><a th:href="@{/adminlogout}">ログアウト</a></li>
+		</ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
 	</footer>
 </body>

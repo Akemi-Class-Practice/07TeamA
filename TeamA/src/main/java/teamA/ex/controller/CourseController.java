@@ -187,17 +187,23 @@ public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
 			@RequestParam LocalTime lessonStartTime, @RequestParam int lessonDuration,
 			@RequestParam String courseInfo, @RequestParam Long courseId) {
 		
+		CourseEntity course = (CourseEntity) courseService.getCourse(courseId);
 		
 		// courseImageの名前を習得し保存する処理
-		String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + courseImage.getOriginalFilename();
-		try {
-			// 保存処理
-			Files.copy(courseImage.getInputStream(), Path.of("src/main/resources/static/course-img/" + fileName));
-		} catch (Exception e) {
-			e.printStackTrace();
+		String newFileName;
+		if (!courseImage.isEmpty()) {
+			newFileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + courseImage.getOriginalFilename();
+			try {
+				// 保存処理
+				Files.copy(courseImage.getInputStream(), Path.of("src/main/resources/static/user-img/" + newFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+				}
+		} else {
+			newFileName = course.getCourseImage();
 		}
 		
-		courseService.editCoursePost(courseName, courseFee, fileName, courseStartDate, courseFinishDate, lessonStartTime, lessonDuration, courseInfo, courseId);
+		courseService.editCoursePost(courseName, courseFee, newFileName, courseStartDate, courseFinishDate, lessonStartTime, lessonDuration, courseInfo, courseId);
 		return "redirect:/home/admin/view/courses";
 	}
 	

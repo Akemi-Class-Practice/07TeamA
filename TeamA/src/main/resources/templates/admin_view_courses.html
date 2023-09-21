@@ -89,13 +89,17 @@
 					<div class ="course-info">
 						<div class="course-name-price">
 							<a th:href="@{#}" th:text="${course.courseName}" class="course-name"><h2></h2></a>
-							<p th:text="${course.deleteFlag} + '円'" class="course-price"></p>
+							<div th:switch="${course.deleteFlag}">
+								<p th:case="0">Active</p>
+								<p th:case="1">Inactive</p>
+							</div>
 							<p th:text="${course.courseFee}" class="course-price"></p>
 						</div>
 						<p th:text="${course.courseInfo}" class="course-description"></p>
 						<div class="buttons">
                             <a class="course-bttn course-edit-bttn" th:href="@{/home/admin/view/courses/editcourse/{courseId}(courseId=${course.courseId})}">講座編集</a>
-                            <a class="course-bttn course-delete-bttn" th:href="@{/home/course/delete/{courseId}(courseId=${course.courseId})}">講座削除</a>
+								<a th:if="${course.deleteFlag} == 0" class="course-bttn course-delete-bttn" th:href="@{/home/course/delete/{courseId}(courseId=${course.courseId})}">講座非公開</a>
+                            	<a th:if="${course.deleteFlag} == 1" class="course-bttn course-reactivate-bttn" th:href="@{/home/course/delete/{courseId}(courseId=${course.courseId})}">講座再公開</a>
                         </div>
 					</div>
 				</article>

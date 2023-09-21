@@ -102,3 +102,7 @@ filter:brightness(90%);
 .course-delete-bttn {
     background-color: var(--red);
 }
+
+.course-reactivate-bttn {
+    background-color: var(--green);
+}
