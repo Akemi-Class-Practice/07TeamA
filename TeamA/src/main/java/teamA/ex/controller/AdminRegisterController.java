@@ -49,7 +49,13 @@ public class AdminRegisterController {
 			e.printStackTrace();
 		}
 		
-		adminService.createAdmin(adminImgFileName, admin_name, admin_email, password);
-		return "redirect:/home/admin/register";
+		if(adminService.createAdmin(adminImgFileName, admin_name, admin_email, password)) {
+			return "redirect:/home/admin/view/courses";
+		}else {
+			return "redirect:/home/admin/register";
+		}
+		
+		//adminService.createAdmin(adminImgFileName, admin_name, admin_email, password);
+		//return "redirect:/home/admin/register";
 	}
 }
