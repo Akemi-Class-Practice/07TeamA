@@ -81,14 +81,25 @@ public class CourseService {
 	}
 	
 	// 削除処理を行うためのメソッド
+	// deleteFlag == 0 の状態は講座が削除されてない
+	// deleteFlag == 1 の状態は講座が削除されている
+	// 削除されてない場合、非公開にする
+	// 削除されている場合は再公開する
 	public boolean deleteCourse(Long courseId) {
 		CourseEntity courseList = courseDao.findByCourseId(courseId);
 		if(courseList == null) {
 			return false;
 		}else {
-			courseList.setDeleteFlag(1);
-			courseDao.save(courseList);			
-			return true;
+			if (courseList.getDeleteFlag() == 0) {
+				courseList.setDeleteFlag(1);
+				courseDao.save(courseList);			
+				return true;
+			} else {
+				courseList.setDeleteFlag(0);
+				courseDao.save(courseList);
+				return true;
+			}
+
 		}
 	}
 	

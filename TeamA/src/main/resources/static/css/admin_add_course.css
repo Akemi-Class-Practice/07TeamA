@@ -1,8 +1,3 @@
-main{
-    width: 960px;
-    margin: 0 auto;
-}
-
 .page-title{
     display: flex;
     justify-content: center;
@@ -34,7 +29,6 @@ form div{
     display: flex;
     flex-direction: column;
     text-align:left;
-    /* margin-bottom: 10px; */
 	padding: 5px;
 	font-size: 16px;
 	border: none;
@@ -48,7 +42,6 @@ form.course-item{
     padding: 5px;
     margin-left: 15px;
     margin-bottom: 30px;
-    /* background-color: aqua; */
 }
 
 .heading label{
@@ -66,17 +59,12 @@ div.course-price{
 
 .course-info{
     width:500px;
-    transform: translate(100px);
 }
 
-.body{
-    width: 960px;
-    display: flex;
-    flex-direction: column;
-    /* margin-top: 50px; */
-    transform: translate(-400px);
+.body {
+	width: 950px;
+	
 }
-
 .body label{
     font-weight: 800;
     font-size:x-large;
@@ -84,9 +72,9 @@ div.course-price{
 }
 
 .body textarea{
-    width: 900px;
-    min-height: 400px;
-   
+	display: flex;
+	resize: none;
+	height: 500px;
 }
 
 #add-course-button{
@@ -125,7 +113,6 @@ div.course-price{
 }
 
 #save-button{
-
     height: 35px;
     width: 110px;
     background-color: var(--green);
@@ -135,4 +122,96 @@ div.course-price{
 	cursor: pointer;
     font-size:medium;
     font-weight: 500;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    width: 400px;
+    margin-top: 75px;
+	margin: 0 auto;
+	justify-content: space-between;
+}
+.buttons a {
+    color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+.buttons a:hover {
+transition: all .2s ease;
+filter:brightness(90%);
+}
+
+.course-edit-bttn {
+    background-color: var(--orange);
+}
+
+.course-delete-bttn {
+    background-color: var(--red);
+}
+
+.course-reactivate-bttn {
+    background-color: var(--green);
+}
+
+.course-container {
+	display: flex;
+	flex-direction: column;
+	width: 950px;
+	margin: 0 auto;
+}
+
+#course-picture-and-data {
+	display: flex;
+	flex-direction: row;
+	width: 950px;
+	justify-content: space-between;
+}
+
+.butttons {
+	justify-content: flex-start;
+}
+
+.course-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.delete-button {
+	width: 950px;
+	justify-content: flex-end;
+}
+
+.submit-button {
+    display: flex;
+    gap: 10px;
+    width: 400px;
+    margin-top: 75px;
+	margin: 0 auto;
+	justify-content: center;
+	color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+.submit-button a {
+    color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
 }

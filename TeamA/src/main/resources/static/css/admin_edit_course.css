@@ -127,3 +127,37 @@ div.course-price{
     font-weight: 500;
 }
 
+.buttons {
+    display: flex;
+    gap: 10px;
+    width: 200px;
+    margin-top: 75px;
+    margin-left: 355px;
+}
+.buttons a {
+    color: darkslategrey;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 3px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+.buttons a:hover {
+transition: all .2s ease;
+filter:brightness(90%);
+}
+
+.course-edit-bttn {
+    background-color: var(--orange);
+}
+
+.course-delete-bttn {
+    background-color: var(--red);
+}
+
+.course-reactivate-bttn {
+    background-color: var(--green);
+}
