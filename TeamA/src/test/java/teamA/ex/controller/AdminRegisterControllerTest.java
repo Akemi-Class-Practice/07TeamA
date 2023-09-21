@@ -41,7 +41,7 @@ public class AdminRegisterControllerTest {
 		AdminEntity admin = new AdminEntity();
 		admin.setAdminId(1L);
 		admin.setAdminName("admin");
-		admin.setAdminIcon("2023-09-20-17-21-11-flower.jpg");
+		admin.setAdminIcon("flower.jpg");
 		session = new MockHttpSession();
 		session.setAttribute("admin", admin);
 	}
@@ -70,15 +70,15 @@ public class AdminRegisterControllerTest {
 	public void testAdminAdd_Succeed() throws Exception{
 		when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(true);
 		
-		String adminImg = "cat.jpg";
-		String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
+		String adminImg = "cat3.jpg";
+		//String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
 		
-		MockMultipartFile adminIcon = new MockMultipartFile("adminImgName", adminImg, "image/jpeg", new byte[0]);
+		MockMultipartFile adminIcon = new MockMultipartFile("admin_icon", adminImg, "image/jpeg", new byte[0]);
 		
 		mockMvc.perform(MockMvcRequestBuilders.multipart("/home/admin/register/process")
 				.file(adminIcon)
-				.param("adminName","admin2")
-				.param("adminEmail","admin2@admin2.com")
+				.param("admin_name","admin2")
+				.param("admin_email","admin2@admin2.com")
 				.param("password","admin2")
 				.session(session))
 		
@@ -91,14 +91,14 @@ public class AdminRegisterControllerTest {
 			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
 			
 			String adminImg = "cat.jpg";
-			String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
+			//String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
 			
-			MockMultipartFile adminIcon = new MockMultipartFile("adminImgName", adminImg, "image/jpeg", new byte[0]);
+			MockMultipartFile adminIcon = new MockMultipartFile("admin_icon", adminImg, "image/jpeg", new byte[0]);
 			
 			mockMvc.perform(MockMvcRequestBuilders.multipart("/home/admin/register/process")
 					.file(adminIcon)
-					.param("adminName","")
-					.param("adminEmail","admin2@admin2.com")
+					.param("admin_name","")
+					.param("admin_email","admin2@admin2.com")
 					.param("password","admin2")
 					.session(session))
 			
@@ -111,14 +111,14 @@ public class AdminRegisterControllerTest {
 			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
 			
 			String adminImg = "cat.jpg";
-			String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
+			//String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
 			
-			MockMultipartFile adminIcon = new MockMultipartFile("adminImgName", adminImg, "image/jpeg", new byte[0]);
+			MockMultipartFile adminIcon = new MockMultipartFile("admin_icon", adminImg, "image/jpeg", new byte[0]);
 			
 			mockMvc.perform(MockMvcRequestBuilders.multipart("/home/admin/register/process")
 					.file(adminIcon)
-					.param("adminName","admin2")
-					.param("adminEmail","")
+					.param("admin_name","admin2")
+					.param("admin_email","")
 					.param("password","admin2")
 					.session(session))
 			
@@ -131,18 +131,79 @@ public class AdminRegisterControllerTest {
 			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
 			
 			String adminImg = "cat.jpg";
-			String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
+			//String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
 			
-			MockMultipartFile adminIcon = new MockMultipartFile("adminImgName", adminImg, "image/jpeg", new byte[0]);
+			MockMultipartFile adminIcon = new MockMultipartFile("admin_icon", adminImg, "image/jpeg", new byte[0]);
 			
 			mockMvc.perform(MockMvcRequestBuilders.multipart("/home/admin/register/process")
 					.file(adminIcon)
-					.param("adminName","admin2")
-					.param("adminEmail","admin2@admin2.com")
+					.param("admin_name","admin2")
+					.param("admin_email","admin2@admin2.com")
 					.param("password","")
 					.session(session))
 			
 			.andExpect(redirectedUrl("/home/admin/register"));
 		}
 
+		//名前が間違って登録が失敗するテスト
+		@Test
+		public void testAdminAdd_WrongName_Unsuccessful() throws Exception{
+			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
+			
+			String adminImg = "cat.jpg";
+			//String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
+			
+			MockMultipartFile adminIcon = new MockMultipartFile("admin_icon", adminImg, "image/jpeg", new byte[0]);
+			
+			mockMvc.perform(MockMvcRequestBuilders.multipart("/home/admin/register/process")
+					.file(adminIcon)
+					.param("admin_name","admin3")
+					.param("admin_email","admin2@admin2.com")
+					.param("password","admin2")
+					.session(session))
+			
+			.andExpect(redirectedUrl("/home/admin/register"));
+		}
+		
+
+		//名前が間違って登録が失敗するテスト
+		@Test
+		public void testAdminAdd_WrongEmail_Unsuccessful() throws Exception{
+			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
+			
+			String adminImg = "cat.jpg";
+			//String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
+			
+			MockMultipartFile adminIcon = new MockMultipartFile("admin_icon", adminImg, "image/jpeg", new byte[0]);
+			
+			mockMvc.perform(MockMvcRequestBuilders.multipart("/home/admin/register/process")
+					.file(adminIcon)
+					.param("admin_name","admin2")
+					.param("admin_email","admin3@admin3.com")
+					.param("password","admin2")
+					.session(session))
+			
+			.andExpect(redirectedUrl("/home/admin/register"));
+		}
+		
+
+		//名前が間違って登録が失敗するテスト
+		@Test
+		public void testAdminAdd_WrongPassword_Unsuccessful() throws Exception{
+			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
+			
+			String adminImg = "cat.jpg";
+			//String adminImgName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminImg;
+			
+			MockMultipartFile adminIcon = new MockMultipartFile("admin_icon", adminImg, "image/jpeg", new byte[0]);
+			
+			mockMvc.perform(MockMvcRequestBuilders.multipart("/home/admin/register/process")
+					.file(adminIcon)
+					.param("admin_name","admin2")
+					.param("admin_email","admin2@admin2.com")
+					.param("password","admin3")
+					.session(session))
+			
+			.andExpect(redirectedUrl("/home/admin/register"));
+		}
 }
