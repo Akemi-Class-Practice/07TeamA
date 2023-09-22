@@ -36,6 +36,9 @@ public class PurchaseHistoryController {
 	@Autowired 
 	private TransactionItemsService transactionItemsService;
 	
+	@Autowired 
+	private UserService userService;
+	
 	@Autowired
 	private HttpSession session;
 	
@@ -86,6 +89,8 @@ public class PurchaseHistoryController {
 			transactions.add(transaction);
 		}
 		
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		//取引の歴史を画面に表示できるようにtransactionsのリストをモデルに設定する
 		model.addAttribute("transactions", transactions);
 		//ユーザー情報を画面に表示できるようにuserのオブジェクトをモデルに設定する

@@ -32,6 +32,8 @@ public class EditUserController {
 	@GetMapping("/edituserinfo")
 	public String getEditUserInfoPage(Model model) {
 		UserEntity user = (UserEntity) session.getAttribute("user");
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		model.addAttribute("user", user);
 		return "user_edit_personal_info.html";
 	}
@@ -54,6 +56,8 @@ public class EditUserController {
 			newFileName = user.getStudentIcon();
 		}
 		
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		model.addAttribute("user", user);
 		model.addAttribute("newIcon", newFileName);
 		model.addAttribute("newName", newName);

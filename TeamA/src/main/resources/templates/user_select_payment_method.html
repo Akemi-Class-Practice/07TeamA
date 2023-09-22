@@ -20,7 +20,7 @@
 		<h1><a th:href="@{/home/user/view/courses}">07TeamA</a></h1>
         <nav>
 			<ul>
-				<li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
+				<li><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></li>
 				<li><p th:text="${user.getStudentName}"></p></li>
 				<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
@@ -112,22 +112,6 @@
 		</ul>
         <p>Copyright @ 2023 Learner All Right Reserved.</p>
     </footer>
+    <script type="text/javascript" th:src="@{/js/cartHover.js}"></script>
 </body>
-<script>
-	const cart = document.getElementById("cart-icon");
-	const cartNumber = document.getElementById("cart-amount");
-	
-	cart.addEventListener("mouseover", mouseOver);
-	cart.addEventListener("mouseout", mouseOut);
-	
-	function mouseOver() {
-		console.log("hover");
-		cartNumber.classList.add("cart-amount-hover");
-	}
-	
-	function mouseOut() {
-		console.log("mouseout");
-		cartNumber.classList.remove("cart-amount-hover");
-	}
-</script>
 </html>

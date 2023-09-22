@@ -16,20 +16,21 @@
 </head>
 
 <body>
-	<header>
+    <header>
 		<h1><a th:href="@{/home/user/view/courses}">07TeamA</a></h1>
-		<nav>
+        <nav>
 			<ul>
-				<li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
+				<li><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></li>
 				<li><p th:text="${user.getStudentName}"></p></li>
 				<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
 				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/userlogout}">ログアウト</a></li>
-				<li><a th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+				<li id="cart-icon"><a  th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+				<p id="cart-amount" th:text="${cartContentNumber}"></p>
 			</ul>
-		</nav>
-	</header>
+        </nav>
+    </header>
 
 	<main>
 		<div id="main-wrapper">
@@ -52,7 +53,7 @@
 							<a th:href="@{/home/user/view/courses/{courseId}(courseId=${course.courseId})}" th:text="${course.courseName}" class="course-name">
 								<h2></h2>
 							</a>
-							<p th:text="${course.courseFee}" class="course-price"></p>
+							<p th:text="${course.courseFee} + '円'" class="course-price"></p>
 						</div>
 						<p th:text="${course.courseInfo}" class="course-description"></p>
 						<a class="course-buy-bttn" th:href="@{/home/add/to/cart/{courseId}(courseId=${course.courseId})}" onclick="alert('カートに入れました')">カートに入れる</a>
@@ -72,8 +73,7 @@
 		</ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
 	</footer>
+	<script type="text/javascript" th:src="@{/js/cartHover.js}"></script>
 </body>
-<script>
 
-</script>
 </html>

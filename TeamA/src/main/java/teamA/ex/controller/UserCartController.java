@@ -18,6 +18,7 @@ import jakarta.servlet.http.HttpSession;
 import teamA.ex.model.entity.CourseEntity;
 import teamA.ex.model.entity.UserEntity;
 import teamA.ex.service.CourseService;
+import teamA.ex.service.UserService;
 
 @Controller
 @RequestMapping("/home")
@@ -30,9 +31,12 @@ public class UserCartController {
 	// HttpSessionを取得可能にしておく
 	@Autowired
 	HttpSession session;
+	
+	@Autowired 
+	private UserService userService;
 
 
-
+	// これは未使用
 	// ログアウトの処理
 	@GetMapping("/guest/view/courses")
 	public String getCourseLogoutViewPage(Model model) {
@@ -44,10 +48,10 @@ public class UserCartController {
 		model.addAttribute("courseList", courseList);
 
 		// modelへ、ログアウト処理のため、ログインフラグにfalseをセットする。
-//		model.addAttribute("loginflg",false);
+		// model.addAttribute("loginflg",false);
 
 		// modelへ、ログアウト処理のため、ログインしているユーザー情報にnullをセットする。
-//		model.addAttribute("userName", null);
+		// model.addAttribute("userName", null);
 
 		model.addAttribute("logoutMessage", "ログアウトしました");
 		return "guest_view_courses";
@@ -111,13 +115,13 @@ public class UserCartController {
 			totalPrice += list.get(idx).getCourseFee();
 		};
 		
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		model.addAttribute("user", user);
 		model.addAttribute("totalPrice", totalPrice);
 		model.addAttribute("list", list);
 		return "user_view_cart.html";
 	}
-
-	
 
 }
 

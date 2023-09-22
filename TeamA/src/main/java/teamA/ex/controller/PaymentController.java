@@ -78,6 +78,8 @@ public class PaymentController {
 			totalPrice += cartList.get(idx).getCourseFee();
 		};
 		
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		// 行き先のページに渡すためにtotalPriceの変数をMODELに設定する
 		model.addAttribute("totalPrice", totalPrice);
 		// 行き先のページに渡すためにuserの変数をMODELに設定する
@@ -119,6 +121,8 @@ public class PaymentController {
 		}
 		
 		cartList.clear();
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		// 行き先のページに渡すためにtotalPriceの変数をMODELに設定する
 		model.addAttribute("totalPrice", totalPrice);
 		// 行き先のページに渡すためにuserの変数をMODELに設定する

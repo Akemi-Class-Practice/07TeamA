@@ -25,6 +25,7 @@ import teamA.ex.model.entity.UserEntity;
 import teamA.ex.service.ContactService;
 import teamA.ex.service.CourseService;
 import teamA.ex.service.LoginAnalyticService;
+import teamA.ex.service.UserService;
 
 
 @RequestMapping("/home")
@@ -39,6 +40,8 @@ public class CourseController {
 	private LoginAnalyticService loginAnalyticService;
 	@Autowired
 	private ContactService contactService;
+	@Autowired 
+	private UserService userService;
 	
 	// HTTP GETリクエストを受け取るメソッド
 	@Autowired
@@ -81,6 +84,8 @@ public class CourseController {
 		//戻り値はCourseEntityのリストで、このリストをmodelに追加
 		 List<CourseEntity> courseList = courseService.findCoursesForUser();
 		
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		model.addAttribute("user", user);
 		model.addAttribute("courseList", courseList);
 		return "user_view_courses.html";
@@ -98,6 +103,8 @@ public class CourseController {
 		if(course == null) {
 			return "redirect:/home/admin/view/courses";
 		}else {
+			int cartContentNumber = userService.getCartContentNumber();
+			model.addAttribute("cartContentNumber", cartContentNumber);
 			model.addAttribute("user", user);
 			model.addAttribute("course", course);
 			return "user_view_course_info.html";
@@ -116,7 +123,7 @@ public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
 		} else {
 			model.addAttribute("admin", admin);
 			model.addAttribute("course", course);
-		return "admin_edit_course.html";
+			return "admin_edit_course.html";
 		}
 	}
 	
@@ -228,8 +235,9 @@ public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
 		
 		if (searchResults.isEmpty()) {
 			return "redirect:/home/user/view/courses";
-
 		} else {
+			int cartContentNumber = userService.getCartContentNumber();
+			model.addAttribute("cartContentNumber", cartContentNumber);
 			UserEntity user = (UserEntity) session.getAttribute("user");
 			model.addAttribute("user", user);
 			model.addAttribute("courseList", searchResults);
