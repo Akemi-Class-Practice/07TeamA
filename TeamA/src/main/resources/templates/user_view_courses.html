@@ -16,20 +16,21 @@
 </head>
 
 <body>
-	<header>
+    <header>
 		<h1><a th:href="@{/home/user/view/courses}">07TeamA</a></h1>
-		<nav>
+        <nav>
 			<ul>
-				<li><a href="#"><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></a></li>
+				<li><img th:src="@{/user-img/{img}(img=${user.getStudentIcon})}" alt="user_icon"></li>
 				<li><p th:text="${user.getStudentName}"></p></li>
 				<li><a th:href="@{/home/user/viewpurchasehistory}">購入履歴</a></li>
 				<li><a th:href="@{/home/edituserinfo}">情報変更</a></li>
 				<li><a th:href="@{/home/user/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/userlogout}">ログアウト</a></li>
-				<li><a th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+				<li id="cart-icon"><a  th:href="@{/home/cart}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
+				<p id="cart-amount" th:text="${cartContentNumber}"></p>
 			</ul>
-		</nav>
-	</header>
+        </nav>
+    </header>
 
 	<main>
 		<div id="main-wrapper">
