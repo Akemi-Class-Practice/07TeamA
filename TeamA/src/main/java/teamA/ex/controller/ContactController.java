@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import jakarta.servlet.http.HttpSession;
 import teamA.ex.model.entity.UserEntity;
 import teamA.ex.service.ContactService;
+import teamA.ex.service.UserService;
 
 @RequestMapping("/home")
 @Controller
@@ -18,15 +19,18 @@ public class ContactController {
 
 	@Autowired
 	private ContactService contactService;
+	@Autowired 
+	private UserService userService;
 
 	@Autowired
 	HttpSession session;
 
 	// お問い合わせの画面の表示
 	@GetMapping("/user/contact/view")
-
 	public String getContactViewPage(Model model) {
 		UserEntity user = (UserEntity) session.getAttribute("user");
+		int cartContentNumber = userService.getCartContentNumber();
+		model.addAttribute("cartContentNumber", cartContentNumber);
 		model.addAttribute("user", user);
         return "user_contact.html";
 	}

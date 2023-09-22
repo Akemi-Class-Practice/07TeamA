@@ -53,7 +53,7 @@
 							<a th:href="@{/home/user/view/courses/{courseId}(courseId=${course.courseId})}" th:text="${course.courseName}" class="course-name">
 								<h2></h2>
 							</a>
-							<p th:text="${course.courseFee}" class="course-price"></p>
+							<p th:text="${course.courseFee} + '円'" class="course-price"></p>
 						</div>
 						<p th:text="${course.courseInfo}" class="course-description"></p>
 						<a class="course-buy-bttn" th:href="@{/home/add/to/cart/{courseId}(courseId=${course.courseId})}" onclick="alert('カートに入れました')">カートに入れる</a>
@@ -73,8 +73,7 @@
 		</ul>
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
 	</footer>
+	<script type="text/javascript" th:src="@{/js/cartHover.js}"></script>
 </body>
-<script>
 
-</script>
 </html>
