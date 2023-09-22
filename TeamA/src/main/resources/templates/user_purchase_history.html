@@ -47,7 +47,7 @@
                 <li class="total-list" th:each="course:${transaction.courses}">
                     <article class="course">
                         <div class="course-image">
-                            <img th:src="@{/course-img/{img}(img=${course.courseImage})}" alt="" height="100px" width="100px">
+                            <img th:src="@{/course-img/{img}(img=${course.courseImage})}" onerror="this.onerror=null;this.src='/img/kiko.jpg';" alt="course image" height="100px" width="100px">
                         </div>
                         <div class="course-name-price">
                             <h2 class="course-name" th:text="${course.courseName}"></h2>

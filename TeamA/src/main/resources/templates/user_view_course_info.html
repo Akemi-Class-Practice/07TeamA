@@ -6,8 +6,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap" rel="stylesheet">
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" th:href="@{/css/base.css}">
 	<link rel="stylesheet" th:href="@{/css/header.css}">
 	<link rel="stylesheet" th:href="@{/css/footer.css}">
@@ -16,7 +15,6 @@
 </head>
 
 <body>
-	<header>
     <header>
 		<h1><a th:href="@{/home/user/view/courses}">07TeamA</a></h1>
         <nav>
@@ -41,8 +39,7 @@
 
 		<section class="course">
 			<div class="course-container">
-				<img th:src="@{/course-img/{img}(img=${course.courseImage})}" alt="" class="image-size">
-				<div class="course-info">
+				<img th:src="@{/course-img/{img}(img=${course.courseImage})}" onerror="this.onerror=null;this.src='/img/kiko.jpg';" alt="course image" height="200px" width="200px">				<div class="course-info">
 					<div class="course-item">
 						<div class="heading">
 							<h2 th:text="${course.courseName}"></h2>
