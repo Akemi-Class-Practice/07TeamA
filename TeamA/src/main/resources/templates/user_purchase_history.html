@@ -51,7 +51,7 @@
                         </div>
                         <div class="course-name-price">
                             <h2 class="course-name" th:text="${course.courseName}"></h2>
-                            <p class="course-price" th:text="${course.courseFee}"></p>
+                            <p class="course-price" th:text="${course.courseFee} + '円'"></p>
                         </div>
                     </article>
                 </li>

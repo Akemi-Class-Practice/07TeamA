@@ -51,7 +51,7 @@
 				<ul>
 					<li th:each="course:${cartList}">
 						<p th:text="${course.courseName}"></p>
-						<p th:text="${course.courseFee}"></p>
+						<p th:text="${course.courseFee} + '円'"></p>
 					</li>
 				</ul>
 			</section>

@@ -16,16 +16,16 @@
 
 <body>
     <header>
-        <h1><a href="">07TeamA</a></h1>
+        <h1><a th:href="@{/home/admin/view/courses}">07TeamA</a></h1>
         <nav>
-        <ul>
-        	<li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
-        	<li><p th:text="${admin.getAdminName}"></p></li>
-        	<li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
-        	<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-			<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
-			<li><a th:href="@{/adminlogout}">ログアウト</a></li>
-		</ul>
+            <ul>
+                <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
+                <li><p th:text="${admin.getAdminName}"></p></li>
+                <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
+				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -37,8 +37,9 @@
             <section id="messages">
 
                 <div class="messages-button">
-                    <button name="unread" id="unread">未読</button>
-                    <button name="read" id="read">既読</button>
+					<a th:href="@{/home/admin/contact/view}"><button name="unread" id="all">全部</button></a>
+                    <a th:href="@{/home/admin/contact/read}"><button name="unread" id="unread">未読</button></a>
+                    <a th:href="@{/home/admin/contact/unread}"><button name="read" id="read">既読</button></a>
                 </div>
 
                 <div class="messages-item">

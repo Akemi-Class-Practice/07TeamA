@@ -48,9 +48,9 @@
                 <h2><span id="check">✔</span>お支払い完了</h2>
             </section>
     
-                        <section id="course-list">
+            <section id="course-list">
 				<ul>
-					<li th:each="course:${cartList}">
+					<li th:each="course:${purchaseList}">
 						<p th:text="${course.courseName}"></p>
 						<p th:text="${course.courseFee} + '円'"></p>
 					</li>

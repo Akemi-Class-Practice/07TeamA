@@ -37,7 +37,7 @@
 			<section id="search">
 				<p id="search-results">講座：リスト一覧</p>
 				<form th:action="@{/home/user/view/courses/search}" method="get">
-					<input type="text" class="search-box" name="searchName">
+					<input type="text" class="search-box" name="searchName"　 placeholder="キーワードで検索。。。">
 					<input type="submit" id="search-button" value="検索">
 				</form>
 			</section>
@@ -46,7 +46,6 @@
 				<article class="course" th:each="course:${courseList}">
 					<div class="course-image">
 						<a th:href="@{/home/user/view/courses/{courseId}(courseId=${course.courseId})}"><img th:src="@{/course-img/{img}(img=${course.courseImage})}" onerror="this.onerror=null;this.src='/img/kiko.jpg';" alt="course image" height="200px" width="200px"></a>
-					<!--	<img th:unless="${course.courseImage != null}" th:src="@{/img/kiko.jpg}" alt="default image" height="200px" width="200px"> -->
 					</div>
 					<div class="course-info">
 						<div class="course-name-price">

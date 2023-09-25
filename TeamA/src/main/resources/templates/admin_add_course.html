@@ -17,17 +17,17 @@
 
 <body>
 	<header>
-		<h1><a href="">07TeamA</a></h1>
-		<nav>
-			<ul>
-		<li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
-        <li><p th:text="${admin.getAdminName}"></p></li>
-        <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
-        <li><a th:href="@{/home/admin/register}">管理者追加</a></li>
-		<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
-		<li><a th:href="@{/adminlogout}">ログアウト</a></li>
-			</ul>
-		</nav>
+        <h1><a th:href="@{/home/admin/view/courses}">07TeamA</a></h1>
+        <nav>
+            <ul>
+                <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
+                <li><p th:text="${admin.getAdminName}"></p></li>
+                <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
+				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
+				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
+            </ul>
+        </nav>
 	</header>
 
 	<main>
@@ -42,8 +42,8 @@
 		<form class="course-item" th:action="@{/home/admin/view/courses/editcourse/save}" method="post" enctype="multipart/form-data" id="edit">
 			<div id="course-picture-and-data">
 				<div id="userIcon">
-					<img src="" alt="course_icon">
-					<input type="file" name="courseImage">
+					<img id="course_image" th:src="@{/img/kiko.jpg}" onerror="this.onerror=null;this.src='/img/kiko.jpg';" alt="course image" height="250px" width="250px">
+					<input type="file" name="courseImage" id="imgInp">
 				</div><!-- End of userIcon div -->
 				<div class="course-info">
 					<div class="item">
@@ -100,5 +100,12 @@
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
 	</footer>
 </body>
-
+<script>
+		imgInp.onchange = evt => {
+		const [file] = imgInp.files
+		if (file) {
+			course_image.src = URL.createObjectURL(file)
+		}
+	}
+</script>
 </html>

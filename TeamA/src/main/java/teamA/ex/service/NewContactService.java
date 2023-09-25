@@ -17,4 +17,12 @@ public class NewContactService {
 	public List<Contact> searchAll(){
 		return contactRepository.findbyAllContactInfo();
 	}
+	
+	public List<Contact> searchRead(){
+		return contactRepository.findRead();
+	}
+	
+	public List<Contact> searchUnread(){
+		return contactRepository.findUnread();
+	}
 }

@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <h1><a href="">07TeamA</a></h1>
+        <h1><a th:href="@{/home/admin/view/courses}">07TeamA</a></h1>
         <nav>
             <ul>
                 <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
@@ -75,8 +75,8 @@
 
 			<section id="search">
 				<p id="search-results">講座：リスト一覧</p>
-				<form action="">
-					<input type="text" class="search-box" placeholder="search by keyword...">
+				<form th:action="@{/home/admin/view/courses/search}" method="get">
+					<input type="text" class="search-box" placeholder="キーワードで検索。。。" name="searchName">
 					<input type="submit" id="search-button" value="検索">
 				</form>
 			</section>
@@ -84,16 +84,15 @@
 			<section id="courses">
 				<article class="course" th:each="course:${courseList}">
 					<div class="course-image">
-						<img th:src="@{/course-img/{img}(img=${course.courseImage})}" alt="" height="200px" width="200px">
-					</div>
+<img th:src="@{/course-img/{img}(img=${course.courseImage})}" onerror="this.onerror=null;this.src='/img/kiko.jpg';" alt="course image" height="200px" width="200px">					</div>
 					<div class ="course-info">
 						<div class="course-name-price">
 							<a th:href="@{#}" th:text="${course.courseName}" class="course-name"><h2></h2></a>
 							<div th:switch="${course.deleteFlag}">
-								<p th:case="0">Active</p>
-								<p th:case="1">Inactive</p>
+								<p th:case="0">公開中</p>
+								<p th:case="1">非公開</p>
 							</div>
-							<p th:text="${course.courseFee}" class="course-price"></p>
+							<p th:text="${course.courseFee} + '円'" class="course-price"></p>
 						</div>
 						<p th:text="${course.courseInfo}" class="course-description"></p>
 						<div class="buttons">
