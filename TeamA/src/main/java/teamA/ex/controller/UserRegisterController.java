@@ -42,8 +42,10 @@ public class UserRegisterController {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		userService.createAccount(imgFileName, user_name, email, password);
-		return "redirect:/userlogin";
+		if(userService.createAccount(imgFileName, user_name, email, password)) {
+			return "redirect:/userlogin";
+		}else {
+			return "redirect:/userregister";
+		}
 	}
 }
