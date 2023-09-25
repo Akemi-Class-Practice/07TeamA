@@ -166,7 +166,7 @@ public class AdminRegisterControllerTest {
 		}
 		
 
-		//名前が間違って登録が失敗するテスト
+		//メールが間違って登録が失敗するテスト
 		@Test
 		public void testAdminAdd_WrongEmail_Unsuccessful() throws Exception{
 			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
@@ -187,7 +187,7 @@ public class AdminRegisterControllerTest {
 		}
 		
 
-		//名前が間違って登録が失敗するテスト
+		//パスワードが間違って登録が失敗するテスト
 		@Test
 		public void testAdminAdd_WrongPassword_Unsuccessful() throws Exception{
 			when(adminService.createAdmin(anyString(), anyString(), anyString(), anyString())).thenReturn(false);
