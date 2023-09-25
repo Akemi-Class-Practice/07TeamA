@@ -63,4 +63,30 @@ public class AdminContactController {
 				}
 			}
 		}
+		
+	// 既読のみを表示する昨日
+		@GetMapping("/admin/contact/read")
+		public String getReadMessages(Model model) {
+			//List<ContactEntity> contactList = contactService.findAllByOrderByIsDoneAsc();
+			List<Contact> contactList = newContactService.searchRead();
+			AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+			
+			model.addAttribute("contactList", contactList);
+			//model.addAttribute("contact", contactList);
+			model.addAttribute("admin", admin);
+			return "admin_contact.html";
+		}
+		
+		// 未読のみを表示する昨日
+		@GetMapping("/admin/contact/unread")
+		public String getUnreadMessages(Model model) {
+			//List<ContactEntity> contactList = contactService.findAllByOrderByIsDoneAsc();
+			List<Contact> contactList = newContactService.searchUnread();
+			AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+			
+			model.addAttribute("contactList", contactList);
+			//model.addAttribute("contact", contactList);
+			model.addAttribute("admin", admin);
+			return "admin_contact.html";
+		}
 }

@@ -16,19 +16,17 @@
 
 <body>
 	<header>
-		<h1><a href="">07TeamA</a></h1>
-		<nav>
-			<ul>
-				<li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
-				<li>
-					<p th:text="${admin.getAdminName}"></p>
-				</li>
-				<li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
+        <h1><a th:href="@{/home/admin/view/courses}">07TeamA</a></h1>
+        <nav>
+            <ul>
+                <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
+                <li><p th:text="${admin.getAdminName}"></p></li>
+                <li><a th:href="@{/home/admin/editadmininfo}">情報変更</a></li>
 				<li><a th:href="@{/home/admin/register}">管理者追加</a></li>
 				<li><a th:href="@{/home/admin/contact/view}">お問い合わせ</a></li>
 				<li><a th:href="@{/adminlogout}">ログアウト</a></li>
-			</ul>
-		</nav>
+            </ul>
+        </nav>
 	</header>
 
 	<main>
@@ -51,8 +49,8 @@
 			<div id="course-picture-and-data">
 				<input id="course-id" type="text" name="courseId" th:value="${course.courseId}" style="display:none">
 				<div id="userIcon">
-					<img th:src="@{/course-img/{img}(img=${course.getCourseImage})}" alt="course_icon">
-					<input type="file" name="courseImage">
+					<img id="course_image" th:src="@{/course-img/{img}(img=${course.getCourseImage})}" alt="course_icon">
+					<input type="file" name="courseImage" id="imgInp">
 				</div><!-- End of userIcon div -->
 				<div class="course-info">
 					<div class="item">
@@ -95,7 +93,7 @@
 		</form>
 		<div class="buttons">
 			<Input type="submit" form="edit" name="save-button" id="save-button"></Input>
-			<button name="back-button" id="back-button"><a href="/home/admin/view/courses">戻るfdsfsd</a></button>
+			<button name="back-button" id="back-button"><a href="/home/admin/view/courses">戻る</a></button>
 		</div> <!--End of Buttons div-->
 	</div><!-- End of course-container div-->	
 </section><!-- End of course section -->
@@ -113,5 +111,13 @@
 		<p>Copyright @ 2023 Learner All Right Reserved.</p>
 	</footer>
 </body>
+<script>
+		imgInp.onchange = evt => {
+		const [file] = imgInp.files
+		if (file) {
+			course_image.src = URL.createObjectURL(file)
+		}
+	}
+</script>
 
 </html>

@@ -228,9 +228,9 @@ public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
 		}
 	}
 	
-	//名前で講座を検索する機能
+	//名前で講座を検索する機能　USER
 	@GetMapping("/user/view/courses/search")
-	public String searchCourses(@RequestParam String searchName, Model model) {
+	public String searchCoursesUser(@RequestParam String searchName, Model model) {
 		List<CourseEntity> searchResults = courseService.searchCourses(searchName);
 		
 		if (searchResults.isEmpty()) {
@@ -244,5 +244,32 @@ public String getEditCoursePage(@PathVariable Long courseId, Model model)  {
 			return "user_view_courses.html";
 		}
 	}
+	 
+	//名前で講座を検索する機能 ADMIN
+		@GetMapping("/admin/view/courses/search")
+		public String searchCoursesAdmin(@RequestParam String searchName, Model model) {
+			List<CourseEntity> searchResults = courseService.searchCourses(searchName);
+			
+			if (searchResults.isEmpty()) {
+				return "redirect:/home/admin/view/courses";
+			} else {
+				AdminEntity admin = (AdminEntity) session.getAttribute("admin");
+				Long totalLogins = loginAnalyticService.countTotal();
+				Long totalLoginsToday = loginAnalyticService.countTotalCountToday();
+				Long totalLoginsMonth = loginAnalyticService.countTotalCountMonth();
+				Long totalSalesToday = loginAnalyticService.countTotalSalesToday();
+				Long totalSalesThisMonth = loginAnalyticService.countTotalSalesThisMonth();
+				Long totalUnreadMail = contactService.countTotalUnread();
+				model.addAttribute("totalLogins", totalLogins);
+				model.addAttribute("totalLoginsToday", totalLoginsToday);
+				model.addAttribute("totalLoginsMonth", totalLoginsMonth);
+				model.addAttribute("totalSalesToday", totalSalesToday);
+				model.addAttribute("totalSalesThisMonth", totalSalesThisMonth);
+				model.addAttribute("totalUnreadMail", totalUnreadMail);
+				model.addAttribute("admin", admin);
+				model.addAttribute("courseList", searchResults);
+				return "admin_view_courses.html";
+			}
+		}
 	
 }

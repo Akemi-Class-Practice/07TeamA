@@ -95,6 +95,7 @@ public class PaymentController {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		Long userId = user.getStudentId();
 		LinkedList<CourseEntity> cartList = (LinkedList<CourseEntity>) session.getAttribute("cart");
+		LinkedList<CourseEntity> purchaseList = (LinkedList<CourseEntity>) cartList.clone();
 		
 		// 次の３行はカートの合計金額を計算するためのメソッドです
 		// １。合計金額を確保するためにtotalPriceというint の変数を制限して、０に設定する
@@ -120,6 +121,7 @@ public class PaymentController {
 			transactionItemsService.createTransactionHistory(transactionId, courseId);
 		}
 		
+		model.addAttribute("purchaseList", purchaseList);
 		cartList.clear();
 		int cartContentNumber = userService.getCartContentNumber();
 		model.addAttribute("cartContentNumber", cartContentNumber);

@@ -16,8 +16,8 @@
 
 <body>
 	<header>
-		<h1><a href="#">07TeamA</a></h1>
-		<nav>
+        <h1><a th:href="@{/home/admin/view/courses}">07TeamA</a></h1>
+        <nav>
             <ul>
                 <li><img th:src="@{/admin-img/{img}(img=${admin.getAdminIcon})}" alt="admin_icon"></li>
                 <li><p th:text="${admin.getAdminName}"></p></li>

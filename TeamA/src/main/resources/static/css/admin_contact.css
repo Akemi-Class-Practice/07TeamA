@@ -36,14 +36,20 @@ section{
 	cursor: pointer;
 }
 
+#all{
+    background: var(--blue);
+    color: var(--text);
+    font-weight: 500;
+}
+
 #unread{
-    background: var(--green);
+    background: var(--red);
     color: var(--text);
     font-weight: 500;
 }
 
 #read{
-    background: var(--blue);
+    background: var(--green);
     color: var(--text);
     font-weight: 500;
 }
