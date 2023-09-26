@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
+import teamA.ex.model.entity.CourseEntity;
 import teamA.ex.model.entity.UserEntity;
 import teamA.ex.service.UserService;
 
@@ -76,6 +78,9 @@ public class EditUserController {
 		if (!newPassword.isEmpty()) {
 			userService.updateUserPassword(currentEmail, newPassword);
 			if (userService.updateUser(currentEmail, newIcon, newName, newEmail)) {
+//				LinkedList<CourseEntity> cartList = new LinkedList<CourseEntity>(); 
+				int cartContentNumber = userService.getCartContentNumber();
+				model.addAttribute("cartContentNumber", cartContentNumber);
 				session.invalidate();
 				UserEntity user = userService.login(newEmail, newPassword);
 				session.setAttribute("user", user);
@@ -86,8 +91,6 @@ public class EditUserController {
 			}
 		} else {
 			if (userService.updateUser(currentEmail, newIcon, newName, newEmail)) {
-				int cartContentNumber = userService.getCartContentNumber();
-				model.addAttribute("cartContentNumber", cartContentNumber);
 				UserEntity user = (UserEntity) session.getAttribute("user");
 				Long userId = user.getStudentId();
 				UserEntity newUser = (UserEntity) userService.findByStudentId(userId);
