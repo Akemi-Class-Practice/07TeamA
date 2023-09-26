@@ -103,9 +103,7 @@ public class EditUserController {
 				return "user_edit_personal_info.html";
 			}
 		}
-				
 	}
-	
 }
 
 
