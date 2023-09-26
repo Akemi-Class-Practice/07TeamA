@@ -82,7 +82,7 @@ public class EditUserController {
 				LinkedList<CourseEntity> newCartList = (LinkedList<CourseEntity>) cartList.clone();
 				session.invalidate();
 				UserEntity user = userService.login(newEmail, newPassword);
-				session.setAttribute("cart", newCartList); 
+				session.setAttribute("cartList", newCartList); 
 				int cartContentNumber = userService.getCartContentNumber();
 				model.addAttribute("cartContentNumber", cartContentNumber);
 				session.setAttribute("user", user);

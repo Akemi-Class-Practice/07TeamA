@@ -82,7 +82,7 @@ public class CourseController {
 			
 		//courseServiceのfindAllCoursePostメソッドを呼び出し、現在の管理者に関する講座を取得
 		//戻り値はCourseEntityのリストで、このリストをmodelに追加
-		 List<CourseEntity> courseList = courseService.findCoursesForUser();
+		List<CourseEntity> courseList = courseService.findCoursesForUser();
 		
 		int cartContentNumber = userService.getCartContentNumber();
 		model.addAttribute("cartContentNumber", cartContentNumber);
