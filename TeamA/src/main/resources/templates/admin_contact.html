@@ -62,7 +62,10 @@
                                 <p th:text="${contact.studentEmail}"></p>
                                 <p><a href="#" class="toggle"　th:text="${contact.contactTitle}"></a></p>
                                 <p th:text="${contact.contactDate}"></p>
-                                <p th:text="${contact.isDone}"></p>
+                                <div th:switch="${course.deleteFlag}">
+									<p th:case="0">未読</p>
+									<p th:case="1">既読</p>
+								</div>
                             </div>
                             <div class="hidden">
                                 <p th:text="${contact.contactDetail}"></p>
