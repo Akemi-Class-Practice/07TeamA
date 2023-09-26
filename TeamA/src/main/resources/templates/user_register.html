@@ -23,8 +23,8 @@
         <div class="container">
             <form th:action="@{/userregister/process}" id="Form" method="post" enctype="multipart/form-data">
                 <h2>新規登録</h2>
-                <div id="userIcon"><img th:src="@{/img/kiko.jpg}" alt="user_icon"><input type="file" name="user_icon"></div>
-                <input type="username" name="user_name" placeholder="ユーザー名前" required>
+                <div id="userIcon"><img th:src="@{/img/kiko.jpg}" alt="user_icon"><input type="file" name="user_icon" id="imgInp"></div>
+                <input type="username" name="user_name" placeholder="ユーザー名前" required >
                 <input type="email" name="email" placeholder="ユーザーメール" required>
                 <input type="password" name="password" placeholder="ユーザーパスワード" required>
                 <input type="password" name="confirm" placeholder="パスワード確認" required>
@@ -43,5 +43,13 @@
     </main>
 
 </body>
+<script>
+		imgInp.onchange = evt => {
+		const [file] = imgInp.files
+		if (file) {
+			userIcon.src = URL.createObjectURL(file)
+		}
+	}
+</script>
 
 </html>
