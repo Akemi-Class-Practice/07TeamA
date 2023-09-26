@@ -51,7 +51,7 @@
                         </div>
                         <div class="statistics-line">
                             <p>今日の購入売上：</p>
-                            <p th:text="${totalSalesToday} + '円'"></p>
+                            <p th:text="${totalSalesToday == null} ? '0円' : '${totalSalesToday} + '円''"></p>
                         </div>
                     </div>
                     <div class="this-months-statistics">
