@@ -78,11 +78,11 @@ public class EditUserController {
 		if (!newPassword.isEmpty()) {
 			userService.updateUserPassword(currentEmail, newPassword);
 			if (userService.updateUser(currentEmail, newIcon, newName, newEmail)) {
-//				LinkedList<CourseEntity> cartList = new LinkedList<CourseEntity>(); 
-				int cartContentNumber = userService.getCartContentNumber();
-				model.addAttribute("cartContentNumber", cartContentNumber);
 				session.invalidate();
 				UserEntity user = userService.login(newEmail, newPassword);
+				LinkedList<CourseEntity> cartList = new LinkedList<CourseEntity>(); 
+				int cartContentNumber = userService.getCartContentNumber();
+				model.addAttribute("cartContentNumber", cartContentNumber);
 				session.setAttribute("user", user);
 				model.addAttribute("user", user);
 				return "redirect:/home/user/view/courses";
