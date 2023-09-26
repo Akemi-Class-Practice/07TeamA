@@ -95,6 +95,7 @@ public class PaymentController {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 		Long userId = user.getStudentId();
 		LinkedList<CourseEntity> cartList = (LinkedList<CourseEntity>) session.getAttribute("cart");
+		// Make purchase list
 		LinkedList<CourseEntity> purchaseList = (LinkedList<CourseEntity>) cartList.clone();
 		
 		// 次の３行はカートの合計金額を計算するためのメソッドです
