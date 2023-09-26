@@ -86,6 +86,8 @@ public class EditUserController {
 			}
 		} else {
 			if (userService.updateUser(currentEmail, newIcon, newName, newEmail)) {
+				int cartContentNumber = userService.getCartContentNumber();
+				model.addAttribute("cartContentNumber", cartContentNumber);
 				UserEntity user = (UserEntity) session.getAttribute("user");
 				Long userId = user.getStudentId();
 				UserEntity newUser = (UserEntity) userService.findByStudentId(userId);
